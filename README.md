@@ -1,5 +1,4 @@
 # tabby
-<<<<<<< HEAD
 
 > Design System of PulsarUp!
 
