@@ -19,21 +19,22 @@
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook -p 9001",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
+    "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed"
+
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "prop-types": "^15.5.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "@svgr/rollup": "^2.4.1",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -59,12 +60,18 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
-    "rollup-plugin-url": "^1.4.0"
+    "rollup-plugin-url": "^1.4.0",
+    "@storybook/react": "^4.1.13",
+    "node-sass-chokidar": "^1.3.4",
+    "sass": "^1.17.2"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "sass": "^1.17.2"
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
