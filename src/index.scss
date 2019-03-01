@@ -1,7 +1,9 @@
+@import 'css/variables/_colors';
+
 @font-face {
   font-family: 'Roboto', sans-serif;
   src: url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500")
 }
 
-@import 'css/variables/colors.scss';
-@import 'components/components.scss'
+
+@import 'components/components'
