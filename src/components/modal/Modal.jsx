@@ -1,17 +1,17 @@
 import React, { PureComponent } from "react";
-import classNames from "classnames";
 import PropTypes from "prop-types";
-import ButtonIcon from "../Buttons/ButtonIcon";
 
-class ModalContainer extends PureComponent {
+class Modal extends PureComponent {
+      render(){
         return (
-            <div>
+            <div className="modal">
+              <p>Holi</p>
             </div>
         );
     }
 }
-ModalContainer.propTypes = {
+Modal.propTypes = {
 
 };
 
-export default ModalContainer;
+export default Modal;

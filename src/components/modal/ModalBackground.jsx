@@ -2,11 +2,10 @@ import React, { PureComponent } from "react";
 
 class ModalBackground extends PureComponent {
   render(){
-          return(
+    return (
               <div className="modal-background">
-                <p>Holi</p>
               </div>
-          )
+    );
       }
   }
 
