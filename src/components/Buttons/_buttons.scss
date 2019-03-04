@@ -1,0 +1,54 @@
+.btn{
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.btn--icon{
+  background-color: transparent;
+  i{
+    font-size: $XXL;
+    color: $gray;
+  }
+}
+
+.btn--text{
+  font-size: $R;
+  font-weight: $regular;
+  padding:4px 16px;
+  border-radius: 16px;
+  text-align: center;
+  &:hover{
+    filter:brightness(1.2);
+  }
+  &:active{
+    filter:saturate(.7);
+  }
+  &:disabled{
+    filter: saturate(.3);
+  }
+}
+
+.btn--blue{
+  background-color: $blue;
+  color: $white;
+}
+
+.btn--red{
+  background-color: $red;
+  color: $white;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .btn--text{
+    font-size: $S;
+  }
+}
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { ... }
+//
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+//
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ...
