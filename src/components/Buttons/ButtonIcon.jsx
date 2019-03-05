@@ -5,12 +5,12 @@ import "material-design-icons/iconfont/material-icons.css";
 class ButtonIcon extends PureComponent {
   render() {
     return (
-      <div
+      <button
         className={`btn btn--icon icon--${this.props.iconClassName}`}
         onClick={this.props.onClick}
       >
         <i className="material-icons"> {this.props.iconName}</i>
-      </div>
+      </button>
     );
   }
 }

@@ -1,6 +1,10 @@
 .btn{
   cursor: pointer;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  border: none;
+  &:focus{
+    outline: none;
+  }
 }
 
 .btn--icon{
@@ -23,20 +27,28 @@
   &:active{
     filter:saturate(.7);
   }
+
   &:disabled{
     filter: saturate(.3);
   }
 }
 
-.btn--blue{
-  background-color: $blue;
-  color: $white;
+
+
+@each $bgColor, $color in $darkColors {
+  .btn--#{$bgColor} {
+    background-color: $color;
+    color: $white;
+  }
+}
+@each $bgLightColor, $colorss in $lightColors {
+  .btn--#{$bgLightColor} {
+    background-color: $colorss;
+    font-size: $XXL;
+    color: $gray;
+  }
 }
 
-.btn--red{
-  background-color: $red;
-  color: $white;
-}
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
@@ -51,4 +63,4 @@
 // @media (min-width: 992px) { ... }
 //
 // // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) { ...
+// @media (min-width: 1200px) { ...}
