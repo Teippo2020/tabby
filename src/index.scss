@@ -1,6 +1,7 @@
-@import 'css/variables/_colors';
-@import './css/variables/_fonts.scss';
-@import './css/variables/levels.scss';
+@import './styles/variables/colors';
+@import './styles/variables/_fonts.scss';
+@import './styles/variables/levels.scss';
+@import './styles/common/common';
 
 @font-face {
   font-family: 'Roboto', sans-serif;

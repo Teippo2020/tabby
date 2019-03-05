@@ -1,8 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import ModalBackground from "../../../components/modal/ModalBackground"
-import Modal from "../../../components/modal/Modal";
+import ModalBackground from "../../../components/modal/ModalBackground";
 
-storiesOf("Modal Background", module)
-//Modal Background
-  .add("Modal Background", () => <ModalBackground />);
+storiesOf("ModalWrapper", module)
+  //Modal
+  .add("ss", () => <ModalBackground show={true} />);

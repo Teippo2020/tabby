@@ -4,10 +4,12 @@
   height: -webkit-fill-available;
   height: -moz-available;
   z-index: $level-1;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .modal--background{
-  background-color: $not-gray;
+  background-color: $not-gray-d3;
   width: -webkit-fill-available;
   width: -moz-available;
   height: -webkit-fill-available;

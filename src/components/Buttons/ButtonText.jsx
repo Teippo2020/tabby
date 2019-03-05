@@ -1,17 +1,17 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import "material-design-icons/iconfont/material-icons.css";
-import styled from 'styled-components';
 
 class ButtonText extends PureComponent {
-
   render() {
+    const { color, onClick, text } = this.props;
     return (
       <button
-        className={`btn btn--text btn--${this.props.color}`}
-        Click={this.props.onClick}
+        className={`btn btn--text btn--${color}`}
+        onClick={onClick}
+        type="button"
       >
-        <p>{this.props.text}</p>
+        <p>{text}</p>
       </button>
     );
   }

@@ -41,10 +41,9 @@
     color: $white;
   }
 }
-@each $bgLightColor, $colorss in $lightColors {
+@each $bgLightColor, $color in $lightColors {
   .btn--#{$bgLightColor} {
-    background-color: $colorss;
-    font-size: $XXL;
+    background-color: $color;
     color: $gray;
   }
 }

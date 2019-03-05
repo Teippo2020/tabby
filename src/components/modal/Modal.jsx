@@ -1,33 +1,31 @@
 import React, { PureComponent } from "react";
+import classnames from "classnames";
 import PropTypes from "prop-types";
+
 import ButtonIcon from "../Buttons/ButtonIcon";
-import ButtonText from "../Buttons/ButtonText";
-import ModalFooter from "./ModalFooter";
+import ModalBackground from "./ModalBackground";
 
 class Modal extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ModalFooter:this.props.footer
-    };
-  }
+  static propTypes = {
+    show: PropTypes.bool.isRequired,
+    close: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired
+  };
 
   render() {
+    const { show, close, children } = this.props;
     return (
-      <div className="modal">
-        <div className="icons">
-          <ButtonIcon iconName="clear" onClick={this.props.close} />
+      <div className={classnames({ "hidden": !show }, "modal--wrapper")}>
+        <ModalBackground close={close} />
+        <div className="modal">
+          <div className="icons">
+            <ButtonIcon iconName="clear" onClick={close} />
+          </div>
+          <div className="modal--content">{children}</div>
         </div>
-        <div className="modal--content">
-            {this.props.children}
-        </div>
-        {this.state.ModalFooter && <ModalFooter/>}
-        </div>
+      </div>
     );
   }
 }
-Modal.propTypes = {
-  close: PropTypes.string.isRequired
-};
 
 export default Modal;
