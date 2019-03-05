@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import ButtonIcon from "../Buttons/ButtonIcon";
 import ButtonText from "../Buttons/ButtonText";
-
+import ModalFooter from "./ModalFooter";
 
 class Modal extends PureComponent {
   constructor(props) {
@@ -20,7 +20,8 @@ class Modal extends PureComponent {
         </div>
         <div className="modal--content">
             {this.props.children}
-          </div>
+        </div>
+        {this.state.ModalFooter && <ModalFooter/>}
         </div>
     );
   }
