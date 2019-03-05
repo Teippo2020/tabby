@@ -1,17 +1,13 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import ButtonText from "../Buttons/ButtonText";
 
-class ModalFooter extends PureComponent {
+export default class ModalFooter extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node.isRequired
+  };
 
   render() {
-    return (
-      <div className="modal--footer">
-        {this.props.children}
-      </div>
-    );
+    const { children } = this.props;
+    return <div className="modal--footer">{children}</div>;
   }
 }
-
-
-export default ModalFooter;
