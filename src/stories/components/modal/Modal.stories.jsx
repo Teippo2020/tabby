@@ -3,5 +3,5 @@ import { storiesOf } from "@storybook/react";
 import Modal from "../../../components/modal/Modal";
 
 storiesOf("Modal", module)
-//Modal
+  // Modal
   .add("Modal", () => <Modal />);

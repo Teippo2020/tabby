@@ -2,8 +2,8 @@ import React, { PureComponent } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-import ButtonIcon from "../Buttons/ButtonIcon";
 import ModalBackground from "./ModalBackground";
+import ModalCard from "./ModalCard";
 
 class Modal extends PureComponent {
   static propTypes = {
@@ -13,16 +13,13 @@ class Modal extends PureComponent {
   };
 
   render() {
-    const { show, close, children } = this.props;
+    const { show, close, children, className } = this.props;
     return (
       <div className={classnames({ "hidden": !show }, "modal--wrapper")}>
         <ModalBackground close={close} />
-        <div className="modal">
-          <div className="icons">
-            <ButtonIcon iconName="clear" onClick={close} />
-          </div>
-          <div className="modal--content">{children}</div>
-        </div>
+        <ModalCard close={close} className={className}>
+          {children}
+        </ModalCard>
       </div>
     );
   }

@@ -59,6 +59,76 @@
     }
 }
 
+.modal--medal{
+  color: $white;
+  font-weight: $light;
+  padding: 16px 16px 32px;
+  background-color: $white;
+  background-image:linear-gradient(to bottom right, $blue-d2, $navy);
+  background-size: auto 65%;
+  background-repeat: no-repeat;
+  width:90%;
+  max-width: 768px;
+  max-height: 80%;
+  border-radius: 8px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: $level-2;
+  box-shadow:0 4px 8px 2px rgba($black,0.4);
+    .icons{
+    width:100%;
+    display: flex;
+    justify-content:flex-end;
+      i{
+        color: $white;
+      }
+    }
+    .medals{
+      position: absolute;
+      top: -10%;
+      left:50%;
+      max-width: 90%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: 120px;
+      img{
+        height: 100%;
+        margin: 0 -20px;
+      }
+    }
+    .modal--content{
+      padding: 16px 0 0;
+      p{
+        padding: 16px 0;
+        text-align: center;
+      }
+    }
+    .modal--header{
+      text-align: center;
+      h2{
+        font-size: $XL;
+        font-weight: $bold;
+      }
+      padding-bottom: 16px;
+    }
+    .modal--footer{
+      z-index: $level-3;
+      // background-color: $white;
+      margin: 0 auto;
+      padding:16px 0 0;
+      width:100%;
+      display: flex;
+      justify-content: space-around;
+      p{
+        padding:4px 16px;
+      }
+    }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .modal{
@@ -77,6 +147,39 @@
     }
     .modal--footer{
       width: 75%;
+    }
+  }
+  .modal--medal{
+    font-size: $S;
+    max-width: 384px;
+    .icons{
+      i{
+        font-size: $L;
+      }
+    }
+    .modal--header{
+      font-size: $S;
+      h2{
+        font-size: $L;
+      }
+    }
+    .modal--footer{
+      width: 75%;
+    }
+    .medals{
+      position: absolute;
+      top: -5%;
+      left:50%;
+      max-width: 90%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: row;
+      height: 80px;
+      img{
+        height: 100%;
+        margin: 0 -10px;
+      }
+
     }
   }
 }
