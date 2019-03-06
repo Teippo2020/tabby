@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 
-import ButtonText from "../Buttons/ButtonText";
+import ButtonText from "../buttons/ButtonText";
 import Modal from "./Modal";
-import ModalHeader from "./ModalHeader";
 
 class ModalContainer extends PureComponent {
   constructor(props) {
@@ -11,6 +11,10 @@ class ModalContainer extends PureComponent {
       show: false
     };
   }
+
+  static propTypes = {
+    children: PropTypes.node.isRequired
+  };
 
   openModal = () => {
     this.setState({
@@ -25,12 +29,15 @@ class ModalContainer extends PureComponent {
   };
 
   render() {
-    const { show } = this.state;
+    const { show, children } = this.state;
+
     return (
       <div>
         <ButtonText text="modal" color="red" onClick={this.openModal} />
-        <Modal show={show} close={this.closeModal} modalFooter={false}>
-          <ModalHeader title="Hola prrrrooo" />
+        <Modal show={show} close={this.closeModal}>
+          <div>
+            {children}
+          </div>
         </Modal>
       </div>
     );
