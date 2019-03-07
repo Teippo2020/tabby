@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+/**
+ * @todo Change for custom icons, used temporarily
+ */
+import "material-design-icons/iconfont/material-icons.css";
+
 
 import styles from './styles.css'
 

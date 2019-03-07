@@ -2,31 +2,47 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 class ModalBackground extends PureComponent {
+  /**
+   * @property {func} onClose -The function to close the modal
+   */
   static propTypes = {
-    // close = here goes the close function
-    close: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired
   };
 
+  /**
+   * @function componentDidMount add the keylistener
+   */
   componentDidMount() {
     document.addEventListener("keydown", this.handleEscPressed);
   }
+
+  /**
+   * @function componentWillUnmount unmount the keylistener
+   */
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleEscPressed);
   }
 
-  // key listener to close the modal
+  /**
+   * @function handleEscPressed to close the modal with the esc key
+   */
   handleEscPressed = event => {
-    const { close } = this.props;
+    const { onClose } = this.props;
+    // keyCode 27 = ESC key
     if (event.keyCode === 27) {
-      close();
+      onClose();
     }
   };
 
   render() {
-    const { close } = this.props;
+    const { onClose } = this.props;
     return (
-      <div className="modal--background" onClick={close} role="presentation" />
+      <div
+        className="modal--background"
+        onClick={onClose}
+        role="presentation"
+      />
     );
   }
 }

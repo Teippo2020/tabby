@@ -2,8 +2,10 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 export default class ModalFooter extends PureComponent {
+  /**
+   * @property {node} children - The buttons of the footer
+   */
   static propTypes = {
-    // Here goes the buttons of the modal
     children: PropTypes.node.isRequired
   };
 
