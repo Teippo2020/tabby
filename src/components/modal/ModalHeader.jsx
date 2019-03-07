@@ -2,8 +2,10 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 class ModalHeader extends PureComponent {
+  /**
+   * @property {string} title - Title of the modal
+   */
   static propTypes = {
-    // Here goes the title of the modal
     title: PropTypes.string.isRequired
   };
 

@@ -8,28 +8,29 @@ import ModalFooter from "../ModalFooter";
 import ButtonText from "../../buttons/ButtonText";
 
 class ModalMedal extends PureComponent {
-  // Props
+  /**
+   * @property {bool} show - Determines if the modal is visible
+   * @property {func} onClose - The function to close the modal
+   * @property {node} children - Where you should put the medals, it could be more than one
+   * @property {string} title - The title of the medal
+   * @property {string} message - The message of the modal
+   * @property {string} btnText - The text of the button
+   * @property {string} btnColor - The color of the button, it's blue by default
+   */
   static propTypes = {
-    // show = to make the modal visible
     show: PropTypes.bool.isRequired,
-    // close = here goes the close function
-    close: PropTypes.func.isRequired,
-    // children = where you should put the medals, it could be more than one
+    onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
-    // title = the title of the modal
     title: PropTypes.string.isRequired,
-    // message = the message of the modal
     message: PropTypes.string.isRequired,
-    // btnText = the text of the button, the default value is "Ok"
-    btnText: PropTypes.string,
-    // btnColor = the color of the button, the default color is blue
+    btnText: PropTypes.string.isRequired,
     btnColor: PropTypes.string
   };
 
   render() {
     const {
       show,
-      close,
+      onClose,
       children,
       title,
       btnText,
@@ -37,16 +38,17 @@ class ModalMedal extends PureComponent {
       message
     } = this.props;
     return (
-      <Modal show={show} className="modal--medal" close={close}>
+      <Modal show={show} className="modal--medal" onClose={onClose}>
         <div className="medals">
           {React.Children.map(children, child => child)}
         </div>
-        {/* Stars animation */}
+        {/** Starts tars animation */}
         <div className="stars--container">
           <div id="stars" />
           <div id="stars2" />
           <div id="stars3" />
         </div>
+        {/** Ends stars animation */}
         <ModalHeader title={title} />
         <p>{message}</p>
         <ModalFooter>
@@ -57,7 +59,6 @@ class ModalMedal extends PureComponent {
   }
 }
 ModalMedal.defaultProps = {
-  btnColor: "blue",
-  btnText: "Ok"
+  btnColor: "blue"
 };
 export default ModalMedal;

@@ -1,24 +1,27 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import ButtonIcon from "../buttons/ButtonIcon";
 
 class ModalCard extends PureComponent {
+  /**
+   * @property {func} onClose - The function to close the modal
+   * @property {node} children - The content of the modal
+   * @property {string} className - Just in case you need another class
+   */
   static propTypes = {
-    // Here goes the close function
-    close: PropTypes.func.isRequired,
-    // Here goes modal content
+    onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
-    // Just in case you need to add another class
     className: PropTypes.string
   };
 
   render() {
-    const { close, children, className } = this.props;
+    const { onClose, children, className } = this.props;
     return (
-      <div className={className}>
+      <div className={classNames("modal", { className })}>
         <div className="icons">
-          <ButtonIcon iconName="clear" onClick={close} />
+          <ButtonIcon iconName="clear" onClick={onClose} />
         </div>
         <div className="modal--content">{children}</div>
       </div>
@@ -27,6 +30,6 @@ class ModalCard extends PureComponent {
 }
 
 ModalCard.defaultProps = {
-  className: "modal"
+  className: ""
 };
 export default ModalCard;

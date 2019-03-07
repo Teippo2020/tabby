@@ -1,23 +1,34 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import "material-design-icons/iconfont/material-icons.css";
+import classNames from "classnames";
 
 class ButtonIcon extends PureComponent {
+  /**
+   * @property {string} iconName -The name of the icon
+   * @property {func} onClick - The function triggered by the button
+   * @property {string} className - Just in case you need another class
+   */
+  static propTypes = {
+    iconName: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.string
+  };
+
   render() {
+    const { iconName, onClick, className } = this.props;
     return (
       <button
-        className={`btn btn--icon icon--${this.props.iconClassName}`}
-        onClick={this.props.onClick}
+        type="submit"
+        className={classNames("btn", "btn--icon", { className })}
+        onClick={onClick}
       >
-        <i className="material-icons"> {this.props.iconName}</i>
+        <i className="material-icons"> {iconName} </i>
       </button>
     );
   }
 }
-ButtonIcon.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  iconClassName: PropTypes.isRequired
+ButtonIcon.defaultProps = {
+  className: ""
 };
 
 export default ButtonIcon;
