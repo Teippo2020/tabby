@@ -1,3 +1,4 @@
+// Modal
 import React, { PureComponent } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
@@ -7,9 +8,14 @@ import ModalCard from "./ModalCard";
 
 class Modal extends PureComponent {
   static propTypes = {
+    // To make the modal visible
     show: PropTypes.bool.isRequired,
+    // Here goes the close function
     close: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired
+    // Here goes the modal content
+    children: PropTypes.node.isRequired,
+    // Just in case you need to add another class
+    className: PropTypes.string
   };
 
   render() {
@@ -24,5 +30,7 @@ class Modal extends PureComponent {
     );
   }
 }
-
+Modal.defaultProps = {
+  className: ""
+};
 export default Modal;
