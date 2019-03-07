@@ -5,23 +5,26 @@ import ButtonText from "../buttons/ButtonText";
 import Modal from "./Modal";
 
 class ModalContainer extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false
-    };
-  }
-
   static propTypes = {
     children: PropTypes.node.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      // To make modal visible
+      show: false
+    };
+  }
+
+  // To open modal
   openModal = () => {
     this.setState({
       show: true
     });
   };
 
+  // To close modal
   closeModal = () => {
     this.setState({
       show: false
@@ -35,9 +38,7 @@ class ModalContainer extends PureComponent {
       <div>
         <ButtonText text="modal" color="red" onClick={this.openModal} />
         <Modal show={show} close={this.closeModal}>
-          <div>
-            {children}
-          </div>
+          <div>{children}</div>
         </Modal>
       </div>
     );

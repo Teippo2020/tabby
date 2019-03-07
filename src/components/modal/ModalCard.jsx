@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 
 import ButtonIcon from "../buttons/ButtonIcon";
 
-
 class ModalCard extends PureComponent {
   static propTypes = {
+    // Here goes the close function
     close: PropTypes.func.isRequired,
+    // Here goes modal content
     children: PropTypes.node.isRequired,
+    // Just in case you need to add another class
     className: PropTypes.string
   };
 
@@ -18,9 +20,7 @@ class ModalCard extends PureComponent {
         <div className="icons">
           <ButtonIcon iconName="clear" onClick={close} />
         </div>
-        <div className="modal--content">
-          {children}
-        </div>
+        <div className="modal--content">{children}</div>
       </div>
     );
   }
@@ -28,5 +28,5 @@ class ModalCard extends PureComponent {
 
 ModalCard.defaultProps = {
   className: "modal"
-}
+};
 export default ModalCard;

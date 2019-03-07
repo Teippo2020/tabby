@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 class ModalBackground extends PureComponent {
   static propTypes = {
+    // close = here goes the close function
     close: PropTypes.func.isRequired
   };
 
@@ -14,6 +15,7 @@ class ModalBackground extends PureComponent {
     document.removeEventListener("keydown", this.handleEscPressed);
   }
 
+  // key listener to close the modal
   handleEscPressed = event => {
     const { close } = this.props;
     if (event.keyCode === 27) {

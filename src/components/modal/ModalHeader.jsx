@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 class ModalHeader extends PureComponent {
   static propTypes = {
+    // Here goes the title of the modal
     title: PropTypes.string.isRequired
   };
 
