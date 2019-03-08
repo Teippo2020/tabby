@@ -1,9 +1,12 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
+/**
+ * @class Modal Footer - Is the footer of the modal
+ */
 export default class ModalFooter extends PureComponent {
   /**
-   * @property {node} children - The buttons of the footer
+   * @property {node} children - The content of the footer
    */
   static propTypes = {
     children: PropTypes.node.isRequired

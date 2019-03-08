@@ -1,7 +1,14 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+/**
+ * @todo Change for custom icons, used temporarily
+ */
+import "material-design-icons/iconfont/material-icons.css";
 
+/**
+ * @class ButtonIcon - Is a button with an icon, none text
+ */
 class ButtonIcon extends PureComponent {
   /**
    * @property {string} iconName -The name of the icon

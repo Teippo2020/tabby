@@ -4,4 +4,4 @@ import Modal from "../../../components/modal/Modal";
 
 storiesOf("Modal", module)
   // Modal
-  .add("Default", () => <Modal />);
+  .add("Default", () => <Modal show />);

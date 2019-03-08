@@ -46,3 +46,16 @@
 .justify-end {
   justify-content: end;
 }
+
+@each $bgColor, $color in $darkColors {
+  .bg--#{$bgColor} {
+    background-color: $color;
+    color: $white;
+  }
+}
+@each $bgLightColor, $color in $lightColors {
+  .bg--#{$bgLightColor} {
+    background-color: $color;
+    color: $gray;
+  }
+}

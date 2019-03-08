@@ -6,6 +6,9 @@ import PropTypes from "prop-types";
 import ModalBackground from "./ModalBackground";
 import ModalCard from "./ModalCard";
 
+/**
+ * @class Modal - It contains the modal card and the modal background
+ */
 class Modal extends PureComponent {
   /**
    * @property {bool} show - Determines if the modal is visible

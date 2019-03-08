@@ -10,7 +10,6 @@
   left: 0;
 }
 .modal--background{
-  background-color: $not-gray-d3;
   width: -webkit-fill-available;
   width: -moz-available;
   height: -webkit-fill-available;
@@ -34,7 +33,7 @@
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: $level-2;
-  box-shadow:0 4px 8px 2px rgba($black,0.4);
+  box-shadow: $shadow-1;
     .icons{
     width:100%;
     display: flex;
