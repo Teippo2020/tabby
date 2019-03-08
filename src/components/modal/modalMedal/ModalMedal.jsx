@@ -7,15 +7,19 @@ import ModalHeader from "../ModalHeader";
 import ModalFooter from "../ModalFooter";
 import ButtonText from "../../buttons/ButtonText";
 
+/**
+ * @Class Modal Medal - Is the modal for the Medals, it has its own style, but shares the Modal component
+ */
 class ModalMedal extends PureComponent {
   /**
    * @property {bool} show - Determines if the modal is visible
    * @property {func} onClose - The function to close the modal
-   * @property {node} children - Where you should put the medals, it could be more than one
+   * @property {node} children - Medals, could be more than one
    * @property {string} title - The title of the medal
    * @property {string} message - The message of the modal
    * @property {string} btnText - The text of the button
    * @property {string} btnColor - The color of the button, it's blue by default
+   * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
     show: PropTypes.bool.isRequired,
@@ -42,7 +46,7 @@ class ModalMedal extends PureComponent {
         <div className="medals">
           {React.Children.map(children, child => child)}
         </div>
-        {/** Starts tars animation */}
+        {/** Starts stars animation */}
         <div className="stars--container">
           <div id="stars" />
           <div id="stars2" />
