@@ -7,7 +7,7 @@ import classNames from "classnames";
 import "material-design-icons/iconfont/material-icons.css";
 
 /**
- * @class ButtonIcon - Is a button with an icon, none text
+ * @class ButtonIcon - It is a button that works as an icon, without text
  */
 class ButtonIcon extends PureComponent {
   /**
@@ -26,7 +26,7 @@ class ButtonIcon extends PureComponent {
     return (
       <button
         type="submit"
-        className={classNames("btn", "btn--icon", { className })}
+        className={classNames("btn", "btn--icon", className)}
         onClick={onClick}
       >
         <i className="material-icons"> {iconName} </i>

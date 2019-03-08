@@ -8,7 +8,7 @@ import classNames from "classnames";
 class ModalBackground extends PureComponent {
   /**
    * @property {func} onClose -The function to close the modal
-   *  @property {string} color  - The color of the background just in case you need another color, its not-gray-d3 by default
+   *  @property {string} color  - The color of the background just in case you need another color, it's not-gray-d3 by default
    *  @see See './../../../styles/variables/_colors.scss' for the list of color names, preferentially use dark colors
    */
   static propTypes = {
