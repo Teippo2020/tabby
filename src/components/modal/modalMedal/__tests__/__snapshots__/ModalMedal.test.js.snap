@@ -11,7 +11,15 @@ ShallowWrapper {
     show={false}
     title="Title"
   >
-    <div />
+    <Medal
+      medalSrc="medal"
+    />
+    <Medal
+      medalSrc="medal"
+    />
+    <Medal
+      medalSrc="medal"
+    />
   </ModalMedal>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -31,7 +39,15 @@ ShallowWrapper {
         <div
           className="medals"
         >
-          <div />
+          <Medal
+            medalSrc="medal"
+          />
+          <Medal
+            medalSrc="medal"
+          />
+          <Medal
+            medalSrc="medal"
+          />
         </div>,
         <div
           className="stars--container"
@@ -73,7 +89,15 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <div />,
+            <Medal
+              medalSrc="medal"
+            />,
+            <Medal
+              medalSrc="medal"
+            />,
+            <Medal
+              medalSrc="medal"
+            />,
           ],
           "className": "medals",
         },
@@ -82,11 +106,35 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": ".0",
-            "nodeType": "host",
-            "props": Object {},
+            "nodeType": "class",
+            "props": Object {
+              "medalSrc": "medal",
+            },
             "ref": null,
             "rendered": null,
-            "type": "div",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": ".1",
+            "nodeType": "class",
+            "props": Object {
+              "medalSrc": "medal",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": ".2",
+            "nodeType": "class",
+            "props": Object {
+              "medalSrc": "medal",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": "div",
@@ -211,7 +259,15 @@ ShallowWrapper {
           <div
             className="medals"
           >
-            <div />
+            <Medal
+              medalSrc="medal"
+            />
+            <Medal
+              medalSrc="medal"
+            />
+            <Medal
+              medalSrc="medal"
+            />
           </div>,
           <div
             className="stars--container"
@@ -253,7 +309,15 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <div />,
+              <Medal
+                medalSrc="medal"
+              />,
+              <Medal
+                medalSrc="medal"
+              />,
+              <Medal
+                medalSrc="medal"
+              />,
             ],
             "className": "medals",
           },
@@ -262,11 +326,35 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": ".0",
-              "nodeType": "host",
-              "props": Object {},
+              "nodeType": "class",
+              "props": Object {
+                "medalSrc": "medal",
+              },
               "ref": null,
               "rendered": null,
-              "type": "div",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": ".1",
+              "nodeType": "class",
+              "props": Object {
+                "medalSrc": "medal",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": ".2",
+              "nodeType": "class",
+              "props": Object {
+                "medalSrc": "medal",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": "div",

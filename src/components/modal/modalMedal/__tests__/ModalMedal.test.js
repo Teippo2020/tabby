@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 
 import sinon from "sinon";
 import ModalMedal from "../ModalMedal";
+import Medal from "../Medal";
 
 describe("Modal Medal", () => {
   const close = sinon.stub();
@@ -18,7 +19,13 @@ describe("Modal Medal", () => {
     };
   });
   it("should render correctly with default state", () => {
-    const component = shallow(<ModalMedal {...props} />);
+    const component = shallow(
+      <ModalMedal {...props}>
+        <Medal medalSrc="medal" />
+        <Medal medalSrc="medal" />
+        <Medal medalSrc="medal" />
+      </ModalMedal>
+    );
     expect(component).toMatchSnapshot();
   });
   it("should remove hiddden class when show is true", () => {

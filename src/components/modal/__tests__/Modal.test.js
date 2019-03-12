@@ -8,6 +8,7 @@ describe("Modal", () => {
   beforeEach(() => {
     props = {
       show: false,
+      // eslint-disable-next-line react/jsx-filename-extension
       children: <div />,
       onClose: () => {}
     };
@@ -28,23 +29,23 @@ describe("Modal", () => {
     const componentVisible = shallow(<Modal {...propsVisible} />);
     expect(componentVisible.hasClass("hidden")).toEqual(false);
   });
-  it("render correct onClose prop on ModalBackground", () => {
+  it("should render correct onClose prop on ModalBackground", () => {
     const ModalBackground = shallow(<Modal {...props} />).find(
       "ModalBackground"
     );
     expect(ModalBackground.props().onClose).toBeFunction();
   });
-  it("render the same onClose func on ModalBackground", () => {
+  it("should render the same onClose func on ModalBackground", () => {
     const ModalBackground = shallow(<Modal {...props} />).find(
       "ModalBackground"
     );
     expect(ModalBackground.props().onClose).toEqual(props.onClose);
   });
-  it("render correct onClose prop on ModalCard", () => {
+  it("should render correct onClose prop on ModalCard", () => {
     const ModalCard = shallow(<Modal {...props} />).find("ModalCard");
     expect(ModalCard.props().onClose).toBeFunction();
   });
-  it("render the same onClose func on ModalCard", () => {
+  it("should render the same onClose func on ModalCard", () => {
     const ModalBackground = shallow(<Modal {...props} />).find("ModalCard");
     expect(ModalBackground.props().onClose).toEqual(props.onClose);
   });
