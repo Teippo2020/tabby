@@ -19,7 +19,6 @@
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 9001",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
     "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed"
@@ -50,7 +49,6 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^3.1.0",
-    "gh-pages": "^1.2.0",
     "jest": "^24.1.0",
     "jest-extended": "^0.11.1",
     "node-sass-chokidar": "^1.3.4",
