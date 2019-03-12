@@ -56,7 +56,7 @@ class ModalMedal extends PureComponent {
         <ModalHeader title={title} />
         <p>{message}</p>
         <ModalFooter>
-          <ButtonText text={btnText} color={btnColor} />
+          <ButtonText text={btnText} color={btnColor} onClick={onClose} />
         </ModalFooter>
       </Modal>
     );

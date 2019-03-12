@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 /**
- * @class Modal Background - Is the layer of color under the modal, you can choose the color 
+ * @class Modal Background - Is the layer of color under the modal, you can choose the color
  */
 class ModalBackground extends PureComponent {
   /**
