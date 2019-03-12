@@ -1,7 +1,5 @@
-
-
-//Modal components
-import Modal from "./components/modal/Modal"
+// Modal components
+import Modal from "./components/modal/Modal";
 
 import ModalCard from "./components/modal/ModalCard";
 import ModalBackground from "./components/modal/ModalBackground";
@@ -26,4 +24,4 @@ export {
   Medal,
   ButtonIcon,
   ButtonText
-}
+};

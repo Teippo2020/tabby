@@ -1,39 +1,30 @@
 import React from "react";
 import { shallow } from "enzyme";
-import "jest-extended";
-import sinon from "sinon";
 
 import Modal from "../Modal";
 
 describe("Modal", () => {
-  it("should render correctly with default state", () => {
-    const props = {
+  let props;
+  beforeEach(() => {
+    props = {
       show: false,
       children: <div />,
       onClose: () => {}
     };
+  });
+  it("should render correctly with default state", () => {
     const component = shallow(<Modal {...props} />);
     expect(component).toMatchSnapshot();
   });
-});
 
-describe("Modal render correct show prop", () => {
-  const props = {
-    show: false,
-    children: <div />,
-    onClose: () => {}
-  };
-  const component = shallow(<Modal {...props} />);
-  it("check proptype", () => {
+  it("should add hidden class when show is false", () => {
+    const component = shallow(<Modal {...props} />);
     expect(component.hasClass("hidden")).toEqual(true);
   });
 
-  it("check proptype", () => {
-    const propsVisible = {
-      show: true,
-      children: <div />,
-      onClose: () => {}
-    };
+  it("should remove hiddden class when show is true", () => {
+    const propsVisible = { ...props };
+    propsVisible.show = true;
     const componentVisible = shallow(<Modal {...propsVisible} />);
     expect(componentVisible.hasClass("hidden")).toEqual(false);
   });
@@ -58,16 +49,3 @@ describe("Modal render correct show prop", () => {
     expect(ModalBackground.props().onClose).toEqual(props.onClose);
   });
 });
-
-// describe("Close func", () => {
-//   it("onClose called", () => {
-//     const close = sinon.stub();
-//     close.returns("alvvvv");
-//     const componentC = shallow(<Modal show onClose={close()} />).find(
-//       "ModalBackground"
-//     );
-//     componentC.simulate("click");
-//     expect(componentC.length).toEqual(1);
-//     expect(close.called).toBeTruthy();
-//   });
-// });
