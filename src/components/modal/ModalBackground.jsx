@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 
 /**
  * @class Modal Background - Is the layer of color under the modal, you can choose the color 
@@ -8,12 +7,9 @@ import classNames from "classnames";
 class ModalBackground extends PureComponent {
   /**
    * @property {func} onClose -The function to close the modal
-   *  @property {string} color  - The color of the background just in case you need another color, it's not-gray-d3 by default
-   *  @see See './../../../styles/variables/_colors.scss' for the list of color names, preferentially use dark colors
    */
   static propTypes = {
-    onClose: PropTypes.func.isRequired,
-    color: PropTypes.string
+    onClose: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -38,17 +34,15 @@ class ModalBackground extends PureComponent {
   };
 
   render() {
-    const { onClose, color } = this.props;
+    const { onClose } = this.props;
     return (
       <div
-        className={classNames("modal--background", `bg--${color}`)}
+        className="modal--background"
         onClick={onClose}
         role="presentation"
       />
     );
   }
 }
-ModalBackground.defaultProps ={
-  color: "not-gray-d3"
-};
+
 export default ModalBackground;
