@@ -27,8 +27,8 @@ class Modal extends PureComponent {
     const { show, onClose, children, className } = this.props;
     return (
       <div className={classNames({ "hidden": !show }, "modal--wrapper")}>
-        <ModalBackground close={onClose} />
-        <ModalCard close={onClose} className={className}>
+        <ModalBackground onClose={onClose} />
+        <ModalCard onClose={onClose} className={className}>
           {children}
         </ModalCard>
       </div>

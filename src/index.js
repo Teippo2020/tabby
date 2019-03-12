@@ -1,16 +1,29 @@
-// Modal components
-export Modal from "./components/modal/Modal.jsx";
 
-export ModalCard from "./components/modal/ModalCard.jsx"
-export ModalBackground from "./components/modal/ModalBackground.jsx";
-export ModalHeader from "./components/modal/ModalHeader.jsx";
-export ModalFooter from "./components/modal/ModalFooter.jsx";
+
+//Modal components
+import Modal from "./components/modal/Modal"
+
+import ModalCard from "./components/modal/ModalCard";
+import ModalBackground from "./components/modal/ModalBackground";
+import ModalHeader from "./components/modal/ModalHeader";
+import ModalFooter from "./components/modal/ModalFooter";
 
 // Modal Medal
-export ModalMedal from "./components/modal/modalMedal/ModalMedal.jsx";
-export Medal from "./components/modal/modalMedal/Medal.jsx";
+import ModalMedal from "./components/modal/modalMedal/ModalMedal";
+import Medal from "./components/modal/modalMedal/Medal";
 
 // Buttons components
-export ButtonIcon from "./components/buttons/ButtonText.jsx";
-export ButtonText from "./components/buttons/ButtonIcon.jsx";
+import ButtonIcon from "./components/buttons/ButtonText";
+import ButtonText from "./components/buttons/ButtonIcon";
 
+export {
+  Modal,
+  ModalCard,
+  ModalBackground,
+  ModalHeader,
+  ModalFooter,
+  ModalMedal,
+  Medal,
+  ButtonIcon,
+  ButtonText
+}
