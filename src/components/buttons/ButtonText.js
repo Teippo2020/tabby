@@ -1,11 +1,11 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
 /**
  * @class ButtonText - Is a button that only contains text
  */
-class ButtonText extends PureComponent {
+class ButtonText extends React.PureComponent {
   /**
    * @property {string} text -The text of the button
    * @property {func} onClick - The function triggered by the button

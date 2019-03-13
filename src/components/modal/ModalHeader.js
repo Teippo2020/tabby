@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 /**
  * @class Modal Header - Is the title of the modal
  */
-class ModalHeader extends PureComponent {
+class ModalHeader extends React.PureComponent {
   /**
    * @property {string} title - Title of the modal
    */

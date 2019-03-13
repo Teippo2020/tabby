@@ -1,5 +1,5 @@
 // Modal Medal
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import Modal from "../Modal";
@@ -10,7 +10,7 @@ import ButtonText from "../../buttons/ButtonText";
 /**
  * @Class Modal Medal - Is the modal for the Medals, it has its own style, but shares the Modal component
  */
-class ModalMedal extends PureComponent {
+class ModalMedal extends React.PureComponent {
   /**
    * @property {bool} show - Determines if the modal is visible
    * @property {func} onClose - The function to close the modal

@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 /**
  * @class Modal Background - Is the layer of color under the modal, you can choose the color
  */
-class ModalBackground extends PureComponent {
+class ModalBackground extends React.PureComponent {
   /**
    * @property {func} onClose -The function to close the modal
    */

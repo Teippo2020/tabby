@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 /**
  * @class Modal Footer - Is the footer of the modal
  */
-export default class ModalFooter extends PureComponent {
+export default class ModalFooter extends React.PureComponent {
   /**
    * @property {node} children - The content of the footer
    */
