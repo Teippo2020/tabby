@@ -21,7 +21,7 @@ class PopOver extends PureComponent {
   render() {
     const { onClose, children, className } = this.props;
     return (
-      <div className={classNames("modal", className)}>
+      <div className={classNames("popOver", className)}>
         <div className="icons">
           <ButtonIcon iconName="clear" onClick={onClose} />
         </div>
