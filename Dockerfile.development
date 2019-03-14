@@ -1,0 +1,19 @@
+FROM node:10.15.3-alpine
+
+
+RUN mkdir -p /opt/tabby
+WORKDIR /opt/tabby
+
+
+
+ADD package.json package.json
+
+RUN npm i
+
+
+# Fixes bug with watcher inside VMs https://facebook.github.io/create-react-app/docs/troubleshooting#npm-start-doesnt-detect-changes
+ENV CHOKIDAR_USEPOLLING=true
+
+
+EXPOSE 3000
+EXPOSE 9009
