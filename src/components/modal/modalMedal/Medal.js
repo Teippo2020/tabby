@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 /**
  * @Class Medal - The image of the medal
  */
-class Medal extends PureComponent {
+class Medal extends React.PureComponent {
   /**
    * @property {string} medalSrc - Medal URL
    */

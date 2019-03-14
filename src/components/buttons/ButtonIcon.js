@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 /**
@@ -9,7 +9,7 @@ import "material-design-icons/iconfont/material-icons.css";
 /**
  * @class ButtonIcon - It is a button that works as an icon, without text
  */
-class ButtonIcon extends PureComponent {
+class ButtonIcon extends React.PureComponent {
   /**
    * @property {string} iconName -The name of the icon
    * @property {func} onClick - The function triggered by the button

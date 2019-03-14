@@ -14,14 +14,16 @@ import Medal from "./components/modal/modalMedal/Medal";
 import ButtonIcon from "./components/buttons/ButtonText";
 import ButtonText from "./components/buttons/ButtonIcon";
 
+import "./index.scss";
+
 export {
-  Modal,
-  ModalCard,
-  ModalBackground,
-  ModalHeader,
-  ModalFooter,
-  ModalMedal,
-  Medal,
-  ButtonIcon,
-  ButtonText
+	Modal,
+	ModalCard,
+	ModalBackground,
+	ModalHeader,
+	ModalFooter,
+	ModalMedal,
+	Medal,
+	ButtonIcon,
+	ButtonText
 };

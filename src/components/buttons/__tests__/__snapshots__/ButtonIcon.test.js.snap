@@ -3,11 +3,10 @@
 exports[`ButtonIcon should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ButtonText
+  Symbol(enzyme.__unrendered__): <ButtonIcon
     className=""
-    color="blue"
+    iconName="clear"
     onClick={[Function]}
-    text="text"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,12 +22,16 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p>
-        text
-      </p>,
-      "className": "btn btn--text bg--blue",
+      "children": <i
+        className="material-icons"
+      >
+         
+        clear
+         
+      </i>,
+      "className": "btn btn--icon",
       "onClick": [Function],
-      "type": "button",
+      "type": "submit",
     },
     "ref": null,
     "rendered": Object {
@@ -36,11 +39,20 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "text",
+        "children": Array [
+          " ",
+          "clear",
+          " ",
+        ],
+        "className": "material-icons",
       },
       "ref": null,
-      "rendered": "text",
-      "type": "p",
+      "rendered": Array [
+        " ",
+        "clear",
+        " ",
+      ],
+      "type": "i",
     },
     "type": "button",
   },
@@ -50,12 +62,16 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <p>
-          text
-        </p>,
-        "className": "btn btn--text bg--blue",
+        "children": <i
+          className="material-icons"
+        >
+           
+          clear
+           
+        </i>,
+        "className": "btn btn--icon",
         "onClick": [Function],
-        "type": "button",
+        "type": "submit",
       },
       "ref": null,
       "rendered": Object {
@@ -63,11 +79,20 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "text",
+          "children": Array [
+            " ",
+            "clear",
+            " ",
+          ],
+          "className": "material-icons",
         },
         "ref": null,
-        "rendered": "text",
-        "type": "p",
+        "rendered": Array [
+          " ",
+          "clear",
+          " ",
+        ],
+        "type": "i",
       },
       "type": "button",
     },
@@ -84,7 +109,9 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,

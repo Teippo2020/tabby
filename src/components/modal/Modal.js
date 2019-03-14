@@ -1,5 +1,5 @@
 // Modal
-import React, { PureComponent } from "react";
+import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -9,7 +9,7 @@ import ModalCard from "./ModalCard";
 /**
  * @class Modal - It contains the modal card and the modal background
  */
-class Modal extends PureComponent {
+class Modal extends React.PureComponent {
   /**
    * @property {bool} show - Determines if the modal is visible
    * @property {func} onClose - The function to close the modal
@@ -26,7 +26,7 @@ class Modal extends PureComponent {
   render() {
     const { show, onClose, children, className } = this.props;
     return (
-      <div className={classNames({ "hidden": !show }, "modal--wrapper")}>
+      <div className={classNames({ hidden: !show }, "modal--wrapper")}>
         <ModalBackground onClose={onClose} />
         <ModalCard onClose={onClose} className={className}>
           {children}

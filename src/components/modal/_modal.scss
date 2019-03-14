@@ -1,5 +1,4 @@
-
-.modal--wrapper{
+.modal--wrapper {
   width: -webkit-fill-available;
   width: -moz-available;
   height: -webkit-fill-available;
@@ -9,149 +8,149 @@
   top: 0;
   left: 0;
 }
-.modal--background{
+.modal--background {
   width: -webkit-fill-available;
   width: -moz-available;
   height: -webkit-fill-available;
   height: -moz-available;
-  opacity: .6;
-  padding:0px;
-  margin:0px;
-  overflow:hidden;
+  opacity: 0.6;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: $black;
 }
-.modal{
+.modal {
   color: $black;
   font-weight: $light;
   padding: 16px 16px 32px;
   background-color: $white;
-  width:90%;
+  width: 90%;
   max-width: 768px;
   max-height: 80%;
   border-radius: 8px;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: $level-2;
   box-shadow: $shadow-1;
-    .icons{
-    width:100%;
+  .icons {
+    width: 100%;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
+  }
+  .modal--content {
+    padding: 16px 0 0;
+  }
+  .modal--header {
+    text-align: center;
+    h2 {
+      font-size: $XL;
+      font-weight: $bold;
     }
-    .modal--content{
-      padding: 16px 0 0;
-    }
-    .modal--header{
-      text-align: center;
-      h2{
-        font-size: $XL;
-        font-weight: $bold;
-      }
-      padding-bottom: 16px;
-    }
-    .modal--footer{
-      margin: 0 auto;
-      padding:16px 0 0;
-      width: 50%;
-      display: flex;
-      justify-content: space-around;
-    }
+    padding-bottom: 16px;
+  }
+  .modal--footer {
+    margin: 0 auto;
+    padding: 16px 0 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-.modal--medal{
+.modal--medal {
   color: $white;
   font-weight: $light;
   padding: 16px 16px 32px;
   background-color: $white;
-  background-image:linear-gradient(to bottom right, $blue-d2, $navy);
+  background-image: linear-gradient(to bottom right, $blue-d2, $navy);
   background-size: auto 65%;
   background-repeat: no-repeat;
-  width:90%;
+  width: 90%;
   max-width: 768px;
   max-height: 80%;
   border-radius: 8px;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: $level-2;
-  box-shadow:0 4px 8px 2px rgba($black,0.4);
-    .icons{
-    width:100%;
+  box-shadow: 0 4px 8px 2px rgba($black, 0.4);
+  .icons {
+    width: 100%;
     display: flex;
-    justify-content:flex-end;
-      i{
-        color: $white;
-      }
+    justify-content: flex-end;
+    i {
+      color: $white;
     }
-    .medals{
-      position: absolute;
-      top: -10%;
-      left:50%;
-      max-width: 90%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      height: 120px;  
-      z-index: $level-3;
-      img{
-        height: 100%;
-        margin: 0 -20px;
-      }
+  }
+  .medals {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 120px;
+    z-index: $level-3;
+    img {
+      height: 100%;
+      margin: 0 -20px;
     }
-    .modal--content{
-      padding: 16px 0 0;
-      p{
-        padding: 16px 0;
-        text-align: center;
-      }
-    }
-    .modal--header{
+  }
+  .modal--content {
+    padding: 16px 0 0;
+    p {
+      padding: 16px 0;
       text-align: center;
-      h2{
-        font-size: $XL;
-        font-weight: $bold;
-      }
-      padding-bottom: 16px;
     }
-    .modal--footer{
-      z-index: $level-3;
-      margin: 0 auto;
-      padding:16px 0 0;
-      width:100%;
-      display: flex;
-      justify-content: space-around;
-      p{
-        padding:4px 16px;
-      }
+  }
+  .modal--header {
+    text-align: center;
+    h2 {
+      font-size: $XL;
+      font-weight: $bold;
     }
+    padding-bottom: 16px;
+  }
+  .modal--footer {
+    z-index: $level-3;
+    margin: 0 auto;
+    padding: 16px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    p {
+      padding: 4px 16px;
+    }
+  }
 }
 
-
 // Stars Animation for medal modal
-@function multiple-box-shadow ($n){ 
-  $value: '#{random(768)}px #{random(2000)}px #FFF';
+@function multiple-box-shadow($n) {
+  $value: "#{random(768)}px #{random(2000)}px #FFF";
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(768)}px #{random(2000)}px #FFF'
+    $value: "#{$value} , #{random(768)}px #{random(2000)}px #FFF";
   }
 
-  @return unquote($value)
-} 
+  @return unquote($value);
+}
 
-$shadows-small:  multiple-box-shadow(700);
+$shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
-$shadows-big:    multiple-box-shadow(100);
+$shadows-big: multiple-box-shadow(100);
 
-#stars{
+#stars {
   width: 1px;
   height: 1px;
   background: transparent;
   box-shadow: $shadows-small;
   animation: animStar 50s linear infinite;
-    
-  &:after{
+
+  &:after {
     content: " ";
     position: absolute;
     top: 2000px;
@@ -160,15 +159,15 @@ $shadows-big:    multiple-box-shadow(100);
     background: transparent;
     box-shadow: $shadows-small;
   }
-} 
-#stars2{
+}
+#stars2 {
   width: 2px;
   height: 2px;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation			: animStar 100s linear infinite;
-    
-  &:after{
+  animation: animStar 100s linear infinite;
+
+  &:after {
     content: " ";
     position: absolute;
     top: 2000px;
@@ -178,14 +177,14 @@ $shadows-big:    multiple-box-shadow(100);
     box-shadow: $shadows-medium;
   }
 }
-#stars3{
+#stars3 {
   width: 3px;
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation	: animStar 150s linear infinite;
-    
-  &:after{
+  animation: animStar 150s linear infinite;
+
+  &:after {
     content: " ";
     position: absolute;
     top: 2000px;
@@ -196,16 +195,16 @@ $shadows-big:    multiple-box-shadow(100);
   }
 }
 
-@keyframes animStar{
-  from{	
-    transform: translateY(0px)
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
   }
-  to{		
-    transform: translateY(-2000px)
+  to {
+    transform: translateY(-2000px);
   }
-} 
+}
 
-.stars--container{
+.stars--container {
   position: absolute;
   top: 0%;
   height: 70%;
@@ -218,59 +217,58 @@ $shadows-big:    multiple-box-shadow(100);
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
-  .modal{
+  .modal {
     font-size: $S;
     max-width: 384px;
-    .icons{
-      i{
+    .icons {
+      i {
         font-size: $L;
       }
     }
-    .modal--header{
+    .modal--header {
       font-size: $S;
-      h2{
+      h2 {
         font-size: $L;
       }
     }
-    .modal--footer{
+    .modal--footer {
       width: 75%;
     }
   }
-  .modal--medal{
+  .modal--medal {
     font-size: $S;
     max-width: 384px;
-    .icons{
-      i{
+    .icons {
+      i {
         font-size: $L;
       }
     }
-    .modal--header{
+    .modal--header {
       font-size: $S;
-      h2{
+      h2 {
         font-size: $L;
       }
     }
-    .modal--footer{
+    .modal--footer {
       width: 75%;
     }
-    .medals{
+    .medals {
       position: absolute;
       top: -5%;
-      left:50%;
+      left: 50%;
       max-width: 90%;
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: row;
       height: 80px;
-      img{
+      img {
         height: 100%;
         margin: 0 -10px;
       }
-
     }
   }
 
-  .stars--container{
+  .stars--container {
     position: absolute;
     top: 0%;
     height: 70%;
