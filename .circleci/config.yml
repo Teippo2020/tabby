@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run-script build-npm
-      - run: semantic-release
+      - run: npm run-script semantic-release
 
 workflows:
   version: 2
