@@ -19,14 +19,12 @@
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "build": "rollup -c",
+    "build": "rollup -c && npm run-script minify-js",
     "start": "rollup -c -w",
-    "prepare": "npm run build",
     "storybook": "start-storybook -p 9001",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
     "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed",
     "semantic-release": "semantic-release",
-    "build-npm": "./deploy/build.sh",
     "minify-js": "terser dist/index.js -m -o dist/index.js"
   },
   "peerDependencies": {
