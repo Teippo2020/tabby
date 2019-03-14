@@ -1,13 +1,5 @@
 version: 2
 jobs:
-  test_node_8:
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm test
-
   test_node_9:
     docker:
       - image: circleci/node:9
@@ -30,19 +22,17 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm run-script build
-      - run: npx run-script deploy
+      - run: npm run-script build-npm
+      - run: npm run-script deploy
 
 workflows:
   version: 2
   test_and_release:
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
-      - test_node_8
       - test_node_9
       - test_node_10
       - release:
           requires:
-            - test_node_8
             - test_node_9
             - test_node_10
