@@ -36,3 +36,6 @@ workflows:
           requires:
             - test_node_9
             - test_node_10
+          filters:
+            branches:
+              only: master
