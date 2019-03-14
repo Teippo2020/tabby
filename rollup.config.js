@@ -3,6 +3,7 @@ import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
 import scss from "rollup-plugin-scss";
+import copy from "rollup-plugin-copy-glob";
 
 import autoprefixer from "autoprefixer";
 import postcss from "postcss";
@@ -28,6 +29,13 @@ export default {
   ],
   plugins: [
     external(),
+    copy([
+      {
+        files:
+          "node_modules/material-design-icons/iconfont/*.{svg,ttf,woff,woff2,eot,ijmap}",
+        dest: "dist"
+      }
+    ]),
     scss({
       output: function(styles, styleNodes) {
         postcss([autoprefixer])
