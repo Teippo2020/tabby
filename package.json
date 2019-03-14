@@ -1,12 +1,12 @@
 {
   "name": "@victorct/tabby",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Design System of PulsarUp!",
   "author": "victorct-pulsarup",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/victorct-pulsarup/tabby.git"
+    "url": "https://github.com/victorct-pulsarup/tabby.git"
   },
   "main": "dist/index.js",
   "mainCss": "dist/styles.css",
@@ -22,10 +22,11 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
     "storybook": "start-storybook -p 9001",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
-    "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed"
+    "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed",
+    "semantic-release": "semantic-release",
+    "deploy": "./deploy/build.sh"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4"
@@ -70,8 +71,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-scss": "^1.0.1",
     "sass": "^1.17.2",
+    "semantic-release-cli": "^4.1.1",
     "sinon": "^7.2.7",
-    "terser": "^3.17.0"
+    "terser": "^3.17.0",
+    "semantic-release": "^15.13.3"
   },
   "files": [
     "dist"
