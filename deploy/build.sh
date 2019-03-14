@@ -8,4 +8,4 @@ set -x
 
 npm run-script build
 
-./node_modules/.bin/terser dist/index.js -m -o dist/index.js
+npm run-script minify-js
