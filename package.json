@@ -41,6 +41,7 @@
     "autoprefixer": "^9.4.10",
     "clean-css": "^4.2.1",
     "cross-env": "^5.1.4",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "eslint": "^5.14.1",
@@ -71,10 +72,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-scss": "^1.0.1",
     "sass": "^1.17.2",
+    "semantic-release": "^15.13.3",
     "semantic-release-cli": "^4.1.1",
     "sinon": "^7.2.7",
-    "terser": "^3.17.0",
-    "semantic-release": "^15.13.3"
+    "terser": "^3.17.0"
   },
   "files": [
     "dist"
@@ -97,5 +98,10 @@
     "javascript",
     "react",
     "tabby"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
