@@ -30,12 +30,12 @@ workflows:
   test_and_release:
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
-      - test_node_9
-      - test_node_10
+      # - test_node_9
+      # - test_node_10
       - release:
-          requires:
-            - test_node_9
-            - test_node_10
           filters:
             branches:
               only: master
+          # requires:
+          #   - test_node_9
+          #   - test_node_10
