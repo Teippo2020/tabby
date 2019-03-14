@@ -5,6 +5,7 @@ jobs:
       - image: circleci/node:9
     steps:
       - checkout
+      - run: rm package-lock.json
       - run: npm install
       - run: npm test
 
@@ -13,6 +14,7 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - run: rm package-lock.json
       - run: npm install
       - run: npm test
 
@@ -21,6 +23,7 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - run: rm package-lock.json
       - run: npm install
       - run: npm run-script build-npm
       - run: npm run-script deploy
