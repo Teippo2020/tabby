@@ -6,23 +6,29 @@
 
 ## Install
 
+With NPM
+
 ```bash
-npm install --save tabby
+npm install --save @victorct/tabby
+```
+
+or Yarn
+
+```bash
+yarn add @victorct/tabby
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'tabby'
+import MyComponent from "tabby";
 
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
+	render() {
+		return <MyComponent />;
+	}
 }
 ```
 
