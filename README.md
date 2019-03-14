@@ -23,11 +23,11 @@ yarn add @victorct/tabby
 ```jsx
 import React, { Component } from "react";
 
-import MyComponent from "tabby";
+import { Modal } from "tabby";
 
 class Example extends Component {
 	render() {
-		return <MyComponent />;
+		return <Modal show />;
 	}
 }
 ```
