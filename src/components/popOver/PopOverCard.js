@@ -6,32 +6,39 @@ import ButtonIcon from "../buttons/ButtonIcon";
 /**
  * @class ModalCard - Is the card for the modals and it contains a clear icon by default
  */
-class PopOver extends PureComponent {
+class PopOverCard extends PureComponent {
   /**
+   * @property {bool} show - Determines if the pop over is visible
    * @property {func} onClose - The function to close the modal
    * @property {node} children - The content of the modal
    * @property {string} className - Just in case you need another class
    */
   static propTypes = {
+    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
+    position: PropTypes.string,
     className: PropTypes.string
   };
 
   render() {
-    const { onClose, children, className } = this.props;
+    const { onClose, children, className, show, position } = this.props;
     return (
-      <div className={classNames("popOver", className)}>
+      <div
+        className={classNames("pop-over", className, { hidden: !show })}
+        position={position}
+      >
         <div className="icons">
           <ButtonIcon iconName="clear" onClick={onClose} />
         </div>
-        <div className="modal--content">{children}</div>
+        <div className="pop-over--content">{children}</div>
       </div>
     );
   }
 }
 
-PopOver.defaultProps = {
-  className: ""
+PopOverCard.defaultProps = {
+  className: "",
+  position: "bottom"
 };
-export default PopOver;
+export default PopOverCard;

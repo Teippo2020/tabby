@@ -6,7 +6,7 @@
   padding:16px;
   max-height: 50%;
   position: absolute;
-  transform: translate(-50%,-50%);
+  // transform: translate(-50%,-50%);
   z-index: $level-3;
   box-shadow: $shadow-2;
   .icons{
@@ -31,5 +31,12 @@
     width: 50%;
     display: flex;
     justify-content: space-around;
+  }
+}
+
+.pop-over--wrapper{
+  display: inherit;
+  .activator{
+    display: inherit;
   }
 }
