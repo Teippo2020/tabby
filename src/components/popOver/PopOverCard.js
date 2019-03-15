@@ -17,14 +17,16 @@ class PopOverCard extends PureComponent {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
+    top: PropTypes.string,
     position: PropTypes.string,
     className: PropTypes.string
   };
 
   render() {
-    const { onClose, children, className, show, position } = this.props;
+    const { onClose, children, className, show, position, style } = this.props;
     return (
       <div
+        style={this.props.left, this.props.right, this.props.top, this.props.bottom}
         className={classNames("pop-over", className, { hidden: !show })}
         position={position}
       >

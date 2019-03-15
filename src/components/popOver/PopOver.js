@@ -55,7 +55,12 @@ class PopOver extends React.PureComponent {
 
   getPositionRef() {
     const node = this.activatorRef.current;
-    console.log(node.firstChild);
+    if(!node){
+      return{
+
+    }
+  }
+    // console.log(node.firstChild);
     const { left, top, right, bottom } = node.getBoundingClientRect();
     return {
       top,
@@ -65,10 +70,10 @@ class PopOver extends React.PureComponent {
     };
   }
 
-  getPosition() {
-    // const activator = this.activatorRef;
-    const { position } = this.props;
-    // let { top, bottom, left, right } = this.getPositionRef();
+  getPosition(){
+    const position = this.props.position;
+    this.getPositionRef()
+    console.log(position)
     console.log(this.getPositionRef());
     if (position === "left") {
       const leftP = this.getPositionRef().left + 110;
@@ -81,8 +86,8 @@ class PopOver extends React.PureComponent {
       const rightP = this.getPositionRef().right + 110;
       const topP = this.getPositionRef().top;
       return {
-        right: `${rightP}px`,
-        top: `${topP}px`
+        right: rightP + 'px',
+        top: topP + 'px'
       };
     } else if (position === "top") {
       const leftP = this.getPositionRef().left + 110;
@@ -101,70 +106,34 @@ class PopOver extends React.PureComponent {
     }
   }
 
-  // positionTop() {
-  //   let top = this.getPositionRef().top - 16;
-  //   let left = this.getPositionRef().left;
-  //   console.log(top);
-  //   return {
-  //     top,
-  //     left
-  //   };
-  // }
-
-  // positionBottom() {
-  //   let left = this.getPositionRef().left;
-  //   let bottom = this.getPositionRef().bottom;
-  //   bottom = bottom + 16;
-  //   console.log(bottom);
-  //   return {
-  //     bottom,
-  //     left
-  //   };
-  // }
-
-  // positionLeft() {
-  //   const leftPop = this.getPositionRef().left - 16;
-  //   const topPop = this.getPositionRef().top;
-  //   return {
-  //     left: `${leftPop}px`,
-  //     top: `${topPop}px`
-  //   };
-  // }
-
-  // positionRight() {
-  //   const rightPop = this.getPositionRef().right + 16;
-  //   const topPop = this.getPositionRef().top;
-  //   return {
-  //     right: `${rightPop}px`,
-  //     top: `${topPop}px`
-  //   };
-  // }
 
   getStyle = () => {
-    let { right } = this.getPosition(this.props.position);
-    console.log(right);
+    this.getPosition();
+    console.log(this.getPosition())
     console.log("aiudaaaa no tengo estilooo");
-    return {
-      right
-    };
   };
 
   render() {
     const { onClose, children, className, activator, position } = this.props;
     const { show } = this.state;
+    const { left, right, top, bottom } = this.getPosition();
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="pop-over--wrapper" ref={this.setReference}>
         <div ref={this.activatorRef} id="activator">
           {activator}
         </div>
-        <ButtonText color="blue" text="gg" onClick={this.getStyle} />
+
+        <ButtonText color="blue" text="gg" onClick={this.getPosition} />
         <PopOverCard
           onClose={this.closePop}
           className={className}
           show={show}
           position={position}
-          style={this.getStyle}
+          left={left}
+          right={right}
+          top={top}
+          bottom={bottom}
         >
           {children}
         </PopOverCard>
