@@ -1,69 +1,7 @@
-// export function getPositionRef(element) {
-//   const { left, top, right, bottom } = element.getBoundingClientRect();
-//   return {
-//     top,
-//     left,
-//     right,
-//     bottom
-//   };
-// }
-
-// export function positionTop(element) {
-//   const topPop = getPositionRef(element).top - 16;
-//   const leftPop = getPositionRef(element).left;
-//   return {
-//     top: `${topPop}px`,
-//     left: `${leftPop}px`
-//   };
-// }
-// export function positionBottom(element) {
-//   const bottomPop = getPositionRef(element).bottom + 16;
-//   const leftPop = getPositionRef(element).left;
-//   return {
-//     bottom: `${bottomPop}px`,
-//     left: `${leftPop}px`
-//   };
-// }
-
-// export function positionLeft(element) {
-//   const leftPop = getPositionRef(element).left - 16;
-//   const topPop = getPositionRef(element).top;
-//   return {
-//     left: `${leftPop}px`,
-//     top: `${topPop}px`
-//   };
-// }
-
-// export function positionRight(element) {
-//   const rightPop = getPositionRef(element).right + 16;
-//   const topPop = getPositionRef(element).top;
-//   return {
-//     right: `${rightPop}px`,
-//     top: `${topPop}px`
-//   };
-// }
-
-// export function openPop() {
-//   this.setState({
-//     show: true
-//   });
-//   console.log("aiudaa");
-// }
-
-// export function closePop() {
-//   this.setState({
-//     show: false
-//   });
-//   console.log("aiudaa");
-// }
-
-export function getPositionRef() {
-  const node = this.activatorRef.current;
-  console.log(node, "PAPA");
+export function getPositionRef(node) {
   if (!node) {
     return {};
   }
-  console.log(node.firstChild.getBoundingClientRect(), "hijoooo");
   const { width, height } = node.firstChild.getBoundingClientRect();
   const { left, top, right, bottom } = node.getBoundingClientRect();
   return {
@@ -76,8 +14,7 @@ export function getPositionRef() {
   };
 }
 
-export function getHeight() {
-  const pop = this.popRef.current;
+export function getHeight(pop) {
   if (!pop) {
     return {};
   }
@@ -91,15 +28,13 @@ export function getHeight() {
   };
 }
 
-export function getPosition() {
-  let position = this.props.position
+export function getPosition(position) {
   const { left, right, top, bottom, width, height } = this.getPositionRef();
   const { widthPop, heightPop } = this.getHeight();
   const heightMargin = heightPop + 16;
   const widthMargin = widthPop + 16
   console.log(position);
   console.log(this.getPositionRef());
-
 
   if ( position === "left" && left < widthMargin) {
     position= "right"

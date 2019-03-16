@@ -5,7 +5,11 @@ import PropTypes from "prop-types";
 
 import PopOverCard from "./PopOverCard";
 import ButtonText from "../buttons/ButtonText";
-import {getPositionRef, getPosition, getHeight} from './../../utils/popsPosition'
+import {
+  getPositionRef,
+  getPosition,
+  getHeight
+} from "./../../utils/popsPosition";
 
 // import {
 //   positionLeft,
@@ -41,87 +45,95 @@ class PopOver extends React.PureComponent {
     this.reference = ref;
   };
 
-  getPositionRef() {
+  // getPositionRef() {
+  //   const node = this.activatorRef.current;
+  //   console.log(node, "PAPA");
+  //   if (!node) {
+  //     return {};
+  //   }
+  //   console.log(node.firstChild.getBoundingClientRect(), "hijoooo");
+  //   const { width, height } = node.firstChild.getBoundingClientRect();
+  //   const { left, top, right, bottom } = node.getBoundingClientRect();
+  //   return {
+  //     top,
+  //     left,
+  //     right,
+  //     bottom,
+  //     width,
+  //     height
+  //   };
+  // }
+
+  // getHeight() {
+  //   const pop = this.popRef.current;
+  //   if (!pop) {
+  //     return {};
+  //   }
+  //   const { width, height } = pop.getBoundingClientRect();
+  //   const widthPop = width;
+  //   const heightPop = height;
+  //   console.log(widthPop, heightPop, "pooooop");
+  //   return {
+  //     widthPop,
+  //     heightPop
+  //   };
+  // }
+
+  // getPosition() {
+  //   let position = this.props.position
+  //   const { left, right, top, bottom, width, height } = this.getPositionRef();
+  //   const { widthPop, heightPop } = this.getHeight();
+  //   const heightMargin = heightPop + 16;
+  //   const widthMargin = widthPop + 16
+  //   console.log(position);
+  //   console.log(this.getPositionRef());
+  //   console.log(left, heightMargin, top, widthMargin, right, bottom)
+
+  //   if ( position === "left" && left < widthMargin) {
+  //     position= "right"
+  //   } else if ( position === "top" && top < heightMargin){
+  //       position="bottom"
+  //   } else if ( position === "right" && right < -widthMargin){
+  //     position = "left"
+  //   } else if ( position === "bottom" && bottom < height){
+  //     position = "top"
+  //   }
+  //   console.log(position);
+  //   if (position === "left") {
+  //     const leftP = left - widthPop - 16;
+  //     return {
+  //       left: `${leftP}px`,
+  //       top: `${top}px`
+  //     };
+  //   } else if (position === "right") {
+  //     const rightP = left + width + 16;
+  //     return {
+  //       left: `${rightP}px`,
+  //       top: `${top}px`
+  //     };
+  //   } else if (position === "top") {
+  //     const topP = top - height - 16;
+  //     return {
+  //       top: `${topP}px`,
+  //       left: `${top}px`
+  //     };
+  //   } else {
+  //     const bottomP = left + height + 16;
+  //     return {
+  //       top: `${bottomP}px`,
+  //       left: `${left}px`
+  //     };
+  //   }
+  // }
+
+  getStyle() {
     const node = this.activatorRef.current;
-    console.log(node, "PAPA");
-    if (!node) {
-      return {};
-    }
-    console.log(node.firstChild.getBoundingClientRect(), "hijoooo");
-    const { width, height } = node.firstChild.getBoundingClientRect();
-    const { left, top, right, bottom } = node.getBoundingClientRect();
-    return {
-      top,
-      left,
-      right,
-      bottom,
-      width,
-      height
-    };
-  }
-
-  getHeight() {
     const pop = this.popRef.current;
-    if (!pop) {
-      return {};
-    }
-    const { width, height } = pop.getBoundingClientRect();
-    const widthPop = width;
-    const heightPop = height;
-    console.log(widthPop, heightPop, "pooooop");
-    return {
-      widthPop,
-      heightPop
-    };
+    let position = this.props.position;
+    getPositionRef(node);
+    getHeight(pop);
+    getPosition(position);
   }
-
-  getPosition() {
-    let position = this.props.position
-    const { left, right, top, bottom, width, height } = this.getPositionRef();
-    const { widthPop, heightPop } = this.getHeight();
-    const heightMargin = heightPop + 16;
-    const widthMargin = widthPop + 16
-    console.log(position);
-    console.log(this.getPositionRef());
-    console.log(left, heightMargin, top, widthMargin, right, bottom)
-
-    if ( position === "left" && left < widthMargin) {
-      position= "right"
-    } else if ( position === "top" && top < heightMargin){
-        position="bottom"
-    } else if ( position === "right" && right < -widthMargin){
-      position = "left"
-    } else if ( position === "bottom" && bottom < height){
-      position = "top"
-    }
-    console.log(position);
-    if (position === "left") {
-      const leftP = left - widthPop - 16;
-      return {
-        left: `${leftP}px`,
-        top: `${top}px`
-      };
-    } else if (position === "right") {
-      const rightP = left + width + 16;
-      return {
-        left: `${rightP}px`,
-        top: `${top}px`
-      };
-    } else if (position === "top") {
-      const topP = top - height - 16;
-      return {
-        top: `${topP}px`,
-        left: `${top}px`
-      };
-    } else {
-      const bottomP = left + height + 16;
-      return {
-        top: `${bottomP}px`,
-        left: `${left}px`
-      };
-    }
-  }
-
 
   render() {
     const {
@@ -132,7 +144,7 @@ class PopOver extends React.PureComponent {
       position,
       show
     } = this.props;
-    const { left, right, top, bottom } = this.getPosition();
+    const { left, right, top, bottom } = this.getStyle();
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="pop-over--wrapper" ref={this.popRef}>
