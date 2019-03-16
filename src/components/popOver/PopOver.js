@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 import PopOverCard from "./PopOverCard";
 import ButtonText from "../buttons/ButtonText";
+import {getPositionRef, getPosition, getHeight} from './../../utils/popsPosition'
 
 // import {
 //   positionLeft,
@@ -18,10 +19,7 @@ import ButtonText from "../buttons/ButtonText";
 class PopOver extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      show: true
-    };
-    this.activatorRef = React.createRef();
+    (this.activatorRef = React.createRef()), (this.popRef = React.createRef());
   }
 
   /**
@@ -39,94 +37,110 @@ class PopOver extends React.PureComponent {
     className: PropTypes.string
   };
 
-  openPop = () => {
-    this.setState({
-      show: true
-    });
-    console.log("aiudaa");
-  };
-
-  closePop = () => {
-    this.setState({
-      show: false
-    });
-    console.log("aiudaa");
+  setReference = ref => {
+    this.reference = ref;
   };
 
   getPositionRef() {
     const node = this.activatorRef.current;
-    if(!node){
-      return{
-
+    console.log(node, "PAPA");
+    if (!node) {
+      return {};
     }
-  }
-    // console.log(node.firstChild);
+    console.log(node.firstChild.getBoundingClientRect(), "hijoooo");
+    const { width, height } = node.firstChild.getBoundingClientRect();
     const { left, top, right, bottom } = node.getBoundingClientRect();
     return {
       top,
       left,
       right,
-      bottom
+      bottom,
+      width,
+      height
     };
   }
 
-  getPosition(){
-    const position = this.props.position;
-    this.getPositionRef()
-    console.log(position)
+  getHeight() {
+    const pop = this.popRef.current;
+    if (!pop) {
+      return {};
+    }
+    const { width, height } = pop.getBoundingClientRect();
+    const widthPop = width;
+    const heightPop = height;
+    console.log(widthPop, heightPop, "pooooop");
+    return {
+      widthPop,
+      heightPop
+    };
+  }
+
+  getPosition() {
+    let position = this.props.position
+    const { left, right, top, bottom, width, height } = this.getPositionRef();
+    const { widthPop, heightPop } = this.getHeight();
+    const heightMargin = heightPop + 16;
+    const widthMargin = widthPop + 16
+    console.log(position);
     console.log(this.getPositionRef());
+    console.log(left, heightMargin, top, widthMargin, right, bottom)
+
+    if ( position === "left" && left < widthMargin) {
+      position= "right"
+    } else if ( position === "top" && top < heightMargin){
+        position="bottom"
+    } else if ( position === "right" && right < -widthMargin){
+      position = "left"
+    } else if ( position === "bottom" && bottom < height){
+      position = "top"
+    }
+    console.log(position);
     if (position === "left") {
-      const leftP = this.getPositionRef().left + 110;
-      const topP = this.getPositionRef().top;
+      const leftP = left - widthPop - 16;
       return {
-        right: `${leftP}px`,
-        top: `${topP}px`
+        left: `${leftP}px`,
+        top: `${top}px`
       };
     } else if (position === "right") {
-      const rightP = this.getPositionRef().right + 110;
-      const topP = this.getPositionRef().top;
+      const rightP = left + width + 16;
       return {
-        right: rightP + 'px',
-        top: topP + 'px'
+        left: `${rightP}px`,
+        top: `${top}px`
       };
     } else if (position === "top") {
-      const leftP = this.getPositionRef().left + 110;
-      const topP = this.getPositionRef().top;
+      const topP = top - height - 16;
       return {
-        left: `${left}px`,
-        top: `${topP}px`
+        top: `${topP}px`,
+        left: `${top}px`
       };
     } else {
-      const bottomP = this.getPositionRef().bottom + 110;
-      const leftP = this.getPositionRef().left;
+      const bottomP = left + height + 16;
       return {
-        bottom: `${bottomP}px`,
-        left: `${leftP}px`
+        top: `${bottomP}px`,
+        left: `${left}px`
       };
     }
   }
 
 
-  getStyle = () => {
-    this.getPosition();
-    console.log(this.getPosition())
-    console.log("aiudaaaa no tengo estilooo");
-  };
-
   render() {
-    const { onClose, children, className, activator, position } = this.props;
-    const { show } = this.state;
+    const {
+      onClose,
+      children,
+      className,
+      activator,
+      position,
+      show
+    } = this.props;
     const { left, right, top, bottom } = this.getPosition();
     return (
       // eslint-disable-next-line react/jsx-filename-extension
-      <div className="pop-over--wrapper" ref={this.setReference}>
+      <div className="pop-over--wrapper" ref={this.popRef}>
         <div ref={this.activatorRef} id="activator">
           {activator}
         </div>
-
-        <ButtonText color="blue" text="gg" onClick={this.getPosition} />
         <PopOverCard
-          onClose={this.closePop}
+          onClose={onClose}
           className={className}
           show={show}
           position={position}
