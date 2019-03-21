@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import ButtonIcon from "../buttons/ButtonIcon";
+import PopOverHeader from "./PopOverHeader";
 /**
  * @class ModalCard - Is the card for the modals and it contains a clear icon by default
  */
@@ -17,14 +18,16 @@ class PopOverCard extends PureComponent {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
+    title: PropTypes.string,
+    onBack: PropTypes.func,
+    back: PropTypes.bool,
     top: PropTypes.string,
     position: PropTypes.string,
     className: PropTypes.string
   };
 
   render() {
-    const { onClose, children, className, show, position, style } = this.props;
-    console.log(this.props);
+    const { onClose, children, className, show, position, title, onBack, back } = this.props;
     return (
       <div
         style={{left: this.props.left, right: this.props.right, top: this.props.top, bottom: this.props.bottom}}
@@ -32,6 +35,8 @@ class PopOverCard extends PureComponent {
         position={position}
       >
         <div className="icons">
+          <ButtonIcon iconName="keyboard_arrow_left" onClick={onBack} className={classNames({ transparent: !back })} />
+          <PopOverHeader title={title} />
           <ButtonIcon iconName="clear" onClick={onClose} />
         </div>
         <div className="pop-over--content">{children}</div>
@@ -42,6 +47,9 @@ class PopOverCard extends PureComponent {
 
 PopOverCard.defaultProps = {
   className: "",
-  position: "bottom"
+  position: "bottom",
+  title: "",
+  back: false,
+  onBack: null
 };
 export default PopOverCard;

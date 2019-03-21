@@ -4,7 +4,7 @@
   height: -webkit-fill-available;
   height: -moz-available;
   z-index: $level-1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -18,6 +18,7 @@
   margin: 0px;
   overflow: hidden;
   background-color: $black;
+  position: fixed;
 }
 .modal {
   color: $black;
@@ -41,6 +42,8 @@
   }
   .modal--content {
     padding: 16px 0 0;
+    display: flex;
+    justify-content: flex-end;
   }
   .modal--header {
     text-align: center;
