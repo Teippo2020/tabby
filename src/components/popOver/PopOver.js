@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PopOverCard from "./PopOverCard";
-import { getPosition, popPosition } from "../../utils/popsPosition";
+import { popXPosition, popYPosition } from "../../utils/popsPosition";
 
 
 /**
@@ -43,13 +43,17 @@ componentWillUnmount() {
   };
 
   getStyle() {
-    const node = this.activatorRef.current;
-    if (!node) {
+    const activator = this.activatorRef.current;
+    if (!activator) {
       return {};
     }
     const pop = this.popRef.current;
-    const { position } = this.props;
-    return popPosition(position, node, pop);
+    const leftPosition = popXPosition(activator, pop);
+    const topPosition = popYPosition(activator, pop);
+    return {
+      left: `${leftPosition}px`,
+      top: `${topPosition}px`
+    }
 
   }
   handleClickOutside = event => {

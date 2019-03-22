@@ -24,6 +24,9 @@ storiesOf("Pop Over Examples", module)
           >
             <p> Holi</p>
             <div>
+            <div style={{backgroundColor: 'red', height: '100px'}}>
+              HOLIII
+            </div>
               <ButtonText color="blue" text="clickkk" onClick={()=> store.set({back: !store.get("back")})}/>
             </div>
         </PopOver>

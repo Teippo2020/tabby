@@ -31,7 +31,7 @@ class PopOverCard extends PureComponent {
     return (
       <div
         style={{left: this.props.left, right: this.props.right, top: this.props.top, bottom: this.props.bottom}}
-        className={classNames("pop-over", className, { hidden: !show })}
+        className={classNames("pop-over", className, { "visibility-hidden": !show })}
         position={position}
       >
         <div className="icons">
