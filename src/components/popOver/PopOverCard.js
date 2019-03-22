@@ -21,21 +21,37 @@ class PopOverCard extends PureComponent {
     title: PropTypes.string,
     onBack: PropTypes.func,
     back: PropTypes.bool,
-    top: PropTypes.string,
-    position: PropTypes.string,
     className: PropTypes.string
   };
 
   render() {
-    const { onClose, children, className, show, position, title, onBack, back } = this.props;
+    const {
+      onClose,
+      children,
+      className,
+      show,
+      title,
+      onBack,
+      back
+    } = this.props;
     return (
       <div
-        style={{left: this.props.left, right: this.props.right, top: this.props.top, bottom: this.props.bottom}}
-        className={classNames("pop-over", className, { "visibility-hidden": !show })}
-        position={position}
+        style={{
+          left: this.props.left,
+          right: this.props.right,
+          top: this.props.top,
+          bottom: this.props.bottom
+        }}
+        className={classNames("pop-over", className, {
+          "visibility-hidden": !show
+        })}
       >
         <div className="icons">
-          <ButtonIcon iconName="keyboard_arrow_left" onClick={onBack} className={classNames({ transparent: !back })} />
+          <ButtonIcon
+            iconName="keyboard_arrow_left"
+            onClick={onBack}
+            className={classNames({ "visibility-hidden": !back })}
+          />
           <PopOverHeader title={title} />
           <ButtonIcon iconName="clear" onClick={onClose} />
         </div>
@@ -47,7 +63,6 @@ class PopOverCard extends PureComponent {
 
 PopOverCard.defaultProps = {
   className: "",
-  position: "bottom",
   title: "",
   back: false,
   onBack: null
