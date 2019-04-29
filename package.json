@@ -21,7 +21,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c && npm run-script minify-js",
     "start": "rollup -c -w",
-    "storybook": "start-storybook -p 9001",
+    "storybook": "start-storybook -s ./public -p 9001",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
     "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed",
     "semantic-release": "semantic-release",
