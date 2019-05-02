@@ -38,8 +38,8 @@ export default {
     ]),
     copy([
       {
-        files: "src/styles/iconfont/*.{svg,ttf,woff,woff2,eot,ijmap}",
-        dest: "dist"
+        files: "src/font/*.*",
+        dest: "dist/font"
       }
     ]),
     scss({

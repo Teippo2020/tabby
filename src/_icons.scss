@@ -2,10 +2,11 @@
   font-family: "Tabby Icons";
   font-style: normal;
   font-weight: normal;
-  src: url(tabby.eot); /* For IE6-8 */
-  src: local("Tabby Icons"), url(tabby.woff) format("woff"),
-    url(tabby.ttf) format("truetype"), url(tabby.svg) format("svg"),
-    url(tabby.eot) format("embedded-opentype");
+  src: url("./font/tabby.eot"); /* For IE6-8 */
+  src: local("Tabby Icons"), url("./font/tabby.woff") format("woff"),
+    url("./font/tabby.ttf") format("truetype"),
+    url("./font/tabby.svg") format("svg"),
+    url("./font/tabby.eot") format("embedded-opentype");
 }
 
 [class*="icon-"]:before {
