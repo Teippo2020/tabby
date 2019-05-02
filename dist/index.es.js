@@ -2567,7 +2567,55 @@ _defineProperty(Medal, "propTypes", {
   medalSrc: PropTypes.string.isRequired
 });
 
+/**
+ * @class Icon - Is the component to use icons from our font-icon
+ */
+
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
+
+  function Icon() {
+    _classCallCheck(this, Icon);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
+
+  _createClass(Icon, [{
+    key: "render",
+
+    /**
+     * @property {string} icon - The function to close the modal
+     * @property {string} size - to define icon's size
+     * @property {string} color - To define icon's color
+     */
+    value: function render() {
+      var _this$props = this.props,
+          icon = _this$props.icon,
+          size = _this$props.size,
+          color = _this$props.color;
+      return react.createElement("i", {
+        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+      });
+    }
+  }]);
+
+  return Icon;
+}(react.PureComponent);
+
+_defineProperty(Icon, "propTypes", {
+  icon: PropTypes.string.isRequired,
+  size: PropTypes.string,
+  color: PropTypes.string
+});
+
+Icon.defaultProps = {
+  size: "XXL",
+  color: "gray-l1"
+};
+
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon };
 //# sourceMappingURL=index.es.js.map

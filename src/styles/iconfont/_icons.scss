@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Tabby Icons";
+  font-style: normal;
+  font-weight: normal;
+  src: url(tabby.eot); /* For IE6-8 */
+  src: local("Tabby Icons"), url(tabby.woff) format("woff"),
+    url(tabby.ttf) format("truetype"), url(tabby.svg) format("svg"),
+    url(tabby.eot) format("embedded-opentype");
+}
+
+[class*="icon-"]:before {
+  display: inline-block;
+  font-family: "Tabby Icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-alignment:before {
+  content: "\0041";
+}
+.icon-filter-open:before {
+  content: "\0042";
+}
+.icon-chat:before {
+  content: "\0043";
+}
+.icon-filter:before {
+  content: "\0044";
+}
+.icon-notifications:before {
+  content: "\0045";
+}
+.icon-rocket:before {
+  content: "\0046";
+}
+.icon-team:before {
+  content: "\0047";
+}
+.icon-trophy:before {
+  content: "\0048";
+}
+.icon-user:before {
+  content: "\0049";
+}
+.icon-pulsarup:before {
+  content: "\004a";
+}

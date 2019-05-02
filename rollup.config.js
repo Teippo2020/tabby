@@ -36,6 +36,12 @@ export default {
         dest: "dist"
       }
     ]),
+    copy([
+      {
+        files: "src/styles/iconfont/*.{svg,ttf,woff,woff2,eot,ijmap}",
+        dest: "dist"
+      }
+    ]),
     scss({
       output: function(styles, styleNodes) {
         postcss([autoprefixer])
