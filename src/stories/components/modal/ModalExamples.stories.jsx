@@ -9,12 +9,7 @@ import Medal from "../../../components/modal/modalMedal/Medal";
 storiesOf("ModalExamples", module)
   // Modal
   .add("Modal Medal", () => (
-    <ModalMedal
-      title="¡GANASTE!"
-      message="Ganaste"
-      btnText="Ok"
-      show
-    >
+    <ModalMedal title="¡GANASTE!" message="Ganaste" btnText="Ok" show>
       <Medal
         medalSrc="https://s3.us-east-2.amazonaws.com/pulsarup-assets-dev/medals-images/medal_objective.svg"
         key="medal_1"
