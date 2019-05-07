@@ -5,14 +5,9 @@ import ModalHeader from "../../../components/modal/ModalHeader";
 import Modal from "../../../components/modal/Modal";
 import ModalMedal from "../../../components/modal/modalMedal/ModalMedal";
 import Medal from "../../../components/modal/modalMedal/Medal";
-import { ICONS } from "../../../components/icons/Constants";
-import Icon from "../../../components/icons/Icon";
 
 storiesOf("ModalExamples", module)
   // Modal
-  .add("Example", () => (
-    <Icon icon="trophy"/>
-  ))
   .add("Modal Medal", () => (
     <ModalMedal
       title="¡GANASTE!"
