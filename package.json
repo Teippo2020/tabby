@@ -25,7 +25,8 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
     "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed",
     "semantic-release": "semantic-release",
-    "minify-js": "terser dist/index.js -m -o dist/index.js"
+    "minify-js": "terser dist/index.js -m -o dist/index.js",
+    "commit": "npx git-cz"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4"
