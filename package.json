@@ -21,7 +21,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c && npm run-script minify-js",
     "start": "rollup -c -w",
-    "storybook": "start-storybook -p 9001",
+    "storybook": "start-storybook -s ./public -p 9001",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --output-style compressed",
     "build-css": "node-sass-chokidar src/ -o src/ --output-style compressed",
     "semantic-release": "semantic-release",
@@ -78,13 +78,13 @@
     "semantic-release": "^15.13.3",
     "semantic-release-cli": "^4.1.1",
     "sinon": "^7.2.7",
-    "terser": "^3.17.0"
+    "terser": "^3.17.0",
+    "@storybook/react": "^4.1.13"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@storybook/react": "^4.1.13",
     "classnames": "^2.2.6",
     "material-design-icons": "^3.0.1",
     "prop-types": "^15.5.4",
