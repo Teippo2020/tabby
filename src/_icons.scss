@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "tabby";
+  font-family: "Tabby-Icons";
   src: url("./font/tabby.eot");
   src: url("./font/tabby.eot?#iefix") format("embedded-opentype"),
     url("./font/tabby.woff") format("woff"),
@@ -10,7 +10,7 @@
 }
 [class*="icon-"]:before {
   display: inline-block;
-  font-family: "Glyphter";
+  font-family: "Tabby-Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
