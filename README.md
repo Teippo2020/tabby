@@ -26,9 +26,9 @@ import React, { Component } from "react";
 import { Modal } from "tabby";
 
 class Example extends Component {
-	render() {
-		return <Modal show />;
-	}
+  render() {
+    return <Modal show />;
+  }
 }
 ```
 
