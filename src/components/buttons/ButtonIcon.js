@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Icon from "./../icons/Icon";
 /**
  * @todo Change for custom icons, used temporarily
  */
@@ -16,20 +17,22 @@ class ButtonIcon extends React.PureComponent {
    * @property {string} className - Just in case you need another class
    */
   static propTypes = {
-    iconName: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
     className: PropTypes.string
   };
 
   render() {
-    const { iconName, onClick, className } = this.props;
+    const { icon, color, size, onClick, className } = this.props;
     return (
       <button
         type="submit"
         className={classNames("btn", "btn--icon", className)}
         onClick={onClick}
       >
-        <i className="material-icons"> {iconName} </i>
+        <Icon icon={icon} color={color} size={size}/>
       </button>
     );
   }

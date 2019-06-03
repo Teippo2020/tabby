@@ -23,7 +23,7 @@ class ModalCard extends React.PureComponent {
     return (
       <div className={classNames("modal", className)}>
         <div className="icons">
-          <ButtonIcon iconName="clear" onClick={onClose} />
+          <ButtonIcon icon="cross" color="gray-l2" size="L" onClick={onClose} />
         </div>
         <div className="modal--content">{children}</div>
       </div>
