@@ -64,3 +64,18 @@
     color: $gray;
   }
 }
+
+@each $allColor, $color in $colors {
+  .color--#{$allColor} {
+    color: $color;
+  }
+}
+
+@each $allSize, $size in $sizes {
+  .size--#{$allSize} {
+    font-size: $size;
+  }
+}
+
+
+
