@@ -20,5 +20,4 @@ describe("PopOver", () => {
     const ActivatorPosition = getActivatorPosition();
     expect(ActivatorPosition).toBeDefined();
   });
-
 });
