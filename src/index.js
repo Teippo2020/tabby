@@ -14,6 +14,9 @@ import Medal from "./components/modal/modalMedal/Medal";
 import ButtonIcon from "./components/buttons/ButtonText";
 import ButtonText from "./components/buttons/ButtonIcon";
 
+//Icon
+import Icon from "./components/icons/Icon";
+
 import "./index.scss";
 
 export {
@@ -25,5 +28,6 @@ export {
 	ModalMedal,
 	Medal,
 	ButtonIcon,
-	ButtonText
+	ButtonText,
+	Icon
 };

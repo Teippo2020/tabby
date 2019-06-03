@@ -36,6 +36,12 @@ export default {
         dest: "dist"
       }
     ]),
+    copy([
+      {
+        files: "src/font/*.*",
+        dest: "dist/font"
+      }
+    ]),
     scss({
       output: function(styles, styleNodes) {
         postcss([autoprefixer])
