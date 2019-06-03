@@ -38,7 +38,10 @@ class ButtonIcon extends React.PureComponent {
   }
 }
 ButtonIcon.defaultProps = {
-  className: ""
+  className: "",
+  icon: "cross",
+  size: "XXL",
+  color: "gray-l1"
 };
 
 export default ButtonIcon;

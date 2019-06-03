@@ -33,16 +33,22 @@ ShallowWrapper {
         >
           <ButtonIcon
             className="visibility-hidden"
+            color="gray-l1"
+            icon="cross"
             iconName="keyboard_arrow_left"
             onClick={[Function]}
+            size="XXL"
           />
           <PopOverHeader
             title=""
           />
           <ButtonIcon
             className=""
+            color="gray-l1"
+            icon="cross"
             iconName="clear"
             onClick={[Function]}
+            size="XXL"
           />
         </div>,
         <div
@@ -69,16 +75,22 @@ ShallowWrapper {
           "children": Array [
             <ButtonIcon
               className="visibility-hidden"
+              color="gray-l1"
+              icon="cross"
               iconName="keyboard_arrow_left"
               onClick={[Function]}
+              size="XXL"
             />,
             <PopOverHeader
               title=""
             />,
             <ButtonIcon
               className=""
+              color="gray-l1"
+              icon="cross"
               iconName="clear"
               onClick={[Function]}
+              size="XXL"
             />,
           ],
           "className": "icons",
@@ -91,8 +103,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "className": "visibility-hidden",
+              "color": "gray-l1",
+              "icon": "cross",
               "iconName": "keyboard_arrow_left",
               "onClick": [Function],
+              "size": "XXL",
             },
             "ref": null,
             "rendered": null,
@@ -115,8 +130,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "className": "",
+              "color": "gray-l1",
+              "icon": "cross",
               "iconName": "clear",
               "onClick": [Function],
+              "size": "XXL",
             },
             "ref": null,
             "rendered": null,
@@ -160,16 +178,22 @@ ShallowWrapper {
           >
             <ButtonIcon
               className="visibility-hidden"
+              color="gray-l1"
+              icon="cross"
               iconName="keyboard_arrow_left"
               onClick={[Function]}
+              size="XXL"
             />
             <PopOverHeader
               title=""
             />
             <ButtonIcon
               className=""
+              color="gray-l1"
+              icon="cross"
               iconName="clear"
               onClick={[Function]}
+              size="XXL"
             />
           </div>,
           <div
@@ -196,16 +220,22 @@ ShallowWrapper {
             "children": Array [
               <ButtonIcon
                 className="visibility-hidden"
+                color="gray-l1"
+                icon="cross"
                 iconName="keyboard_arrow_left"
                 onClick={[Function]}
+                size="XXL"
               />,
               <PopOverHeader
                 title=""
               />,
               <ButtonIcon
                 className=""
+                color="gray-l1"
+                icon="cross"
                 iconName="clear"
                 onClick={[Function]}
+                size="XXL"
               />,
             ],
             "className": "icons",
@@ -218,8 +248,11 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "className": "visibility-hidden",
+                "color": "gray-l1",
+                "icon": "cross",
                 "iconName": "keyboard_arrow_left",
                 "onClick": [Function],
+                "size": "XXL",
               },
               "ref": null,
               "rendered": null,
@@ -242,8 +275,11 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "className": "",
+                "color": "gray-l1",
+                "icon": "cross",
                 "iconName": "clear",
                 "onClick": [Function],
+                "size": "XXL",
               },
               "ref": null,
               "rendered": null,
