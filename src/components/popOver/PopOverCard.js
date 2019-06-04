@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -7,7 +7,7 @@ import PopOverHeader from "./PopOverHeader";
 /**
  * @class PopOver Card - Is the card for the pop over and it contains a cross icon by default
  */
-class PopOverCard extends PureComponent {
+class PopOverCard extends React.PureComponent {
   /**
    * @property {bool} show - Determines if the pop over is visible
    * @property {func} onClose - The function to close the modal
