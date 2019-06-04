@@ -2164,6 +2164,55 @@ _defineProperty(ModalBackground, "propTypes", {
 });
 
 /**
+ * @class Icon - Is the component to use icons from our font-icon
+ */
+
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
+
+  function Icon() {
+    _classCallCheck(this, Icon);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
+
+  _createClass(Icon, [{
+    key: "render",
+
+    /**
+     * @property {string} icon - The function to close the modal
+     * @property {string} size - to define icon's size
+     * @property {string} color - To define icon's color
+     */
+    value: function render() {
+      var _this$props = this.props,
+          icon = _this$props.icon,
+          size = _this$props.size,
+          color = _this$props.color;
+      return react.createElement("i", {
+        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+      });
+    }
+  }]);
+
+  return Icon;
+}(react.PureComponent);
+
+_defineProperty(Icon, "propTypes", {
+  icon: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string
+});
+
+Icon.defaultProps = {
+  size: "XXL",
+  color: "gray-l1",
+  icon: 'cross'
+};
+
+/**
  * @class ButtonIcon - It is a button that works as an icon, without text
  */
 
@@ -2182,22 +2231,28 @@ function (_React$PureComponent) {
     key: "render",
 
     /**
-     * @property {string} iconName -The name of the icon
+     * @property {string} icon -The name of the icon
+     * @property {string} color - The color of the icon
+     * @property {string} size- The size of the icon
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
      */
     value: function render() {
       var _this$props = this.props,
-          iconName = _this$props.iconName,
+          icon = _this$props.icon,
+          color = _this$props.color,
+          size = _this$props.size,
           onClick = _this$props.onClick,
           className = _this$props.className;
       return react.createElement("button", {
         type: "submit",
         className: classnames("btn", "btn--icon", className),
         onClick: onClick
-      }, react.createElement("i", {
-        className: "material-icons"
-      }, " ", iconName, " "));
+      }, react.createElement(Icon, {
+        icon: icon,
+        color: color,
+        size: size
+      }));
     }
   }]);
 
@@ -2205,17 +2260,21 @@ function (_React$PureComponent) {
 }(react.PureComponent);
 
 _defineProperty(ButtonIcon, "propTypes", {
-  iconName: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string
 });
 
 ButtonIcon.defaultProps = {
-  className: ""
+  className: "",
+  size: "XXL",
+  color: "gray-l1"
 };
 
 /**
- * @class ModalCard - Is the card for the modals and it contains a clear icon by default
+ * @class ModalCard - Is the card for the modals and it contains a cross icon by default
  */
 
 var ModalCard =
@@ -2247,7 +2306,9 @@ function (_React$PureComponent) {
       }, react.createElement("div", {
         className: "icons"
       }, react.createElement(ButtonIcon, {
-        iconName: "clear",
+        icon: "cross",
+        color: "gray-l2",
+        size: "L",
         onClick: onClose
       })), react.createElement("div", {
         className: "modal--content"
@@ -2568,54 +2629,376 @@ _defineProperty(Medal, "propTypes", {
 });
 
 /**
- * @class Icon - Is the component to use icons from our font-icon
+ * @class PopOver Header - Is the title of the pop over
  */
 
-var Icon =
+var PopOverHeader =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(Icon, _React$PureComponent);
+  _inherits(PopOverHeader, _React$PureComponent);
 
-  function Icon() {
-    _classCallCheck(this, Icon);
+  function PopOverHeader() {
+    _classCallCheck(this, PopOverHeader);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(PopOverHeader).apply(this, arguments));
   }
 
-  _createClass(Icon, [{
+  _createClass(PopOverHeader, [{
     key: "render",
 
     /**
-     * @property {string} icon - The function to close the modal
-     * @property {string} size - to define icon's size
-     * @property {string} color - To define icon's color
+     * @property {string} title - Title of the pop over
      */
     value: function render() {
-      var _this$props = this.props,
-          icon = _this$props.icon,
-          size = _this$props.size,
-          color = _this$props.color;
-      return react.createElement("i", {
-        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
-      });
+      var title = this.props.title;
+      return react.createElement("div", {
+        className: "pop-over--header"
+      }, react.createElement("h2", null, title));
     }
   }]);
 
-  return Icon;
+  return PopOverHeader;
 }(react.PureComponent);
 
-_defineProperty(Icon, "propTypes", {
-  icon: PropTypes.string.isRequired,
-  size: PropTypes.string,
-  color: PropTypes.string
+_defineProperty(PopOverHeader, "propTypes", {
+  title: PropTypes.string.isRequired
 });
 
-Icon.defaultProps = {
-  size: "XXL",
-  color: "gray-l1"
+/**
+ * @class PopOver Card - Is the card for the pop over and it contains a cross icon by default
+ */
+
+var PopOverCard =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(PopOverCard, _React$PureComponent);
+
+  function PopOverCard() {
+    _classCallCheck(this, PopOverCard);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(PopOverCard).apply(this, arguments));
+  }
+
+  _createClass(PopOverCard, [{
+    key: "render",
+
+    /**
+     * @property {bool} show - Determines if the pop over is visible
+     * @property {func} onClose - The function to close the modal
+     * @property {node} children - The content of the modal
+     * @property {string} className - Just in case you need another class
+     * @property {string} title - The title of the pop over
+     * @property {bool} back - Determines if the pop over has a back button
+     * @property {func} onBack - The function to go back
+     * @property {number} left - The value of the left position of the pop over card
+     * @property {number} top - The value of the top position of the pop over card
+     */
+    value: function render() {
+      var _this$props = this.props,
+          onClose = _this$props.onClose,
+          children = _this$props.children,
+          className = _this$props.className,
+          show = _this$props.show,
+          title = _this$props.title,
+          onBack = _this$props.onBack,
+          back = _this$props.back,
+          left = _this$props.left,
+          top = _this$props.top;
+      return react.createElement("div", {
+        style: {
+          left: left,
+          top: top
+        },
+        className: classnames("pop-over", className, {
+          "visibility-hidden": !show
+        })
+      }, react.createElement("div", {
+        className: "icons"
+      }, react.createElement(ButtonIcon, {
+        icon: "left",
+        onClick: onBack,
+        className: classnames({
+          "visibility-hidden": !back
+        })
+      }), react.createElement(PopOverHeader, {
+        title: title
+      }), react.createElement(ButtonIcon, {
+        icon: "cross",
+        onClick: onClose
+      })), react.createElement("div", {
+        className: "pop-over--content"
+      }, children));
+    }
+  }]);
+
+  return PopOverCard;
+}(react.PureComponent);
+
+_defineProperty(PopOverCard, "propTypes", {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  onBack: PropTypes.func,
+  back: PropTypes.bool,
+  className: PropTypes.string,
+  left: PropTypes.number,
+  top: PropTypes.number
+});
+
+PopOverCard.defaultProps = {
+  className: "",
+  title: "",
+  back: false,
+  onBack: null,
+  left: 0,
+  top: 0
 };
+
+/**
+ * @function getActivatorPosition - Returns width, height and position of the activator
+ * @param {node} node
+ */
+function getActivatorPosition(activator) {
+  if (!activator) {
+    return {};
+  }
+
+  var _activator$firstChild = activator.firstChild.getBoundingClientRect(),
+      width = _activator$firstChild.width,
+      height = _activator$firstChild.height;
+
+  var _activator$getBoundin = activator.getBoundingClientRect(),
+      left = _activator$getBoundin.left,
+      top = _activator$getBoundin.top,
+      right = _activator$getBoundin.right,
+      bottom = _activator$getBoundin.bottom;
+
+  return {
+    top: top,
+    left: left,
+    right: right,
+    bottom: bottom,
+    width: width,
+    height: height
+  };
+}
+/**
+ * @function getPopDimensions - Returns width, height of the popOver
+ * @param {node} pop
+ */
+
+function getPopDimensions(pop) {
+  if (!pop) {
+    return {};
+  }
+
+  var _pop$getBoundingClien = pop.getBoundingClientRect(),
+      width = _pop$getBoundingClien.width,
+      height = _pop$getBoundingClien.height;
+
+  var popWidth = width;
+  var popHeight = height;
+  return {
+    popWidth: popWidth,
+    popHeight: popHeight
+  };
+}
+/**
+ * @function popXPosition - Returns x position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
+
+function popXPosition(activator, pop) {
+  var _getActivatorPosition = getActivatorPosition(activator),
+      left = _getActivatorPosition.left;
+
+  var popUpElement = pop.lastChild;
+
+  var _getPopDimensions = getPopDimensions(popUpElement),
+      popWidth = _getPopDimensions.popWidth;
+
+  var windowWidth = window.innerWidth;
+  var activatorOffsetLeft = activator.offsetLeft;
+  var popWidthAndLeft = popWidth + left;
+  var diff = popWidthAndLeft - windowWidth;
+  var leftPosition = activatorOffsetLeft;
+
+  if (windowWidth < popWidthAndLeft) {
+    leftPosition = activatorOffsetLeft - diff - 16;
+  }
+
+  return leftPosition;
+}
+/**
+ * @function popYPosition - Returns y position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
+
+function popYPosition(activator, pop) {
+  var _getActivatorPosition2 = getActivatorPosition(activator),
+      top = _getActivatorPosition2.top,
+      height = _getActivatorPosition2.height;
+
+  var popUpElement = pop.lastChild;
+
+  var _getPopDimensions2 = getPopDimensions(popUpElement),
+      popHeight = _getPopDimensions2.popHeight;
+
+  var windowHeight = window.innerHeight;
+  var activatorOffsetTop = activator.offsetTop;
+  var popHeightAndTop = popHeight + top;
+  var diff = popHeightAndTop - windowHeight;
+  var topPosition = 0;
+
+  if (windowHeight < popHeightAndTop) {
+    topPosition = activatorOffsetTop - diff - 16;
+  } else if (windowHeight > popHeightAndTop) {
+    topPosition = activatorOffsetTop + height + 8;
+  }
+
+  return topPosition;
+}
+
+/**
+ * @class PopOver - It contains the pop over card and its activator
+ */
+
+var PopOver =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(PopOver, _React$PureComponent);
+
+  /**
+   * @property {node} children - The content of the pop over
+   * @property {string} className - Just in case you need another class
+   * @property {func} onClose - The function to close the pop over
+   * @property {node} activator - The button/link that triggers the pop over
+   * @property {bool} show - Determines if the popOver is visible
+   * @property {string} title - The title of the pop over
+   * @property {bool} back - Determines if the pop over has a back button
+   */
+  function PopOver(props) {
+    var _this;
+
+    _classCallCheck(this, PopOver);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PopOver).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "resize", function () {
+      return _this.forceUpdate();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleEscPressed", function (event) {
+      var onClose = _this.props.onClose; // keyCode 27 = ESC key
+
+      if (event.keyCode === 27) {
+        onClose();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (event) {
+      if (_this.popRef.current && !_this.popRef.current.contains(event.target) && _this.props.show) {
+        _this.props.onClose();
+      }
+    });
+
+    _this.activatorRef = react.createRef();
+    _this.popRef = react.createRef();
+    return _this;
+  }
+
+  _createClass(PopOver, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener("mousedown", this.handleClickOutside);
+      window.addEventListener("resize", this.resize);
+      document.addEventListener("keydown", this.handleEscPressed);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener("mousedown", this.handleClickOutside);
+      window.removeEventListener("resize", this.resize);
+      document.removeEventListener("keydown", this.handleEscPressed);
+    }
+  }, {
+    key: "getStyle",
+    value: function getStyle() {
+      var activator = this.activatorRef.current;
+
+      if (!activator) {
+        return {};
+      }
+
+      var pop = this.popRef.current;
+      var leftPosition = popXPosition(activator, pop);
+      var topPosition = popYPosition(activator, pop);
+      return {
+        left: "".concat(leftPosition, "px"),
+        top: "".concat(topPosition, "px")
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          onClose = _this$props.onClose,
+          children = _this$props.children,
+          className = _this$props.className,
+          activator = _this$props.activator,
+          title = _this$props.title,
+          back = _this$props.back,
+          onBack = _this$props.onBack,
+          show = _this$props.show;
+
+      var _this$getStyle = this.getStyle(),
+          left = _this$getStyle.left,
+          top = _this$getStyle.top;
+
+      return (// eslint-disable-next-line react/jsx-filename-extension
+        react.createElement("div", {
+          className: "pop-over--wrapper",
+          ref: this.popRef
+        }, react.createElement("div", {
+          ref: this.activatorRef,
+          id: "activator"
+        }, activator), react.createElement(PopOverCard, {
+          onClose: onClose,
+          className: className,
+          show: show,
+          left: left,
+          top: top,
+          title: title,
+          back: back,
+          onBack: onBack
+        }, children))
+      );
+    }
+  }]);
+
+  return PopOver;
+}(react.PureComponent);
+
+_defineProperty(PopOver, "propTypes", {
+  activator: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  show: PropTypes.bool.isRequired,
+  title: PropTypes.string,
+  back: PropTypes.bool,
+  className: PropTypes.string
+});
+
+_defineProperty(PopOver, "defaultProps", {
+  title: "",
+  back: false,
+  className: ""
+});
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon, PopOver, PopOverCard, PopOverHeader };
 //# sourceMappingURL=index.es.js.map
