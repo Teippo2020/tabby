@@ -5,7 +5,7 @@ import classNames from "classnames";
 import ButtonIcon from "../buttons/ButtonIcon";
 import PopOverHeader from "./PopOverHeader";
 /**
- * @class ModalCard - Is the card for the pop over and it contains a cross icon by default
+ * @class PopOver Card - Is the card for the pop over and it contains a cross icon by default
  */
 class PopOverCard extends PureComponent {
   /**
@@ -15,11 +15,9 @@ class PopOverCard extends PureComponent {
    * @property {string} className - Just in case you need another class
    * @property {string} title - The title of the pop over
    * @property {bool} back - Determines if the pop over has a back button
-   * @property {func} onClose - The function to go back
+   * @property {func} onBack - The function to go back
    * @property {number} left - The value of the left position of the pop over card
-   * @property {number} right - The value of the right position of the pop over card
    * @property {number} top - The value of the top position of the pop over card
-   * @property {number} bottom - The value of the bottom position of the pop over card
    */
   static propTypes = {
     show: PropTypes.bool.isRequired,
