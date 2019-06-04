@@ -17,6 +17,11 @@ import ButtonText from "./components/buttons/ButtonIcon";
 //Icon
 import Icon from "./components/icons/Icon";
 
+//PopOver
+import PopOver from "./components/popOver/PopOver";
+import PopOverCard from "./components/popOver/PopOverCard";
+import PopOverHeader from "./components/popOver/PopOverHeader";
+
 import "./index.scss";
 
 export {
@@ -29,5 +34,8 @@ export {
 	Medal,
 	ButtonIcon,
 	ButtonText,
-	Icon
+	Icon,
+	PopOver,
+	PopOverCard,
+	PopOverHeader
 };
