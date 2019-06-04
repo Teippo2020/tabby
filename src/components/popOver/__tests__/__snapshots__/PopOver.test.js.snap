@@ -48,10 +48,12 @@ ShallowWrapper {
         <PopOverCard
           back={false}
           className=""
+          left={0}
           onBack={null}
           onClose={[Function]}
           show={false}
           title=""
+          top={0}
         >
           <div />
         </PopOverCard>,
@@ -100,16 +102,14 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "back": false,
-          "bottom": undefined,
           "children": <div />,
           "className": "",
-          "left": undefined,
+          "left": 0,
           "onBack": null,
           "onClose": [Function],
-          "right": undefined,
           "show": false,
           "title": "",
-          "top": undefined,
+          "top": 0,
         },
         "ref": null,
         "rendered": Object {
@@ -146,10 +146,12 @@ ShallowWrapper {
           <PopOverCard
             back={false}
             className=""
+            left={0}
             onBack={null}
             onClose={[Function]}
             show={false}
             title=""
+            top={0}
           >
             <div />
           </PopOverCard>,
@@ -198,16 +200,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "back": false,
-            "bottom": undefined,
             "children": <div />,
             "className": "",
-            "left": undefined,
+            "left": 0,
             "onBack": null,
             "onClose": [Function],
-            "right": undefined,
             "show": false,
             "title": "",
-            "top": undefined,
+            "top": 0,
           },
           "ref": null,
           "rendered": Object {
@@ -248,7 +248,9 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;

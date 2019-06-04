@@ -6,10 +6,12 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <PopOverCard
     back={false}
     className=""
+    left={0}
     onBack={[Function]}
     onClose={[Function]}
     show={false}
     title=""
+    top={0}
   >
     <div />
   </PopOverCard>,
@@ -34,8 +36,7 @@ ShallowWrapper {
           <ButtonIcon
             className="visibility-hidden"
             color="gray-l1"
-            icon="cross"
-            iconName="keyboard_arrow_left"
+            icon="left"
             onClick={[Function]}
             size="XXL"
           />
@@ -46,7 +47,6 @@ ShallowWrapper {
             className=""
             color="gray-l1"
             icon="cross"
-            iconName="clear"
             onClick={[Function]}
             size="XXL"
           />
@@ -59,10 +59,8 @@ ShallowWrapper {
       ],
       "className": "pop-over visibility-hidden",
       "style": Object {
-        "bottom": undefined,
-        "left": undefined,
-        "right": undefined,
-        "top": undefined,
+        "left": 0,
+        "top": 0,
       },
     },
     "ref": null,
@@ -76,8 +74,7 @@ ShallowWrapper {
             <ButtonIcon
               className="visibility-hidden"
               color="gray-l1"
-              icon="cross"
-              iconName="keyboard_arrow_left"
+              icon="left"
               onClick={[Function]}
               size="XXL"
             />,
@@ -88,7 +85,6 @@ ShallowWrapper {
               className=""
               color="gray-l1"
               icon="cross"
-              iconName="clear"
               onClick={[Function]}
               size="XXL"
             />,
@@ -104,8 +100,7 @@ ShallowWrapper {
             "props": Object {
               "className": "visibility-hidden",
               "color": "gray-l1",
-              "icon": "cross",
-              "iconName": "keyboard_arrow_left",
+              "icon": "left",
               "onClick": [Function],
               "size": "XXL",
             },
@@ -132,7 +127,6 @@ ShallowWrapper {
               "className": "",
               "color": "gray-l1",
               "icon": "cross",
-              "iconName": "clear",
               "onClick": [Function],
               "size": "XXL",
             },
@@ -179,8 +173,7 @@ ShallowWrapper {
             <ButtonIcon
               className="visibility-hidden"
               color="gray-l1"
-              icon="cross"
-              iconName="keyboard_arrow_left"
+              icon="left"
               onClick={[Function]}
               size="XXL"
             />
@@ -191,7 +184,6 @@ ShallowWrapper {
               className=""
               color="gray-l1"
               icon="cross"
-              iconName="clear"
               onClick={[Function]}
               size="XXL"
             />
@@ -204,10 +196,8 @@ ShallowWrapper {
         ],
         "className": "pop-over visibility-hidden",
         "style": Object {
-          "bottom": undefined,
-          "left": undefined,
-          "right": undefined,
-          "top": undefined,
+          "left": 0,
+          "top": 0,
         },
       },
       "ref": null,
@@ -221,8 +211,7 @@ ShallowWrapper {
               <ButtonIcon
                 className="visibility-hidden"
                 color="gray-l1"
-                icon="cross"
-                iconName="keyboard_arrow_left"
+                icon="left"
                 onClick={[Function]}
                 size="XXL"
               />,
@@ -233,7 +222,6 @@ ShallowWrapper {
                 className=""
                 color="gray-l1"
                 icon="cross"
-                iconName="clear"
                 onClick={[Function]}
                 size="XXL"
               />,
@@ -249,8 +237,7 @@ ShallowWrapper {
               "props": Object {
                 "className": "visibility-hidden",
                 "color": "gray-l1",
-                "icon": "cross",
-                "iconName": "keyboard_arrow_left",
+                "icon": "left",
                 "onClick": [Function],
                 "size": "XXL",
               },
@@ -277,7 +264,6 @@ ShallowWrapper {
                 "className": "",
                 "color": "gray-l1",
                 "icon": "cross",
-                "iconName": "clear",
                 "onClick": [Function],
                 "size": "XXL",
               },
@@ -335,7 +321,9 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;

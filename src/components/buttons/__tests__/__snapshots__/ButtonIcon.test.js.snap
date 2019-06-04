@@ -7,7 +7,6 @@ ShallowWrapper {
     className=""
     color="gray-l1"
     icon="cross"
-    iconName="clear"
     onClick={[Function]}
     size="XXL"
   />,
@@ -105,7 +104,9 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;

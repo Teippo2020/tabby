@@ -22,7 +22,7 @@ describe("PopOver", () => {
     expect(component).toMatchSnapshot();
   });
   it("should call onClose when you press ESC key ", () => {
-    shallow(<PopOver {...props}  />);
+    shallow(<PopOver {...props} />);
     // eslint-disable-next-line no-undef
     const event = new KeyboardEvent("keydown", { keyCode: 27 });
     document.dispatchEvent(event);

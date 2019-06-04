@@ -8,12 +8,16 @@ import { popXPosition, popYPosition } from "../../utils/popsPosition";
  * @class PopOver - It contains the pop over card and its activator
  */
 class PopOver extends React.PureComponent {
-    /**
-
+  /**
    * @property {node} children - The content of the pop over
    * @property {string} className - Just in case you need another class
    * @property {func} onClose - The function to close the pop over
+   * @property {node} activator - The button/link that triggers the pop over
+   * @property {bool} show - Determines if the popOver is visible
+   * @property {string} title - The title of the pop over
+   * @property {bool} back - Determines if the pop over has a back button
    */
+
   static propTypes = {
     activator: PropTypes.node.isRequired,
     onClose: PropTypes.func.isRequired,
@@ -36,10 +40,6 @@ class PopOver extends React.PureComponent {
     this.popRef = React.createRef();
   }
 
-
-
-  resize = () => this.forceUpdate();
-
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
     window.addEventListener("resize", this.resize);
@@ -51,18 +51,6 @@ class PopOver extends React.PureComponent {
     window.removeEventListener("resize", this.resize);
     document.removeEventListener("keydown", this.handleEscPressed);
   }
-
-  handleEscPressed = event => {
-    const { onClose } = this.props;
-    // keyCode 27 = ESC key
-    if (event.keyCode === 27) {
-      onClose();
-    }
-  };
-  
-  setReference = ref => {
-    this.reference = ref;
-  };
 
   getStyle() {
     const activator = this.activatorRef.current;
@@ -77,6 +65,16 @@ class PopOver extends React.PureComponent {
       top: `${topPosition}px`
     };
   }
+
+  resize = () => this.forceUpdate();
+
+  handleEscPressed = event => {
+    const { onClose } = this.props;
+    // keyCode 27 = ESC key
+    if (event.keyCode === 27) {
+      onClose();
+    }
+  };
 
   handleClickOutside = event => {
     if (
@@ -96,9 +94,10 @@ class PopOver extends React.PureComponent {
       activator,
       title,
       back,
+      onBack,
       show
     } = this.props;
-    const { left, top, bottom, right } = this.getStyle();
+    const { left, top } = this.getStyle();
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="pop-over--wrapper" ref={this.popRef}>
@@ -111,10 +110,9 @@ class PopOver extends React.PureComponent {
           show={show}
           left={left}
           top={top}
-          bottom={bottom}
-          right={right}
           title={title}
           back={back}
+          onBack={onBack}
         >
           {children}
         </PopOverCard>

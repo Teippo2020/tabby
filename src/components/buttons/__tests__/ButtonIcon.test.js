@@ -9,7 +9,7 @@ describe("ButtonIcon", () => {
   let props;
   beforeEach(() => {
     props = {
-      iconName: "clear",
+      icon: "cross",
       onClick: action
     };
   });

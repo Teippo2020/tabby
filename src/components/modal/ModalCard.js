@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import ButtonIcon from "../buttons/ButtonIcon";
 /**
- * @class ModalCard - Is the card for the modals and it contains a clear icon by default
+ * @class ModalCard - Is the card for the modals and it contains a cross icon by default
  */
 class ModalCard extends React.PureComponent {
   /**

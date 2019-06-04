@@ -34,23 +34,32 @@ export function getPopDimensions(pop) {
   };
 }
 
+/**
+ * @function popXPosition - Returns x position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
 export function popXPosition(activator, pop) {
   const { left } = getActivatorPosition(activator);
   const popUpElement = pop.lastChild;
   const { popWidth } = getPopDimensions(popUpElement);
-
   const windowWidth = window.innerWidth;
   const activatorOffsetLeft = activator.offsetLeft;
   const popWidthAndLeft = popWidth + left;
   const diff = popWidthAndLeft - windowWidth;
   let leftPosition = activatorOffsetLeft;
-  
+
   if (windowWidth < popWidthAndLeft) {
     leftPosition = activatorOffsetLeft - diff - 16;
   }
   return leftPosition;
 }
 
+/**
+ * @function popYPosition - Returns y position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
 export function popYPosition(activator, pop) {
   const { top, height } = getActivatorPosition(activator);
   const popUpElement = pop.lastChild;
@@ -60,11 +69,10 @@ export function popYPosition(activator, pop) {
   const activatorOffsetTop = activator.offsetTop;
   const popHeightAndTop = popHeight + top;
   const diff = popHeightAndTop - windowHeight;
-  let topPosition = activatorOffsetTop - popHeight - 8;
-
+  let topPosition = 0;
   if (windowHeight < popHeightAndTop) {
     topPosition = activatorOffsetTop - diff - 16;
-  } else if (windowHeight > popHeightAndTop){
+  } else if (windowHeight > popHeightAndTop) {
     topPosition = activatorOffsetTop + height + 8;
   }
 

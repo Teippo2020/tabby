@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 /**
- * @class PopOver Header - Is the title of the modal
+ * @class PopOver Header - Is the title of the pop over
  */
 class PopOverHeader extends React.PureComponent {
   /**
-   * @property {string} title - Title of the modal
+   * @property {string} title - Title of the pop over
    */
   static propTypes = {
     title: PropTypes.string.isRequired

@@ -1,25 +1,30 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { State, Store } from "@sambego/storybook-state";
 import PopOver from "../../../components/popOver/PopOver";
 import ButtonText from "../../../components/buttons/ButtonText";
-import { State, Store } from "@sambego/storybook-state";
 
 const store = new Store({
   show: false
 });
 storiesOf("Pop Over", module)
-  // Moda
+  // Pop Over default
   .add("Default", () => (
     <div>
       <State store={store}>
         <PopOver
-          activator={
-          <ButtonText color="red" text="Poooop" onClick={() => store.set({ show: !store.get("show") })}/> 
-          } position="top"
-          onClose={() => store.set({ show: !store.get("show") })}>
-            <p> Holi</p>
+          activator={(
+            <ButtonText
+              color="red"
+              text="PopOver"
+              onClick={() => store.set({ show: !store.get("show") })}
+            />
+          )}
+          position="top"
+          onClose={() => store.set({ show: !store.get("show") })}
+        >
+          <p> Holi</p>
         </PopOver>
       </State>
     </div>
-
   ));
