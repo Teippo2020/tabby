@@ -59,7 +59,6 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^3.1.0",
-    "jest": "^24.1.0",
     "jest-extended": "^0.11.1",
     "node-sass": "^4.11.0",
     "node-sass-chokidar": "^1.3.4",
@@ -86,8 +85,9 @@
     "dist"
   ],
   "dependencies": {
+    "@sambego/storybook-state": "^1.3.4",
+    "@storybook/react": "^4.1.13",
     "classnames": "^2.2.6",
-    "material-design-icons": "^3.0.1",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

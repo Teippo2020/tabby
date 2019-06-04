@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import ButtonIcon from "../buttons/ButtonIcon";
 /**
- * @class ModalCard - Is the card for the modals and it contains a clear icon by default
+ * @class ModalCard - Is the card for the modals and it contains a cross icon by default
  */
 class ModalCard extends React.PureComponent {
   /**
@@ -23,7 +23,7 @@ class ModalCard extends React.PureComponent {
     return (
       <div className={classNames("modal", className)}>
         <div className="icons">
-          <ButtonIcon iconName="clear" onClick={onClose} />
+          <ButtonIcon icon="cross" color="gray-l2" size="L" onClick={onClose} />
         </div>
         <div className="modal--content">{children}</div>
       </div>

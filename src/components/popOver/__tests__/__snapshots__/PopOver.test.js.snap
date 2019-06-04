@@ -1,14 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal Card should render correctly with default state 1`] = `
+exports[`PopOver should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ModalCard
+  Symbol(enzyme.__unrendered__): <PopOver
+    activator={
+      <ButtonText
+        className=""
+        color="blue"
+        onClick={[Function]}
+        text="Activator"
+      />
+    }
+    back={false}
     className=""
     onClose={[Function]}
+    show={false}
+    title=""
   >
     <div />
-  </ModalCard>,
+  </PopOver>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -25,51 +36,59 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="icons"
+          id="activator"
         >
-          <ButtonIcon
+          <ButtonText
             className=""
-            color="gray-l2"
-            icon="cross"
+            color="blue"
             onClick={[Function]}
-            size="L"
+            text="Activator"
           />
         </div>,
-        <div
-          className="modal--content"
+        <PopOverCard
+          back={false}
+          className=""
+          left={0}
+          onBack={null}
+          onClose={[Function]}
+          show={false}
+          title=""
+          top={0}
         >
           <div />
-        </div>,
+        </PopOverCard>,
       ],
-      "className": "modal",
+      "className": "pop-over--wrapper",
     },
-    "ref": null,
+    "ref": Object {
+      "current": null,
+    },
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ButtonIcon
+          "children": <ButtonText
             className=""
-            color="gray-l2"
-            icon="cross"
+            color="blue"
             onClick={[Function]}
-            size="L"
+            text="Activator"
           />,
-          "className": "icons",
+          "id": "activator",
         },
-        "ref": null,
+        "ref": Object {
+          "current": null,
+        },
         "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
             "className": "",
-            "color": "gray-l2",
-            "icon": "cross",
+            "color": "blue",
             "onClick": [Function],
-            "size": "L",
+            "text": "Activator",
           },
           "ref": null,
           "rendered": null,
@@ -80,10 +99,17 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
+          "back": false,
           "children": <div />,
-          "className": "modal--content",
+          "className": "",
+          "left": 0,
+          "onBack": null,
+          "onClose": [Function],
+          "show": false,
+          "title": "",
+          "top": 0,
         },
         "ref": null,
         "rendered": Object {
@@ -95,7 +121,7 @@ ShallowWrapper {
           "rendered": null,
           "type": "div",
         },
-        "type": "div",
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -108,51 +134,59 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="icons"
+            id="activator"
           >
-            <ButtonIcon
+            <ButtonText
               className=""
-              color="gray-l2"
-              icon="cross"
+              color="blue"
               onClick={[Function]}
-              size="L"
+              text="Activator"
             />
           </div>,
-          <div
-            className="modal--content"
+          <PopOverCard
+            back={false}
+            className=""
+            left={0}
+            onBack={null}
+            onClose={[Function]}
+            show={false}
+            title=""
+            top={0}
           >
             <div />
-          </div>,
+          </PopOverCard>,
         ],
-        "className": "modal",
+        "className": "pop-over--wrapper",
       },
-      "ref": null,
+      "ref": Object {
+        "current": null,
+      },
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <ButtonIcon
+            "children": <ButtonText
               className=""
-              color="gray-l2"
-              icon="cross"
+              color="blue"
               onClick={[Function]}
-              size="L"
+              text="Activator"
             />,
-            "className": "icons",
+            "id": "activator",
           },
-          "ref": null,
+          "ref": Object {
+            "current": null,
+          },
           "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
             "props": Object {
               "className": "",
-              "color": "gray-l2",
-              "icon": "cross",
+              "color": "blue",
               "onClick": [Function],
-              "size": "L",
+              "text": "Activator",
             },
             "ref": null,
             "rendered": null,
@@ -163,10 +197,17 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
+            "back": false,
             "children": <div />,
-            "className": "modal--content",
+            "className": "",
+            "left": 0,
+            "onBack": null,
+            "onClose": [Function],
+            "show": false,
+            "title": "",
+            "top": 0,
           },
           "ref": null,
           "rendered": Object {
@@ -178,7 +219,7 @@ ShallowWrapper {
             "rendered": null,
             "type": "div",
           },
-          "type": "div",
+          "type": [Function],
         },
       ],
       "type": "div",

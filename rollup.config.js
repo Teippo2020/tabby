@@ -31,13 +31,6 @@ export default {
     external(),
     copy([
       {
-        files:
-          "node_modules/material-design-icons/iconfont/*.{svg,ttf,woff,woff2,eot,ijmap}",
-        dest: "dist"
-      }
-    ]),
-    copy([
-      {
         files: "src/font/*.*",
         dest: "dist/font"
       }

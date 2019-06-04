@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopOver should render correctly with default state 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PopOverCard
+    back={false}
+    className=""
+    left={0}
+    onBack={[Function]}
+    onClose={[Function]}
+    show={false}
+    title=""
+    top={0}
+  >
+    <div />
+  </PopOverCard>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="icons"
+        >
+          <ButtonIcon
+            className="visibility-hidden"
+            color="gray-l1"
+            icon="left"
+            onClick={[Function]}
+            size="XXL"
+          />
+          <PopOverHeader
+            title=""
+          />
+          <ButtonIcon
+            className=""
+            color="gray-l1"
+            icon="cross"
+            onClick={[Function]}
+            size="XXL"
+          />
+        </div>,
+        <div
+          className="pop-over--content"
+        >
+          <div />
+        </div>,
+      ],
+      "className": "pop-over visibility-hidden",
+      "style": Object {
+        "left": 0,
+        "top": 0,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <ButtonIcon
+              className="visibility-hidden"
+              color="gray-l1"
+              icon="left"
+              onClick={[Function]}
+              size="XXL"
+            />,
+            <PopOverHeader
+              title=""
+            />,
+            <ButtonIcon
+              className=""
+              color="gray-l1"
+              icon="cross"
+              onClick={[Function]}
+              size="XXL"
+            />,
+          ],
+          "className": "icons",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "visibility-hidden",
+              "color": "gray-l1",
+              "icon": "left",
+              "onClick": [Function],
+              "size": "XXL",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "title": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "",
+              "color": "gray-l1",
+              "icon": "cross",
+              "onClick": [Function],
+              "size": "XXL",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div />,
+          "className": "pop-over--content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="icons"
+          >
+            <ButtonIcon
+              className="visibility-hidden"
+              color="gray-l1"
+              icon="left"
+              onClick={[Function]}
+              size="XXL"
+            />
+            <PopOverHeader
+              title=""
+            />
+            <ButtonIcon
+              className=""
+              color="gray-l1"
+              icon="cross"
+              onClick={[Function]}
+              size="XXL"
+            />
+          </div>,
+          <div
+            className="pop-over--content"
+          >
+            <div />
+          </div>,
+        ],
+        "className": "pop-over visibility-hidden",
+        "style": Object {
+          "left": 0,
+          "top": 0,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <ButtonIcon
+                className="visibility-hidden"
+                color="gray-l1"
+                icon="left"
+                onClick={[Function]}
+                size="XXL"
+              />,
+              <PopOverHeader
+                title=""
+              />,
+              <ButtonIcon
+                className=""
+                color="gray-l1"
+                icon="cross"
+                onClick={[Function]}
+                size="XXL"
+              />,
+            ],
+            "className": "icons",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "visibility-hidden",
+                "color": "gray-l1",
+                "icon": "left",
+                "onClick": [Function],
+                "size": "XXL",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "title": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "",
+                "color": "gray-l1",
+                "icon": "cross",
+                "onClick": [Function],
+                "size": "XXL",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div />,
+            "className": "pop-over--content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;
