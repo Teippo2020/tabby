@@ -18,27 +18,28 @@ class SelectList extends React.PureComponent {
    * @property {node} children -
    */
   static propTypes = {
-    icon: PropTypes.string,
-    title: PropTypes.string.isRequired,
     className: PropTypes.string,
-    list: PropTypes.array.isRequired
+    onClick: PropTypes.func.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
+    options: PropTypes.array.isRequired
   };
 
   render() {
-    const { className, icon, title, list, onClick, id } = this.props;
+    const { className, options, onClick } = this.props;
 
     return ( 
       <ul className={classNames(className, "select__list")}>
-        {list.map((item) => (
+        {options.map((item) => (
           <SelectListItem 
             icon={item.icon} 
-            key={item.id} 
+            key={item.index} 
             title={item.title} 
             selected={item.selected} 
             onClick={onClick} 
             id={item.id}
+            value={item.value}
             />
-        )) }
+        )) } 
       </ul>
     );
   }

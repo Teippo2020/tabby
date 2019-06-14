@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import ButtonIcon from "../buttons/ButtonIcon";
 import Icon from "../icons/Icon";
 
 /**
@@ -9,32 +8,36 @@ import Icon from "../icons/Icon";
  */
 class SelectListItem extends React.PureComponent {
   /**
-   * @property {bool} autofocus -
-   * @property {bool} disabled -
-   * @property {string} form -
-   * @property {bool} multiple -
-   * @property {string} name -
-   * @property {number} size -
-   * @property {node} children -
+   * @property {bool} icon -
+   * @property {bool} title -
+   * @property {string} className -
+   * @property {bool} selected -
+   * @property {string} onClick -
+   * @property {number} id -
+   * @property {node} value -
    */
 
-  constructor(props){
-    super(props)
-    this.selectItemRef = React.createRef();
-  }
   static propTypes = {
     icon: PropTypes.string,
     title: PropTypes.string.isRequired,
     className: PropTypes.string,
-    selected: PropTypes.bool
+    selected: PropTypes.bool,
+    onClick: PropTypes.func.isRequired,
+    id: PropTypes.string,
+    value: PropTypes.string.isRequired
   };
 
   render() {
-    const { className, selected, title, icon, onClick, id } = this.props;
+    const { className, selected, title, icon, onClick, id, value } = this.props;
 
     return (
-      <li className={classNames(className, {"selected__item":selected})} onClick={onClick} id={id} ref={this.selectItemRef}>
-        {icon && <Icon  icon={icon} color="gray-l2" size="R" />}
+      <li
+        className={classNames(className, { "selected__item": selected })}
+        onClick={onClick}
+        id={id}
+        data-value={value}
+      >
+        {icon && <Icon icon={icon} color="gray-l2" size="R" />}
         {title}
       </li>
     );
@@ -44,7 +47,8 @@ class SelectListItem extends React.PureComponent {
 SelectListItem.defaultProps = {
   icon: false,
   className: "",
-  selected: false
+  selected: false,
+  id: ""
 };
 
-export default SelectListItem
+export default SelectListItem;

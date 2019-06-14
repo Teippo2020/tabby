@@ -24,13 +24,13 @@ class SelectHeader extends React.PureComponent {
   };
 
   render() {
-    const { className, icon, title, onClick, listOpen, onClickArrow } = this.props;
+    const { className, icon, title, onClick, listOpen } = this.props;
 
     return ( 
       <div className={classNames('select__header', className)} onClick={onClick}>
         {icon && <Icon icon={icon} color="not-gray-l2" size="R" />}
         <p>{title}</p>
-        <ButtonIcon icon={listOpen ? "top" : "down"} color="not-gray-l1" size="R" onClick={onClickArrow}/>
+        <ButtonIcon icon={listOpen ? "top" : "down"} color="not-gray-l1" size="XXS" onClick={()=>{}}/>
       </div>
     );
   }

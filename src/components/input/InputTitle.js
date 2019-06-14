@@ -53,6 +53,7 @@ class InputTitle extends PureComponent {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.initialText !== this.props.initialText) {
       this.textInput.value = this.props.initialText;
+      autosize(this.textInput)
     }
   }
 

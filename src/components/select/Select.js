@@ -17,50 +17,23 @@ class Select extends React.PureComponent {
    * @property {number} size -
    * @property {node} children -
    */
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.selectRef = React.createRef();
+    const { placeholder, icon } = this.props;
     this.state = {
-      title: "Soy un select bonito",
+      title: placeholder,
       listOpen: false,
-      list: [
-        {
-          title: "Yo soy una opción bonita",
-          icon:"world",
-          id: 1
-        },
-        {
-          title: "Yo soy una opción más bonita",
-          icon:"flag-outline",
-          id: 2
-        },
-        {
-          title: "Yo soy una opción muuucho más bonita",
-          icon: "planet-outline",
-          id: 3
-        },
-        {
-          title: "Yo soy una opción meeeh bonita",
-          icon:"flag-outline",
-          id: 2
-        },
-        {
-          title: "Yo soy una opción equisss",
-          icon:"flag-outline",
-          id: 2
-        }
-      ]
-    }
+      icon,
+      selectedValue: "Opción 5"
+    };
   }
+
   static propTypes = {
-    disabled: PropTypes.bool,
-    form: PropTypes.string.isRequired,
-    multiple: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    size: PropTypes.number.isRequired,
-    children: PropTypes.node.isRequired,
+    options: PropTypes.array.isRequired,
     className: PropTypes.string
   };
+
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
     window.addEventListener("resize", this.resize);
@@ -76,46 +49,67 @@ class Select extends React.PureComponent {
   toggleList = () => {
     this.setState(prevState => ({
       listOpen: !prevState.listOpen
-    }))
-  }
+    }));
+  };
 
   handleClickOutside = event => {
+    const { listOpen } = this.state;
     if (
       this.selectRef.current &&
       !this.selectRef.current.contains(event.target) &&
-      this.state.listOpen
+      listOpen
     ) {
       this.setState({
         listOpen: false
-      })
+      });
     }
   };
-
-  selectItem = (event) =>{
-    console.log(event.target.textContent);
-    const itemTitle = event.target.textContent;
-    this.setState({
-      title: itemTitle
-    })
-    this.toggleList()
+  getSelectedItem = (value) => {
+    const { options } = this.props;
+    const item = options.find(_item => _item.value === value);
+    return item
   }
+  selectItem = (event) => {
+    const itemValue = event.target.dataset.value
+    const item =  this.getSelectedItem(itemValue)
+    if (item.icon) {
+      this.setState({
+        icon: item.icon,
+        title: item.title
+      });
+    } else {
+      this.setState({
+        title: item.title
+      });
+    }
+    this.toggleList();
+  };
 
   render() {
-    const { disabled, form, multiple, name, size, children,className } = this.props;
-    const {title, listOpen, list} = this.state
+
+    const { className, options, placeholder } = this.props;
+    const { title, listOpen, icon, selectedValue } = this.state;
+    let selectedItem = this.getSelectedItem(selectedValue)
+    
     return (
-      <div className={classNames('select__wrapper', className)} ref={this.selectRef}>
-        <SelectHeader title={title} icon="world" onClick={this.toggleList} listOpen={listOpen} onClickArrow={this.toggleList} />
-        {listOpen && <SelectList list={list} onClick={this.selectItem}/>}
+      <div
+        className={classNames("select__wrapper", className)}
+        ref={this.selectRef}
+      >
+        <SelectHeader
+          title={selectedItem ? selectedItem.title : title}
+          icon={selectedItem ? selectedItem.icon : icon}
+          onClick={this.toggleList}
+          listOpen={listOpen}
+        />
+        {listOpen && <SelectList options={options} onClick={this.selectItem}  />}
       </div>
     );
   }
 }
 
 Select.defaultProps = {
-  disabled: false,
-  multiple: false,
   className: ""
 };
 
-export default Select
+export default Select;

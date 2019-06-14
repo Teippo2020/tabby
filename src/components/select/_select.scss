@@ -1,14 +1,20 @@
 .select__wrapper{
   cursor: pointer;
   width: fit-content;
+  position: relative;
+  padding: 0 16px;
 }
 
 .select__header{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 4px 8px 4px 8px;
   border: 1.3px solid rgba($not-gray-l1,1);
   border-radius: 4px;
   width: fit-content;
@@ -28,15 +34,16 @@
   }
   button:last-child{
     margin-left: 32px;
-    border-left: 1.5px solid rgba($not-gray-l1,0.6);
-    padding: 0 0 0 24px;
+    height: $XXS;
+    }
     &:hover{
       i{
         color: $not-gray-d1;
+
       }
     }
   }
-}
+
 
 .select__list{
   border: 1.3px solid rgba($not-gray-l1,1);
@@ -46,6 +53,8 @@
   color: $gray;
   font-weight: $light;
   z-index: $level-3;
+  background-color: $white;
+  position: absolute;
   li{
     padding: 8px 16px 8px 8px;
     display: flex;
