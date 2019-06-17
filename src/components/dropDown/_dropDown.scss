@@ -1,9 +1,11 @@
 
 .dropdown__wrapper{
   width: fit-content;
+  position: relative;
 }
 .dropdown{
   background-color: $gray-l3;
+  position: absolute;
   box-shadow: $shadow-3;
   z-index: $level-3;
   border-radius: 4px;

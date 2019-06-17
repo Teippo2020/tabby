@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { popXPosition, popYPosition } from "../../utils/popsPosition";
 import Dropdown from "./Dropdown";
-
+import ButtonIcon from "../buttons/ButtonIcon";
 /**
  * @class DropDownWrapper -
  */
@@ -19,21 +18,16 @@ class DropdownWrapper extends React.PureComponent {
    */
 
   static propTypes = {
-    activator: PropTypes.node.isRequired,
-    onClose: PropTypes.func.isRequired,
+    icon: PropTypes.string,
     children: PropTypes.node.isRequired,
-    show: PropTypes.bool.isRequired,
     className: PropTypes.string
-  };
-
-  static defaultProps = {
-    title: "",
-    back: false,
-    className: ""
   };
 
   constructor(props) {
     super(props);
+    this.state = {
+      show: false
+    };
     this.activatorRef = React.createRef();
     this.dropdownRef = React.createRef();
   }
@@ -50,19 +44,17 @@ class DropdownWrapper extends React.PureComponent {
     document.removeEventListener("keydown", this.handleEscPressed);
   }
 
-  getStyle() {
-    const activator = this.activatorRef.current;
-    if (!activator) {
-      return {};
-    }
-    const pop = this.popRef.current;
-    const leftPosition = popXPosition(activator, pop);
-    const topPosition = popYPosition(activator, pop);
-    return {
-      left: `${leftPosition}px`,
-      top: `${topPosition}px`
-    };
-  }
+  toggleDropDown = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }));
+  };
+
+  onClose = () => {
+    this.setState({
+      show: false
+    });
+  };
 
   resize = () => this.forceUpdate();
 
@@ -75,47 +67,43 @@ class DropdownWrapper extends React.PureComponent {
   };
 
   handleClickOutside = event => {
+    const { show } = this.state;
     if (
       this.dropdownRef.current &&
       !this.dropdownRef.current.contains(event.target) &&
-      this.props.show
+      show
     ) {
-      this.props.onClose();
+      this.setState({
+        show:false
+      });
     }
   };
 
   render() {
-    const {
-      activator,
-      children,
-      className,
-      onClose,
-      left,
-      show,
-      top
-    } = this.props;
+    const { children, className, icon } = this.props;
 
     return (
       <div className="dropdown__wrapper" ref={this.dropdownRef}>
         <div ref={this.activatorRef} id="activator-dropdown">
-          {activator}
+          <ButtonIcon
+            icon={icon}
+            onClick={this.toggleDropDown}
+          />
         </div>
-        <Dropdown
-          onClose={onClose}
-          className={className}
-          left={left}
-          show={show}
-          top={top}
-        >
-          {children}
-        </Dropdown>
+        {this.state.show && 
+          <Dropdown onClose={this.onClose} className={className}>
+            {children}
+          </Dropdown>
+
+        }
       </div>
     );
   }
 }
 
 DropdownWrapper.defaultProps = {
-  className: ""
+  className: "",
+  icon: "options"
 };
 
 export default DropdownWrapper;

@@ -13,15 +13,7 @@ storiesOf("Dropdown", module)
   .add("Default", () => (
     <div>
       <State store={store}>
-        <Dropdown
-          activator={(
-            <ButtonIcon
-              icon="options"
-              onClick={() => store.set({ show: !store.get("show") })}
-            />
-          )}
-          onClose={() => store.set({ show: !store.get("show") })}
-        >
+        <Dropdown>
           <DropdownOption icon="pencil" text="Editar" iconDirection="right" />
           <DropdownOption
             icon="history"
