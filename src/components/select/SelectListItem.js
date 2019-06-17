@@ -45,9 +45,9 @@ class SelectListItem extends React.PureComponent {
 }
 
 SelectListItem.defaultProps = {
-  icon: false,
+  icon: "",
   className: "",
-  selected: false,
+  selectedValue: "",
   id: ""
 };
 

@@ -20,7 +20,9 @@ class SelectHeader extends React.PureComponent {
   static propTypes = {
     icon: PropTypes.string,
     title: PropTypes.string.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onClick: PropTypes.func.isRequired,
+    listOpen: PropTypes.bool
   };
 
   render() {
@@ -37,8 +39,9 @@ class SelectHeader extends React.PureComponent {
 }
 
 SelectHeader.defaultProps = {
-  icon: false,
-  className: ""
+  icon: "",
+  className: "",
+  listOpen: false
 };
 
 export default SelectHeader

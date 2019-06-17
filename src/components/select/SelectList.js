@@ -9,13 +9,9 @@ import SelectListItem from "./SelectListItem";
  */
 class SelectList extends React.PureComponent {
   /**
-   * @property {bool} autofocus -
-   * @property {bool} disabled -
-   * @property {string} form -
-   * @property {bool} multiple -
-   * @property {string} name -
-   * @property {number} size -
-   * @property {node} children -
+   * @property {string} className - ClassName if you need to customize
+   * @property {func} onClick - OnClick function for each option
+   * @property {array} options - List of options
    */
   static propTypes = {
     className: PropTypes.string,
@@ -29,10 +25,10 @@ class SelectList extends React.PureComponent {
 
     return ( 
       <ul className={classNames(className, "select__list")}>
-        {options.map((item) => (
+        {options.map((item, index) => (
           <SelectListItem 
             icon={item.icon} 
-            key={item.index} 
+            key={index} 
             title={item.title} 
             selected={item.selected} 
             onClick={onClick} 

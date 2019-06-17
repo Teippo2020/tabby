@@ -21,22 +21,19 @@ const options= [
     title: "Yo soy una opción muuucho más bonita",
     icon: "planet-outline",
     id: 3,
-    value: "Opción 3",
-    selected: false
+    value: "Opción 3"
   },
   {
     title: "Yo soy una opción meeeh bonita",
     icon: "flag-outline",
     id: 2,
-    value: "Opción 4",
-    selected: false
+    value: "Opción 4"
   },
   {
     title: "Yo soy una opción equisss",
     icon: "flag-outline",
     id: 2,
-    value: "Opción 5",
-    selected: false
+    value: "Opción 5"
   }
 ]
 storiesOf("Select", module)

@@ -10,13 +10,10 @@ import SelectList from "./SelectList";
  */
 class Select extends React.PureComponent {
   /**
-   * @property {bool} autofocus -
-   * @property {bool} disabled -
-   * @property {string} form -
-   * @property {bool} multiple -
-   * @property {string} name -
-   * @property {number} size -
-   * @property {node} children -
+   * @property {array} options - List of options
+   * @property {string} placeholder - Placeholder for the select
+   * @property {string} icon - Name of the icon if the placeholder needs one
+   * @property {string} className - ClassName if you need to customize
    */
   constructor(props) {
     super(props);
@@ -31,7 +28,10 @@ class Select extends React.PureComponent {
   }
 
   static propTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     options: PropTypes.array.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    icon: PropTypes.string,
     className: PropTypes.string
   };
 
@@ -91,9 +91,9 @@ class Select extends React.PureComponent {
   };
 
   render() {
-    const { className, options, placeholder } = this.props;
+    const { className, options } = this.props;
     const { title, listOpen, icon, selectedValue } = this.state;
-    let selectedItem = this.getSelectedItem(selectedValue);
+    const selectedItem = this.getSelectedItem(selectedValue);
 
     return (
       <div
@@ -119,7 +119,8 @@ class Select extends React.PureComponent {
 }
 
 Select.defaultProps = {
-  className: ""
+  className: "",
+  icon: ""
 };
 
 export default Select;
