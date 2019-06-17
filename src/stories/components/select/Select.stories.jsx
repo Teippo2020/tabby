@@ -43,7 +43,7 @@ storiesOf("Select", module)
   // Input
   .add("Default", () => (
 
-  <Select name="default" options={options} placeholder="Soy un select bien shidooooo" icon="world">
+  <Select name="default" options={options} placeholder="Soy un select bien shidooooo" icon="world" >
     
   </Select>
   ))

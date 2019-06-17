@@ -25,7 +25,7 @@ class SelectList extends React.PureComponent {
   };
 
   render() {
-    const { className, options, onClick } = this.props;
+    const { className, options, onClick, selectedValue} = this.props;
 
     return ( 
       <ul className={classNames(className, "select__list")}>
@@ -38,6 +38,7 @@ class SelectList extends React.PureComponent {
             onClick={onClick} 
             id={item.id}
             value={item.value}
+            selectedValue={selectedValue}
             />
         )) } 
       </ul>

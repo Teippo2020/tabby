@@ -21,18 +21,18 @@ class SelectListItem extends React.PureComponent {
     icon: PropTypes.string,
     title: PropTypes.string.isRequired,
     className: PropTypes.string,
-    selected: PropTypes.bool,
+    selectedValue: PropTypes.string,
     onClick: PropTypes.func.isRequired,
     id: PropTypes.string,
     value: PropTypes.string.isRequired
   };
 
   render() {
-    const { className, selected, title, icon, onClick, id, value } = this.props;
+    const { className, selectedValue, title, icon, onClick, id, value } = this.props;
 
     return (
       <li
-        className={classNames(className, { "selected__item": selected })}
+        className={classNames(className, { "selected__item": selectedValue === value })}
         onClick={onClick}
         id={id}
         data-value={value}

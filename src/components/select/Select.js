@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -25,7 +26,7 @@ class Select extends React.PureComponent {
       title: placeholder,
       listOpen: false,
       icon,
-      selectedValue: "Opción 5"
+      selectedValue: ""
     };
   }
 
@@ -64,33 +65,36 @@ class Select extends React.PureComponent {
       });
     }
   };
-  getSelectedItem = (value) => {
+
+  getSelectedItem = value => {
     const { options } = this.props;
     const item = options.find(_item => _item.value === value);
-    return item
-  }
-  selectItem = (event) => {
-    const itemValue = event.target.dataset.value
-    const item =  this.getSelectedItem(itemValue)
+    return item;
+  };
+
+  selectItem = event => {
+    const itemValue = event.target.dataset.value;
+    const item = this.getSelectedItem(itemValue);
     if (item.icon) {
       this.setState({
         icon: item.icon,
-        title: item.title
+        title: item.title,
+        selectedValue: itemValue
       });
     } else {
       this.setState({
-        title: item.title
+        title: item.title,
+        selectedValue: itemValue
       });
     }
     this.toggleList();
   };
 
   render() {
-
     const { className, options, placeholder } = this.props;
     const { title, listOpen, icon, selectedValue } = this.state;
-    let selectedItem = this.getSelectedItem(selectedValue)
-    
+    let selectedItem = this.getSelectedItem(selectedValue);
+
     return (
       <div
         className={classNames("select__wrapper", className)}
@@ -102,7 +106,13 @@ class Select extends React.PureComponent {
           onClick={this.toggleList}
           listOpen={listOpen}
         />
-        {listOpen && <SelectList options={options} onClick={this.selectItem}  />}
+        {listOpen && (
+          <SelectList
+            options={options}
+            onClick={this.selectItem}
+            selectedValue={selectedValue}
+          />
+        )}
       </div>
     );
   }
