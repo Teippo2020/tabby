@@ -45,7 +45,7 @@ class Input extends React.PureComponent {
         name={name}
         type={type}
         placeholder={placeholder}
-        className={classNames({ error_div: showError }, "input")}
+        className={classNames({ "error_div": showError }, "input")}
         onChange={onChange}
         onBlur={onBlur}
         defaultValue={defaultValue}
