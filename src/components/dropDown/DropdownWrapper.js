@@ -10,7 +10,7 @@ class DropdownWrapper extends React.PureComponent {
   /**
    * @property {node} children - The content of the dropdown
    * @property {string} className - Just in case you need another class
-   * @property {func} icon - The icon that triggers the dropdown
+   * @property {string} icon - The icon that triggers the dropdown
    * */
 
   static propTypes = {
@@ -30,12 +30,10 @@ class DropdownWrapper extends React.PureComponent {
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
-    window.addEventListener("resize", this.resize);
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
-    window.removeEventListener("resize", this.resize);
   }
 
   toggleDropDown = () => {
@@ -49,9 +47,6 @@ class DropdownWrapper extends React.PureComponent {
       show: false
     });
   };
-
-  resize = () => this.forceUpdate();
-
 
   handleClickOutside = event => {
     const { show } = this.state;

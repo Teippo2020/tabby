@@ -17,6 +17,16 @@ class InputTitle extends PureComponent {
    * @property {number} maxLength - The number of characters
    * @property {bool} readOnly - Determines if you can edit text
    */
+  static propTypes = {
+    initialText: PropTypes.string,
+    className: PropTypes.string,
+    placeholder: PropTypes.string,
+    onTextEdited: PropTypes.func.isRequired,
+    allowBlank: PropTypes.bool.isRequired,
+    resetOnFinish: PropTypes.bool.isRequired,
+    maxLength: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    readOnly: PropTypes.bool.isRequired
+  };
   constructor(props) {
     super(props);
 
@@ -90,17 +100,6 @@ class InputTitle extends PureComponent {
     );
   }
 }
-
-InputTitle.propTypes = {
-  initialText: PropTypes.string,
-  className: PropTypes.string,
-  placeholder: PropTypes.string,
-  onTextEdited: PropTypes.func.isRequired,
-  allowBlank: PropTypes.bool.isRequired,
-  resetOnFinish: PropTypes.bool.isRequired,
-  maxLength: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  readOnly: PropTypes.bool.isRequired
-};
 
 InputTitle.defaultProps = {
   allowBlank: true,

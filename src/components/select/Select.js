@@ -17,8 +17,8 @@ class Select extends React.PureComponent {
    */
   constructor(props) {
     super(props);
-    this.selectRef = React.createRef();
     const { placeholder, icon } = this.props;
+    this.selectRef = React.createRef();
     this.state = {
       title: placeholder,
       listOpen: false,
@@ -37,14 +37,10 @@ class Select extends React.PureComponent {
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
-    window.addEventListener("resize", this.resize);
-    document.addEventListener("keydown", this.handleEscPressed);
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
-    window.removeEventListener("resize", this.resize);
-    document.removeEventListener("keydown", this.handleEscPressed);
   }
 
   toggleList = () => {

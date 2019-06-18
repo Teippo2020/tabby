@@ -4,17 +4,17 @@ import classNames from "classnames";
 import Icon from "../icons/Icon";
 
 /**
- * @class Select -
+ * @class SelectListItem - Is an option of the SelectList
  */
 class SelectListItem extends React.PureComponent {
   /**
-   * @property {string} icon - The icon of each option
-   * @property {string} title - The title of each option
+   * @property {string} icon - The icon of the option
+   * @property {string} title - The title of the option
    * @property {string} className - ClassName if you need to customize
-   * @property {string} selectedValue - Is the selected value of the select
+   * @property {string} selectedValue - Is the selected value of the select list
    * @property {func} onClick - The function to select an option
-   * @property {string} id - The id of each option
-   * @property {string} value - The value of each option
+   * @property {string} id - The id of the option
+   * @property {string} value - The value of the option
    */
 
   static propTypes = {
@@ -23,7 +23,6 @@ class SelectListItem extends React.PureComponent {
     className: PropTypes.string,
     selectedValue: PropTypes.string,
     onClick: PropTypes.func.isRequired,
-    id: PropTypes.string,
     value: PropTypes.string.isRequired
   };
 
@@ -34,7 +33,6 @@ class SelectListItem extends React.PureComponent {
       <li
         className={classNames(className, { "selected__item": selectedValue === value })}
         onClick={onClick}
-        id={id}
         data-value={value}
       >
         {icon && <Icon icon={icon} color="gray-l2" size="R" />}
@@ -47,8 +45,7 @@ class SelectListItem extends React.PureComponent {
 SelectListItem.defaultProps = {
   icon: "",
   className: "",
-  selectedValue: "",
-  id: ""
+  selectedValue: ""
 };
 
 export default SelectListItem;

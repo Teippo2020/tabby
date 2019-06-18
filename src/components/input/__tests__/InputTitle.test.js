@@ -4,7 +4,7 @@ import sinon from "sinon";
 
 import InputTitle from "../InputTitle";
 
-describe("Input", () => {
+describe("Inputtitle", () => {
   const onTextEdited = sinon.stub();
   let props;
   beforeEach(() => {
@@ -21,9 +21,9 @@ describe("Input", () => {
   it("should trim text from input value", () => {
     const component = mount(<InputTitle {...props} />);
     const instance = component.instance();
-    instance.textInput.value = " sin espacios ";
+    instance.textInput.value = " without spaces ";
     component.simulate("blur");
-    expect(component.state().text).toEqual("sin espacios");
+    expect(component.state().text).toEqual("without spaces");
   });
   it("should return nothing", () => {
     const _onTextEdited = sinon.spy();

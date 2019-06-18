@@ -8,24 +8,21 @@ describe("Select", () => {
   let props;
   beforeEach(() => {
     props = {
-      placeholder: "Selecciona",
+      placeholder: "Select",
       options: [
         {
-          title: "Yo soy la opción 1",
+          title: "Option 1",
           icon: "top",
-          id: "1",
           value: "option 1"
         },
         {
-          title: "Yo soy la opción 2",
+          title: "Option 2",
           icon: "left",
-          id: "2",
           value: "option 2"
         },
         {
-          title: "Yo soy la opción 3",
+          title: "Option 3",
           icon: "right",
-          id: "3",
           value: "option 3"
         }
       ]

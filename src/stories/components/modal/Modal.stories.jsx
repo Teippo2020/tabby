@@ -4,39 +4,29 @@ import Modal from "../../../components/modal/Modal";
 import Select from "../../../components/select/Select";
 const options= [
   {
-    title: "Yo soy una opción bonita",
+    title: "Option 1",
     icon: "world",
-    id: 1,
-    value: "Opción 1",
-    selected: false
+    value: "Option 1"
   },
   {
-    title: "Yo soy una opción más bonita",
+    title: "Option 2",
     icon: "flag-outline",
-    id: 2,
-    value: "Opción 2",
-    selected: false
+    value: "Option 2"
   },
   {
-    title: "Yo soy una opción muuucho más bonita",
+    title: "Option 3",
     icon: "planet-outline",
-    id: 3,
-    value: "Opción 3",
-    selected: false
+    value: "Option 3"
   },
   {
-    title: "Yo soy una opción meeeh bonita",
+    title: "Option 4",
     icon: "flag-outline",
-    id: 2,
-    value: "Opción 4",
-    selected: false
+    value: "Option 4"
   },
   {
-    title: "Yo soy una opción equisss",
+    title: "Option 5",
     icon: "flag-outline",
-    id: 2,
-    value: "Opción 5",
-    selected: false
+    value: "Option 5"
   }
 ]
 storiesOf("Modal", module)
@@ -44,6 +34,6 @@ storiesOf("Modal", module)
 
   .add("Default", () => 
     <Modal show >
-      <Select name="default" options={options} placeholder="Soy un select bien shidooooo" icon="world" />
-      <p>Holiiii</p>
+      <Select name="default" options={options} placeholder="Select" icon="world" />
+      <p>Heeey</p>
     </Modal>);

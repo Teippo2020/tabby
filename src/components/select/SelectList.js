@@ -31,7 +31,6 @@ class SelectList extends React.PureComponent {
             title={item.title} 
             selected={item.selected} 
             onClick={onClick} 
-            id={item.id}
             value={item.value}
             selectedValue={selectedValue}
             />
