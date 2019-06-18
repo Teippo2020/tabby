@@ -4,14 +4,14 @@ import classNames from "classnames";
 import Dropdown from "./Dropdown";
 import ButtonIcon from "../buttons/ButtonIcon";
 /**
- * @class DropDownWrapper -
+ * @class DropDownWrapper -It contains the Dropdown and the Button Icon that triggers it
  */
 class DropdownWrapper extends React.PureComponent {
   /**
-   * @property {node} children - The content of the pop over
+   * @property {node} children - The content of the dropdown
    * @property {string} className - Just in case you need another class
-   * @property {func} icon - The function to close the pop over
-   */
+   * @property {func} icon - The icon that triggers the dropdown
+   * */
 
   static propTypes = {
     icon: PropTypes.string,

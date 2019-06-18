@@ -22,6 +22,16 @@ import PopOver from "./components/popOver/PopOver";
 import PopOverCard from "./components/popOver/PopOverCard";
 import PopOverHeader from "./components/popOver/PopOverHeader";
 
+//Select
+import Select from "./components/select/Select";
+
+//DropDown
+import DropdownWrapper from "./components/dropDown/DropdownWrapper";
+
+//Inputs
+import Input from "./components/input/Input";
+import InputTitle from "./components/input/InputTitle"
+
 import "./index.scss";
 
 export {
@@ -37,5 +47,9 @@ export {
 	Icon,
 	PopOver,
 	PopOverCard,
-	PopOverHeader
+	PopOverHeader,
+	Select,
+	DropdownWrapper,
+	Input,
+	InputTitle
 };

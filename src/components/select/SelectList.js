@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import ButtonIcon from "../buttons/ButtonIcon";
 import SelectListItem from "./SelectListItem";
 
 /**
- * @class Select -
+ * @class SelectList - The list of options of the select
  */
 class SelectList extends React.PureComponent {
   /**

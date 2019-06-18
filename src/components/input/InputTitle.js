@@ -6,7 +6,17 @@ import autosize from "autosize";
 
 import classNames from "classnames";
 
+/**
+ * @class InputTitle - It is an input for titles where they look as text
+ */
 class InputTitle extends PureComponent {
+    /**
+   * @property {string} placeholder -The placeholder of the input
+   * @property {string} className - The type of the input
+   * @property {string} initialText- The placeholder of the input
+   * @property {number} maxLength - The number of characters
+   * @property {bool} readOnly - Determines if you can edit text
+   */
   constructor(props) {
     super(props);
 

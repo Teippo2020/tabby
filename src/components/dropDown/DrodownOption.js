@@ -4,14 +4,15 @@ import classNames from "classnames";
 import Icon from "../icons/Icon";
 
 /**
- * @class DropDown- Is the card for the pop over and it contains a cross icon by default
+ * @class DropDown- Is the option of the Dropdown
  */
 class DropdownOption extends React.PureComponent {
   /**
    * @property {string} className - Just in case you need another class
-   * @property {string} title - The title of the pop over
-   * @property {bool} left - The value of the left position of the pop over card
-   * @property {number} top - The value of the top position of the pop over card
+   * @property {func} onClick - The function of each option
+   * @property {string} iconDirection - Determines if the icon is on the left or rigth side
+   * @property {string} text - The title of each option
+   * @property {string} icon - The icon of each option
    */
   static propTypes = {
     className: PropTypes.string,

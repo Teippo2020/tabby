@@ -8,13 +8,13 @@ import Icon from "../icons/Icon";
  */
 class SelectListItem extends React.PureComponent {
   /**
-   * @property {bool} icon -
-   * @property {bool} title -
-   * @property {string} className -
-   * @property {bool} selected -
-   * @property {string} onClick -
-   * @property {number} id -
-   * @property {node} value -
+   * @property {string} icon - The icon of each option
+   * @property {string} title - The title of each option
+   * @property {string} className - ClassName if you need to customize
+   * @property {string} selectedValue - Is the selected value of the select
+   * @property {func} onClick - The function to select an option
+   * @property {string} id - The id of each option
+   * @property {string} value - The value of each option
    */
 
   static propTypes = {

@@ -6,7 +6,7 @@ import SelectHeader from "./SelectHeader";
 import SelectList from "./SelectList";
 
 /**
- * @class Select -
+ * @class Select - It is the wrapper for the Select Header and the Select List
  */
 class Select extends React.PureComponent {
   /**

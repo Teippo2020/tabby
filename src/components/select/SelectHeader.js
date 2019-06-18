@@ -2,20 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import ButtonIcon from "../buttons/ButtonIcon";
-import Icon from "../icons/Icon"
+import Icon from "../icons/Icon";
 
 /**
- * @class Select -
+ * @class SelectHeader - It is the title of the select
  */
 class SelectHeader extends React.PureComponent {
   /**
-   * @property {bool} autofocus -
-   * @property {bool} disabled -
-   * @property {string} form -
-   * @property {bool} multiple -
-   * @property {string} name -
-   * @property {number} size -
-   * @property {node} children -
+   * @property {string} icon - The icon of the Header
+   * @property {string} title - The title of the header
+   * @property {string} className - ClassName if you need to customize
+   * @property {func} onClick - The function to open the Select List
+   * @property {bool} listOpen - Determines if the Select List is visible
    */
   static propTypes = {
     icon: PropTypes.string,

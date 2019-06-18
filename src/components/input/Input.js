@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 /**
- * @class Input - It is a button that works as an icon, without text
+ * @class Input - It is a html input
  */
 class Input extends React.PureComponent {
   /**
-   * @property {string} name -The name of the icon
-   * @property {string} type - The color of the icon
-   * @property {string} placeholder- The size of the icon
-   * @property {func} onBlur - The function triggered by the button
-   * @property {func} onChange - The function triggered by the button
-   * @property {bool} showError - The function triggered by the button
-   * @property {string} defaultValue - The function triggered by the button
-   * @property {func} innerRef - The function triggered by the button
+   * @property {string} name -The name of the input
+   * @property {string} type - The type of the input
+   * @property {string} placeholder- The placeholder of the input
+   * @property {func} onBlur - The function triggered when the input is onBlur
+   * @property {func} onChange - The function triggered when the input value change
+   * @property {bool} showError - Determines if the input has a different class
+   * @property {string} defaultValue - The Default Value of the input
+   * @property {func} innerRef - The function to create a Ref for the input
    */
   static propTypes = {
     name: PropTypes.string.isRequired,

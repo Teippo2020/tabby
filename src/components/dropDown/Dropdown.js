@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 /**
- * @class DropDown- Is the card for the pop over and it contains a cross icon by default
+ * @class DropDown- It contains the list of options
  */
 class Dropdown extends React.PureComponent {
   /**
