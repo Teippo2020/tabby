@@ -38,5 +38,5 @@ describe("Input", () => {
   it("should has class error_div with showError prop", () => {
     const component = shallow(<Input {...props} showError={true} />);
     expect(component.hasClass("error_div")).toBeTruthy();
-  })
+  });
 });
