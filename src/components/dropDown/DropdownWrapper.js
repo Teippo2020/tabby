@@ -10,11 +10,7 @@ class DropdownWrapper extends React.PureComponent {
   /**
    * @property {node} children - The content of the pop over
    * @property {string} className - Just in case you need another class
-   * @property {func} onClose - The function to close the pop over
-   * @property {node} activator - The button/link that triggers the pop over
-   * @property {bool} show - Determines if the popOver is visible
-   * @property {string} title - The title of the pop over
-   * @property {bool} back - Determines if the pop over has a back button
+   * @property {func} icon - The function to close the pop over
    */
 
   static propTypes = {
@@ -35,13 +31,11 @@ class DropdownWrapper extends React.PureComponent {
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
     window.addEventListener("resize", this.resize);
-    document.addEventListener("keydown", this.handleEscPressed);
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
     window.removeEventListener("resize", this.resize);
-    document.removeEventListener("keydown", this.handleEscPressed);
   }
 
   toggleDropDown = () => {
@@ -58,13 +52,6 @@ class DropdownWrapper extends React.PureComponent {
 
   resize = () => this.forceUpdate();
 
-  handleEscPressed = event => {
-    const { onClose } = this.props;
-    // keyCode 27 = ESC key
-    if (event.keyCode === 27) {
-      onClose();
-    }
-  };
 
   handleClickOutside = event => {
     const { show } = this.state;
@@ -74,7 +61,7 @@ class DropdownWrapper extends React.PureComponent {
       show
     ) {
       this.setState({
-        show:false
+        show: false
       });
     }
   };
@@ -83,18 +70,14 @@ class DropdownWrapper extends React.PureComponent {
     const { children, className, icon } = this.props;
 
     return (
-      <div className="dropdown__wrapper" ref={this.dropdownRef}>
+      <div className={classNames("dropdown__wrapper", className)} ref={this.dropdownRef}>
         <div ref={this.activatorRef} id="activator-dropdown">
-          <ButtonIcon
-            icon={icon}
-            onClick={this.toggleDropDown}
-          />
+          <ButtonIcon icon={icon} onClick={this.toggleDropDown} />
         </div>
         {this.state.show && 
           <Dropdown onClose={this.onClose} className={className}>
             {children}
           </Dropdown>
-
         }
       </div>
     );

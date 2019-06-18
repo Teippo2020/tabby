@@ -15,9 +15,10 @@ class DropdownOption extends React.PureComponent {
    */
   static propTypes = {
     className: PropTypes.string,
-    right: PropTypes.bool,
     onClick: PropTypes.func.isRequired,
-    iconDirection: PropTypes.string
+    iconDirection: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.string
   };
 
   render() {
@@ -43,7 +44,7 @@ class DropdownOption extends React.PureComponent {
 
 DropdownOption.defaultProps = {
   className: "",
-  right: false,
-  iconDirection: "left"
+  iconDirection: "left",
+  icon: ""
 };
 export default DropdownOption;
