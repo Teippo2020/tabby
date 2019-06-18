@@ -48,7 +48,6 @@ ShallowWrapper {
         <SelectListItem
           className=""
           icon="top"
-          id="1"
           onClick={[Function]}
           selectedValue=""
           title="Yo soy la opción 1"
@@ -57,7 +56,6 @@ ShallowWrapper {
         <SelectListItem
           className=""
           icon="left"
-          id="2"
           onClick={[Function]}
           selectedValue=""
           title="Yo soy la opción 2"
@@ -66,7 +64,6 @@ ShallowWrapper {
         <SelectListItem
           className=""
           icon="right"
-          id="3"
           onClick={[Function]}
           selectedValue=""
           title="Yo soy la opción 3"
@@ -84,7 +81,6 @@ ShallowWrapper {
         "props": Object {
           "className": "",
           "icon": "top",
-          "id": "1",
           "onClick": [Function],
           "selected": undefined,
           "selectedValue": "",
@@ -102,7 +98,6 @@ ShallowWrapper {
         "props": Object {
           "className": "",
           "icon": "left",
-          "id": "2",
           "onClick": [Function],
           "selected": undefined,
           "selectedValue": "",
@@ -120,7 +115,6 @@ ShallowWrapper {
         "props": Object {
           "className": "",
           "icon": "right",
-          "id": "3",
           "onClick": [Function],
           "selected": undefined,
           "selectedValue": "",
@@ -144,7 +138,6 @@ ShallowWrapper {
           <SelectListItem
             className=""
             icon="top"
-            id="1"
             onClick={[Function]}
             selectedValue=""
             title="Yo soy la opción 1"
@@ -153,7 +146,6 @@ ShallowWrapper {
           <SelectListItem
             className=""
             icon="left"
-            id="2"
             onClick={[Function]}
             selectedValue=""
             title="Yo soy la opción 2"
@@ -162,7 +154,6 @@ ShallowWrapper {
           <SelectListItem
             className=""
             icon="right"
-            id="3"
             onClick={[Function]}
             selectedValue=""
             title="Yo soy la opción 3"
@@ -180,7 +171,6 @@ ShallowWrapper {
           "props": Object {
             "className": "",
             "icon": "top",
-            "id": "1",
             "onClick": [Function],
             "selected": undefined,
             "selectedValue": "",
@@ -198,7 +188,6 @@ ShallowWrapper {
           "props": Object {
             "className": "",
             "icon": "left",
-            "id": "2",
             "onClick": [Function],
             "selected": undefined,
             "selectedValue": "",
@@ -216,7 +205,6 @@ ShallowWrapper {
           "props": Object {
             "className": "",
             "icon": "right",
-            "id": "3",
             "onClick": [Function],
             "selected": undefined,
             "selectedValue": "",

@@ -10,25 +10,22 @@ ShallowWrapper {
       Array [
         Object {
           "icon": "top",
-          "id": "1",
-          "title": "Yo soy la opción 1",
+          "title": "Option 1",
           "value": "option 1",
         },
         Object {
           "icon": "left",
-          "id": "2",
-          "title": "Yo soy la opción 2",
+          "title": "Option 2",
           "value": "option 2",
         },
         Object {
           "icon": "right",
-          "id": "3",
-          "title": "Yo soy la opción 3",
+          "title": "Option 3",
           "value": "option 3",
         },
       ]
     }
-    placeholder="Selecciona"
+    placeholder="Select"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -50,7 +47,7 @@ ShallowWrapper {
           icon=""
           listOpen={false}
           onClick={[Function]}
-          title="Selecciona"
+          title="Select"
         />,
         false,
       ],
@@ -69,7 +66,7 @@ ShallowWrapper {
           "icon": "",
           "listOpen": false,
           "onClick": [Function],
-          "title": "Selecciona",
+          "title": "Select",
         },
         "ref": null,
         "rendered": null,
@@ -91,7 +88,7 @@ ShallowWrapper {
             icon=""
             listOpen={false}
             onClick={[Function]}
-            title="Selecciona"
+            title="Select"
           />,
           false,
         ],
@@ -110,7 +107,7 @@ ShallowWrapper {
             "icon": "",
             "listOpen": false,
             "onClick": [Function],
-            "title": "Selecciona",
+            "title": "Select",
           },
           "ref": null,
           "rendered": null,

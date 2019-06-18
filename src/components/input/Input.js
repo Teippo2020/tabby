@@ -25,7 +25,7 @@ class Input extends React.PureComponent {
     showError: PropTypes.bool.isRequired,
     defaultValue: PropTypes.string,
     innerRef: PropTypes.func,
-    autoComplete: PropTypes.bool
+    autoComplete: PropTypes.string
   };
 
   render() {
@@ -59,7 +59,7 @@ Input.defaultProps = {
   placeholder: "",
   defaultValue: "",
   innerRef: () => {},
-  autoComplete: false
+  autoComplete: "false"
 };
 
 export default Input;

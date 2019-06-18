@@ -6,7 +6,6 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <SelectListItem
     className=""
     icon=""
-    id=""
     onClick={[Function]}
     selectedValue=""
     title="Option"
@@ -32,7 +31,6 @@ ShallowWrapper {
       ],
       "className": "",
       "data-value": "option",
-      "id": "",
       "onClick": [Function],
     },
     "ref": null,
@@ -54,7 +52,6 @@ ShallowWrapper {
         ],
         "className": "",
         "data-value": "option",
-        "id": "",
         "onClick": [Function],
       },
       "ref": null,

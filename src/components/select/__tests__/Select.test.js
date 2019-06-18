@@ -51,7 +51,7 @@ describe("Select", () => {
     const component = mount(<Select {...props} onClick={click} />);
     component.find("SelectHeader").simulate("click");
     component.find({ value: "option 2" }).simulate("click");
-    expect(component.state().title).toEqual("Yo soy la opción 2");
+    expect(component.state().title).toEqual("Option 2");
   });
   it("should chnage state when you click outside", () => {
     const wrapper = mount(
