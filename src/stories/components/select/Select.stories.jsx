@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Modal from "../../../components/modal/Modal";
-import Select from "../../../components/select/Select";
+import Select from "../../../components/select/Select"
+
 const options= [
   {
     title: "Option 1",
@@ -29,11 +29,12 @@ const options= [
     value: "Option 5"
   }
 ]
-storiesOf("Modal", module)
-  // Modal
+storiesOf("Select", module)
+  // Input
+  .add("Default", () => (
 
-  .add("Default", () => 
-    <Modal show >
-      <Select name="default" options={options} placeholder="Select" icon="world" />
-      <p>Heeey</p>
-    </Modal>);
+  <Select name="default" options={options} placeholder="Select" icon="world" >
+    
+  </Select>
+  ))
+  ;
