@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
 import PropTypes from "prop-types";
 
@@ -9,7 +9,7 @@ import classNames from "classnames";
 /**
  * @class InputTitle - It is an input for titles where they look as text
  */
-class InputTitle extends PureComponent {
+class InputTitle extends React.PureComponent {
     /**
    * @property {string} placeholder -The placeholder of the input
    * @property {string} className - The type of the input
