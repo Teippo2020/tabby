@@ -11,7 +11,7 @@ class Icon extends React.PureComponent {
    * @property {string} color - To define icon's color
    */
   static propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.string,
     size: PropTypes.string,
     color: PropTypes.string
   };
@@ -24,7 +24,8 @@ class Icon extends React.PureComponent {
 
 Icon.defaultProps = {
   size: "XXL",
-  color: "gray-l1"
+  color: "gray-l1",
+  icon:'cross'
 };
 
 export default Icon;

@@ -29,8 +29,10 @@ ShallowWrapper {
         >
           <ButtonIcon
             className=""
-            iconName="clear"
+            color="gray-l2"
+            icon="cross"
             onClick={[Function]}
+            size="L"
           />
         </div>,
         <div
@@ -50,8 +52,10 @@ ShallowWrapper {
         "props": Object {
           "children": <ButtonIcon
             className=""
-            iconName="clear"
+            color="gray-l2"
+            icon="cross"
             onClick={[Function]}
+            size="L"
           />,
           "className": "icons",
         },
@@ -62,8 +66,10 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "className": "",
-            "iconName": "clear",
+            "color": "gray-l2",
+            "icon": "cross",
             "onClick": [Function],
+            "size": "L",
           },
           "ref": null,
           "rendered": null,
@@ -106,8 +112,10 @@ ShallowWrapper {
           >
             <ButtonIcon
               className=""
-              iconName="clear"
+              color="gray-l2"
+              icon="cross"
               onClick={[Function]}
+              size="L"
             />
           </div>,
           <div
@@ -127,8 +135,10 @@ ShallowWrapper {
           "props": Object {
             "children": <ButtonIcon
               className=""
-              iconName="clear"
+              color="gray-l2"
+              icon="cross"
               onClick={[Function]}
+              size="L"
             />,
             "className": "icons",
           },
@@ -139,8 +149,10 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "className": "",
-              "iconName": "clear",
+              "color": "gray-l2",
+              "icon": "cross",
               "onClick": [Function],
+              "size": "L",
             },
             "ref": null,
             "rendered": null,
@@ -184,6 +196,7 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
+          "getDerivedStateFromError": true,
           "getDerivedStateFromProps": Object {
             "hasShouldComponentUpdateBug": false,
           },
@@ -194,7 +207,9 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;

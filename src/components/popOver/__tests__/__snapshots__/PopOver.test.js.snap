@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopOver should render correctly with default state 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PopOver
+    activator={
+      <ButtonText
+        className=""
+        color="blue"
+        onClick={[Function]}
+        text="Activator"
+      />
+    }
+    back={false}
+    className=""
+    onClose={[Function]}
+    show={false}
+    title=""
+  >
+    <div />
+  </PopOver>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          id="activator"
+        >
+          <ButtonText
+            className=""
+            color="blue"
+            onClick={[Function]}
+            text="Activator"
+          />
+        </div>,
+        <PopOverCard
+          back={false}
+          className=""
+          left={0}
+          onBack={null}
+          onClose={[Function]}
+          show={false}
+          title=""
+          top={0}
+        >
+          <div />
+        </PopOverCard>,
+      ],
+      "className": "pop-over--wrapper",
+    },
+    "ref": Object {
+      "current": null,
+    },
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ButtonText
+            className=""
+            color="blue"
+            onClick={[Function]}
+            text="Activator"
+          />,
+          "id": "activator",
+        },
+        "ref": Object {
+          "current": null,
+        },
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "",
+            "color": "blue",
+            "onClick": [Function],
+            "text": "Activator",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "back": false,
+          "children": <div />,
+          "className": "",
+          "left": 0,
+          "onBack": null,
+          "onClose": [Function],
+          "show": false,
+          "title": "",
+          "top": 0,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            id="activator"
+          >
+            <ButtonText
+              className=""
+              color="blue"
+              onClick={[Function]}
+              text="Activator"
+            />
+          </div>,
+          <PopOverCard
+            back={false}
+            className=""
+            left={0}
+            onBack={null}
+            onClose={[Function]}
+            show={false}
+            title=""
+            top={0}
+          >
+            <div />
+          </PopOverCard>,
+        ],
+        "className": "pop-over--wrapper",
+      },
+      "ref": Object {
+        "current": null,
+      },
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ButtonText
+              className=""
+              color="blue"
+              onClick={[Function]}
+              text="Activator"
+            />,
+            "id": "activator",
+          },
+          "ref": Object {
+            "current": null,
+          },
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "",
+              "color": "blue",
+              "onClick": [Function],
+              "text": "Activator",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "back": false,
+            "children": <div />,
+            "className": "",
+            "left": 0,
+            "onBack": null,
+            "onClose": [Function],
+            "show": false,
+            "title": "",
+            "top": 0,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;

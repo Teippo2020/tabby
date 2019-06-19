@@ -85,6 +85,8 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -188,11 +190,11 @@ function da(a,b){return {$$typeof:p,type:a.type,key:b,ref:a.ref,props:a.props,_o
 function R(a){a.result=null;a.keyPrefix=null;a.func=null;a.context=null;a.count=0;10>P.length&&P.push(a);}
 function S(a,b,d,c){var e=typeof a;if("undefined"===e||"boolean"===e)a=null;var g=!1;if(null===a)g=!0;else switch(e){case "string":case "number":g=!0;break;case "object":switch(a.$$typeof){case p:case q:g=!0;}}if(g)return d(c,a,""===b?"."+T(a,0):b),1;g=0;b=""===b?".":b+":";if(Array.isArray(a))for(var h=0;h<a.length;h++){e=a[h];var f=b+T(e,h);g+=S(e,f,d,c);}else if(null===a||"object"!==typeof a?f=null:(f=A&&a[A]||a["@@iterator"],f="function"===typeof f?f:null),"function"===typeof f)for(a=f.call(a),h=
 0;!(e=a.next()).done;)e=e.value,f=b+T(e,h++),g+=S(e,f,d,c);else"object"===e&&(d=""+a,B("31","[object Object]"===d?"object with keys {"+Object.keys(a).join(", ")+"}":d,""));return g}function U(a,b,d){return null==a?0:S(a,"",b,d)}function T(a,b){return "object"===typeof a&&null!==a&&null!=a.key?escape(a.key):b.toString(36)}function ea(a,b){a.func.call(a.context,b,a.count++);}
-function fa(a,b,d){var c=a.result,e=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,c,d,function(a){return a}):null!=a&&(N(a)&&(a=da(a,e+(!a.key||b&&b.key===a.key?"":(""+a.key).replace(O,"$&/")+"/")+d)),c.push(a));}function V(a,b,d,c,e){var g="";null!=d&&(g=(""+d).replace(O,"$&/")+"/");b=Q(b,g,c,e);U(a,fa,b);R(b);}function W(){var a=I.current;null===a?B("307"):void 0;return a}
+function fa(a,b,d){var c=a.result,e=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,c,d,function(a){return a}):null!=a&&(N(a)&&(a=da(a,e+(!a.key||b&&b.key===a.key?"":(""+a.key).replace(O,"$&/")+"/")+d)),c.push(a));}function V(a,b,d,c,e){var g="";null!=d&&(g=(""+d).replace(O,"$&/")+"/");b=Q(b,g,c,e);U(a,fa,b);R(b);}function W(){var a=I.current;null===a?B("321"):void 0;return a}
 var X={Children:{map:function(a,b,d){if(null==a)return a;var c=[];V(a,c,null,b,d);return c},forEach:function(a,b,d){if(null==a)return a;b=Q(null,null,b,d);U(a,ea,b);R(b);},count:function(a){return U(a,function(){return null},null)},toArray:function(a){var b=[];V(a,b,null,function(a){return a});return b},only:function(a){N(a)?void 0:B("143");return a}},createRef:function(){return {current:null}},Component:E,PureComponent:G,createContext:function(a,b){void 0===b&&(b=null);a={$$typeof:w,_calculateChangedBits:b,
 _currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null};a.Provider={$$typeof:v,_context:a};return a.Consumer=a},forwardRef:function(a){return {$$typeof:y,render:a}},lazy:function(a){return {$$typeof:ba,_ctor:a,_status:-1,_result:null}},memo:function(a,b){return {$$typeof:aa,type:a,compare:void 0===b?null:b}},useCallback:function(a,b){return W().useCallback(a,b)},useContext:function(a,b){return W().useContext(a,b)},useEffect:function(a,b){return W().useEffect(a,b)},useImperativeHandle:function(a,
 b,d){return W().useImperativeHandle(a,b,d)},useDebugValue:function(){},useLayoutEffect:function(a,b){return W().useLayoutEffect(a,b)},useMemo:function(a,b){return W().useMemo(a,b)},useReducer:function(a,b,d){return W().useReducer(a,b,d)},useRef:function(a){return W().useRef(a)},useState:function(a){return W().useState(a)},Fragment:r,StrictMode:t,Suspense:z,createElement:M,cloneElement:function(a,b,d){null===a||void 0===a?B("267",a):void 0;var c=void 0,e=objectAssign({},a.props),g=a.key,h=a.ref,f=a._owner;if(null!=
-b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c]);}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l;}return {$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.4",
+b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c]);}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l;}return {$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.6",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentOwner:J,assign:objectAssign}},Y={default:X},Z=Y&&X||Y;var react_production_min=Z.default||Z;
 
 var react_development = createCommonjsModule(function (module) {
@@ -207,7 +209,7 @@ var checkPropTypes$$1 = checkPropTypes;
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.4';
+var ReactVersion = '16.8.6';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -1620,7 +1622,7 @@ function memo(type, compare) {
 
 function resolveDispatcher() {
   var dispatcher = ReactCurrentDispatcher.current;
-  !(dispatcher !== null) ? invariant(false, 'Hooks can only be called inside the body of a function component. (https://fb.me/react-invalid-hook-call)') : void 0;
+  !(dispatcher !== null) ? invariant(false, 'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.') : void 0;
   return dispatcher;
 }
 
@@ -2164,6 +2166,55 @@ _defineProperty(ModalBackground, "propTypes", {
 });
 
 /**
+ * @class Icon - Is the component to use icons from our font-icon
+ */
+
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
+
+  function Icon() {
+    _classCallCheck(this, Icon);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
+
+  _createClass(Icon, [{
+    key: "render",
+
+    /**
+     * @property {string} icon - The function to close the modal
+     * @property {string} size - to define icon's size
+     * @property {string} color - To define icon's color
+     */
+    value: function render() {
+      var _this$props = this.props,
+          icon = _this$props.icon,
+          size = _this$props.size,
+          color = _this$props.color;
+      return react.createElement("i", {
+        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+      });
+    }
+  }]);
+
+  return Icon;
+}(react.PureComponent);
+
+_defineProperty(Icon, "propTypes", {
+  icon: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string
+});
+
+Icon.defaultProps = {
+  size: "XXL",
+  color: "gray-l1",
+  icon: 'cross'
+};
+
+/**
  * @class ButtonIcon - It is a button that works as an icon, without text
  */
 
@@ -2182,22 +2233,28 @@ function (_React$PureComponent) {
     key: "render",
 
     /**
-     * @property {string} iconName -The name of the icon
+     * @property {string} icon -The name of the icon
+     * @property {string} color - The color of the icon
+     * @property {string} size- The size of the icon
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
      */
     value: function render() {
       var _this$props = this.props,
-          iconName = _this$props.iconName,
+          icon = _this$props.icon,
+          color = _this$props.color,
+          size = _this$props.size,
           onClick = _this$props.onClick,
           className = _this$props.className;
       return react.createElement("button", {
         type: "submit",
         className: classnames("btn", "btn--icon", className),
         onClick: onClick
-      }, react.createElement("i", {
-        className: "material-icons"
-      }, " ", iconName, " "));
+      }, react.createElement(Icon, {
+        icon: icon,
+        color: color,
+        size: size
+      }));
     }
   }]);
 
@@ -2205,17 +2262,21 @@ function (_React$PureComponent) {
 }(react.PureComponent);
 
 _defineProperty(ButtonIcon, "propTypes", {
-  iconName: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string
 });
 
 ButtonIcon.defaultProps = {
-  className: ""
+  className: "",
+  size: "XXL",
+  color: "gray-l1"
 };
 
 /**
- * @class ModalCard - Is the card for the modals and it contains a clear icon by default
+ * @class ModalCard - Is the card for the modals and it contains a cross icon by default
  */
 
 var ModalCard =
@@ -2247,7 +2308,9 @@ function (_React$PureComponent) {
       }, react.createElement("div", {
         className: "icons"
       }, react.createElement(ButtonIcon, {
-        iconName: "clear",
+        icon: "cross",
+        color: "gray-l2",
+        size: "L",
         onClick: onClose
       })), react.createElement("div", {
         className: "modal--content"
@@ -2568,54 +2631,1328 @@ _defineProperty(Medal, "propTypes", {
 });
 
 /**
- * @class Icon - Is the component to use icons from our font-icon
+ * @class PopOver Header - Is the title of the pop over
  */
 
-var Icon =
+var PopOverHeader =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(Icon, _React$PureComponent);
+  _inherits(PopOverHeader, _React$PureComponent);
 
-  function Icon() {
-    _classCallCheck(this, Icon);
+  function PopOverHeader() {
+    _classCallCheck(this, PopOverHeader);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(PopOverHeader).apply(this, arguments));
   }
 
-  _createClass(Icon, [{
+  _createClass(PopOverHeader, [{
     key: "render",
 
     /**
-     * @property {string} icon - The function to close the modal
-     * @property {string} size - to define icon's size
-     * @property {string} color - To define icon's color
+     * @property {string} title - Title of the pop over
+     */
+    value: function render() {
+      var title = this.props.title;
+      return react.createElement("div", {
+        className: "pop-over--header"
+      }, react.createElement("h2", null, title));
+    }
+  }]);
+
+  return PopOverHeader;
+}(react.PureComponent);
+
+_defineProperty(PopOverHeader, "propTypes", {
+  title: PropTypes.string.isRequired
+});
+
+/**
+ * @class PopOver Card - Is the card for the pop over and it contains a cross icon by default
+ */
+
+var PopOverCard =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(PopOverCard, _React$PureComponent);
+
+  function PopOverCard() {
+    _classCallCheck(this, PopOverCard);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(PopOverCard).apply(this, arguments));
+  }
+
+  _createClass(PopOverCard, [{
+    key: "render",
+
+    /**
+     * @property {bool} show - Determines if the pop over is visible
+     * @property {func} onClose - The function to close the modal
+     * @property {node} children - The content of the modal
+     * @property {string} className - Just in case you need another class
+     * @property {string} title - The title of the pop over
+     * @property {bool} back - Determines if the pop over has a back button
+     * @property {func} onBack - The function to go back
+     * @property {number} left - The value of the left position of the pop over card
+     * @property {number} top - The value of the top position of the pop over card
      */
     value: function render() {
       var _this$props = this.props,
+          onClose = _this$props.onClose,
+          children = _this$props.children,
+          className = _this$props.className,
+          show = _this$props.show,
+          title = _this$props.title,
+          onBack = _this$props.onBack,
+          back = _this$props.back,
+          left = _this$props.left,
+          top = _this$props.top;
+      return react.createElement("div", {
+        style: {
+          left: left,
+          top: top
+        },
+        className: classnames("pop-over", className, {
+          "visibility-hidden": !show
+        })
+      }, react.createElement("div", {
+        className: "icons"
+      }, react.createElement(ButtonIcon, {
+        icon: "left",
+        onClick: onBack,
+        className: classnames({
+          "visibility-hidden": !back
+        })
+      }), react.createElement(PopOverHeader, {
+        title: title
+      }), react.createElement(ButtonIcon, {
+        icon: "cross",
+        onClick: onClose
+      })), react.createElement("div", {
+        className: "pop-over--content"
+      }, children));
+    }
+  }]);
+
+  return PopOverCard;
+}(react.PureComponent);
+
+_defineProperty(PopOverCard, "propTypes", {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  onBack: PropTypes.func,
+  back: PropTypes.bool,
+  className: PropTypes.string,
+  left: PropTypes.number,
+  top: PropTypes.number
+});
+
+PopOverCard.defaultProps = {
+  className: "",
+  title: "",
+  back: false,
+  onBack: null,
+  left: 0,
+  top: 0
+};
+
+/**
+ * @function getActivatorPosition - Returns width, height and position of the activator
+ * @param {node} node
+ */
+function getActivatorPosition(activator) {
+  if (!activator) {
+    return {};
+  }
+
+  var _activator$firstChild = activator.firstChild.getBoundingClientRect(),
+      width = _activator$firstChild.width,
+      height = _activator$firstChild.height;
+
+  var _activator$getBoundin = activator.getBoundingClientRect(),
+      left = _activator$getBoundin.left,
+      top = _activator$getBoundin.top,
+      right = _activator$getBoundin.right,
+      bottom = _activator$getBoundin.bottom;
+
+  return {
+    top: top,
+    left: left,
+    right: right,
+    bottom: bottom,
+    width: width,
+    height: height
+  };
+}
+/**
+ * @function getPopDimensions - Returns width, height of the popOver
+ * @param {node} pop
+ */
+
+function getPopDimensions(pop) {
+  if (!pop) {
+    return {};
+  }
+
+  var _pop$getBoundingClien = pop.getBoundingClientRect(),
+      width = _pop$getBoundingClien.width,
+      height = _pop$getBoundingClien.height;
+
+  var popWidth = width;
+  var popHeight = height;
+  return {
+    popWidth: popWidth,
+    popHeight: popHeight
+  };
+}
+/**
+ * @function popXPosition - Returns x position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
+
+function popXPosition(activator, pop) {
+  var _getActivatorPosition = getActivatorPosition(activator),
+      left = _getActivatorPosition.left;
+
+  var popUpElement = pop.lastChild;
+
+  var _getPopDimensions = getPopDimensions(popUpElement),
+      popWidth = _getPopDimensions.popWidth;
+
+  var windowWidth = window.innerWidth;
+  var activatorOffsetLeft = activator.offsetLeft;
+  var popWidthAndLeft = popWidth + left;
+  var diff = popWidthAndLeft - windowWidth;
+  var leftPosition = activatorOffsetLeft;
+
+  if (windowWidth < popWidthAndLeft) {
+    leftPosition = activatorOffsetLeft - diff - 16;
+  }
+
+  return leftPosition;
+}
+/**
+ * @function popYPosition - Returns y position of the pop over card
+ * @param {ref} pop - Is the pop over card as reference
+ * @param {ref} activator - Is the button that triggers the pop over as reference
+ */
+
+function popYPosition(activator, pop) {
+  var _getActivatorPosition2 = getActivatorPosition(activator),
+      top = _getActivatorPosition2.top,
+      height = _getActivatorPosition2.height;
+
+  var popUpElement = pop.lastChild;
+
+  var _getPopDimensions2 = getPopDimensions(popUpElement),
+      popHeight = _getPopDimensions2.popHeight;
+
+  var windowHeight = window.innerHeight;
+  var activatorOffsetTop = activator.offsetTop;
+  var popHeightAndTop = popHeight + top;
+  var diff = popHeightAndTop - windowHeight;
+  var topPosition = 0;
+
+  if (windowHeight < popHeightAndTop) {
+    topPosition = activatorOffsetTop - diff - 16;
+  } else if (windowHeight > popHeightAndTop) {
+    topPosition = activatorOffsetTop + height + 8;
+  }
+
+  return topPosition;
+}
+
+/**
+ * @class PopOver - It contains the pop over card and its activator
+ */
+
+var PopOver =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(PopOver, _React$PureComponent);
+
+  /**
+   * @property {node} children - The content of the pop over
+   * @property {string} className - Just in case you need another class
+   * @property {func} onClose - The function to close the pop over
+   * @property {node} activator - The button/link that triggers the pop over
+   * @property {bool} show - Determines if the popOver is visible
+   * @property {string} title - The title of the pop over
+   * @property {bool} back - Determines if the pop over has a back button
+   */
+  function PopOver(props) {
+    var _this;
+
+    _classCallCheck(this, PopOver);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PopOver).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "resize", function () {
+      return _this.forceUpdate();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleEscPressed", function (event) {
+      var onClose = _this.props.onClose; // keyCode 27 = ESC key
+
+      if (event.keyCode === 27) {
+        onClose();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (event) {
+      if (_this.popRef.current && !_this.popRef.current.contains(event.target) && _this.props.show) {
+        _this.props.onClose();
+      }
+    });
+
+    _this.activatorRef = react.createRef();
+    _this.popRef = react.createRef();
+    return _this;
+  }
+
+  _createClass(PopOver, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener("mousedown", this.handleClickOutside);
+      window.addEventListener("resize", this.resize);
+      document.addEventListener("keydown", this.handleEscPressed);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener("mousedown", this.handleClickOutside);
+      window.removeEventListener("resize", this.resize);
+      document.removeEventListener("keydown", this.handleEscPressed);
+    }
+  }, {
+    key: "getStyle",
+    value: function getStyle() {
+      var activator = this.activatorRef.current;
+
+      if (!activator) {
+        return {};
+      }
+
+      var pop = this.popRef.current;
+      var leftPosition = popXPosition(activator, pop);
+      var topPosition = popYPosition(activator, pop);
+      return {
+        left: "".concat(leftPosition, "px"),
+        top: "".concat(topPosition, "px")
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          onClose = _this$props.onClose,
+          children = _this$props.children,
+          className = _this$props.className,
+          activator = _this$props.activator,
+          title = _this$props.title,
+          back = _this$props.back,
+          onBack = _this$props.onBack,
+          show = _this$props.show;
+
+      var _this$getStyle = this.getStyle(),
+          left = _this$getStyle.left,
+          top = _this$getStyle.top;
+
+      return (// eslint-disable-next-line react/jsx-filename-extension
+        react.createElement("div", {
+          className: "pop-over--wrapper",
+          ref: this.popRef
+        }, react.createElement("div", {
+          ref: this.activatorRef,
+          id: "activator"
+        }, activator), react.createElement(PopOverCard, {
+          onClose: onClose,
+          className: className,
+          show: show,
+          left: left,
+          top: top,
+          title: title,
+          back: back,
+          onBack: onBack
+        }, children))
+      );
+    }
+  }]);
+
+  return PopOver;
+}(react.PureComponent);
+
+_defineProperty(PopOver, "propTypes", {
+  activator: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  show: PropTypes.bool.isRequired,
+  title: PropTypes.string,
+  back: PropTypes.bool,
+  className: PropTypes.string
+});
+
+_defineProperty(PopOver, "defaultProps", {
+  title: "",
+  back: false,
+  className: ""
+});
+
+/**
+ * @class SelectHeader - It is the title of the select
+ */
+
+var SelectHeader =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SelectHeader, _React$PureComponent);
+
+  function SelectHeader() {
+    _classCallCheck(this, SelectHeader);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectHeader).apply(this, arguments));
+  }
+
+  _createClass(SelectHeader, [{
+    key: "render",
+
+    /**
+     * @property {string} icon - The icon of the Header
+     * @property {string} title - The title of the header
+     * @property {string} className - ClassName if you need to customize
+     * @property {func} onClick - The function to open the Select List
+     * @property {bool} listOpen - Determines if the Select List is visible
+     */
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
           icon = _this$props.icon,
-          size = _this$props.size,
-          color = _this$props.color;
-      return react.createElement("i", {
-        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+          title = _this$props.title,
+          onClick = _this$props.onClick,
+          listOpen = _this$props.listOpen;
+      return react.createElement("div", {
+        className: classnames('select__header', className),
+        onClick: onClick
+      }, icon && react.createElement(Icon, {
+        icon: icon,
+        color: "not-gray-l2",
+        size: "R"
+      }), react.createElement("p", null, title), react.createElement(ButtonIcon, {
+        icon: listOpen ? "top" : "down",
+        color: "not-gray-l1",
+        size: "XXS",
+        onClick: function onClick() {}
+      }));
+    }
+  }]);
+
+  return SelectHeader;
+}(react.PureComponent);
+
+_defineProperty(SelectHeader, "propTypes", {
+  icon: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  listOpen: PropTypes.bool
+});
+
+SelectHeader.defaultProps = {
+  icon: "",
+  className: "",
+  listOpen: false
+};
+
+/**
+ * @class SelectListItem - Is an option of the SelectList
+ */
+
+var SelectListItem =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SelectListItem, _React$PureComponent);
+
+  function SelectListItem() {
+    _classCallCheck(this, SelectListItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectListItem).apply(this, arguments));
+  }
+
+  _createClass(SelectListItem, [{
+    key: "render",
+
+    /**
+     * @property {string} icon - The icon of the option
+     * @property {string} title - The title of the option
+     * @property {string} className - ClassName if you need to customize
+     * @property {string} selectedValue - Is the selected value of the select list
+     * @property {func} onClick - The function to select an option
+     * @property {string} id - The id of the option
+     * @property {string} value - The value of the option
+     */
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          selectedValue = _this$props.selectedValue,
+          title = _this$props.title,
+          icon = _this$props.icon,
+          onClick = _this$props.onClick,
+          id = _this$props.id,
+          value = _this$props.value;
+      return react.createElement("li", {
+        className: classnames(className, {
+          "selected__item": selectedValue === value
+        }),
+        onClick: onClick,
+        "data-value": value
+      }, icon && react.createElement(Icon, {
+        icon: icon,
+        color: "gray-l2",
+        size: "R"
+      }), title);
+    }
+  }]);
+
+  return SelectListItem;
+}(react.PureComponent);
+
+_defineProperty(SelectListItem, "propTypes", {
+  icon: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  selectedValue: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+});
+
+SelectListItem.defaultProps = {
+  icon: "",
+  className: "",
+  selectedValue: ""
+};
+
+/**
+ * @class SelectList - The list of options of the select
+ */
+
+var SelectList =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SelectList, _React$PureComponent);
+
+  function SelectList() {
+    _classCallCheck(this, SelectList);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectList).apply(this, arguments));
+  }
+
+  _createClass(SelectList, [{
+    key: "render",
+
+    /**
+     * @property {string} className - ClassName if you need to customize
+     * @property {func} onClick - OnClick function for each option
+     * @property {array} options - List of options
+     */
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          options = _this$props.options,
+          onClick = _this$props.onClick,
+          selectedValue = _this$props.selectedValue;
+      return react.createElement("ul", {
+        className: classnames(className, "select__list")
+      }, options.map(function (item, index) {
+        return react.createElement(SelectListItem, {
+          icon: item.icon,
+          key: index,
+          title: item.title,
+          selected: item.selected,
+          onClick: onClick,
+          value: item.value,
+          selectedValue: selectedValue
+        });
+      }));
+    }
+  }]);
+
+  return SelectList;
+}(react.PureComponent);
+
+_defineProperty(SelectList, "propTypes", {
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  options: PropTypes.array.isRequired
+});
+
+SelectList.defaultProps = {
+  icon: false,
+  className: ""
+};
+
+/**
+ * @class Select - It is the wrapper for the Select Header and the Select List
+ */
+
+var Select =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Select, _React$PureComponent);
+
+  /**
+   * @property {array} options - List of options
+   * @property {string} placeholder - Placeholder for the select
+   * @property {string} icon - Name of the icon if the placeholder needs one
+   * @property {string} className - ClassName if you need to customize
+   */
+  function Select(props) {
+    var _this;
+
+    _classCallCheck(this, Select);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "toggleList", function () {
+      _this.setState(function (prevState) {
+        return {
+          listOpen: !prevState.listOpen
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (event) {
+      var listOpen = _this.state.listOpen;
+
+      if (_this.selectRef.current && !_this.selectRef.current.contains(event.target) && listOpen) {
+        _this.setState({
+          listOpen: false
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getSelectedItem", function (value) {
+      var options = _this.props.options;
+      var item = options.find(function (_item) {
+        return _item.value === value;
+      });
+      return item;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
+      var itemValue = event.target.dataset.value;
+
+      var item = _this.getSelectedItem(itemValue);
+
+      if (item.icon) {
+        _this.setState({
+          icon: item.icon,
+          title: item.title,
+          selectedValue: itemValue
+        });
+      } else {
+        _this.setState({
+          title: item.title,
+          selectedValue: itemValue
+        });
+      }
+
+      _this.toggleList();
+    });
+
+    var _this$props = _this.props,
+        placeholder = _this$props.placeholder,
+        icon = _this$props.icon;
+    _this.selectRef = react.createRef();
+    _this.state = {
+      title: placeholder,
+      listOpen: false,
+      icon: icon,
+      selectedValue: ""
+    };
+    return _this;
+  }
+
+  _createClass(Select, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          className = _this$props2.className,
+          options = _this$props2.options;
+      var _this$state = this.state,
+          title = _this$state.title,
+          listOpen = _this$state.listOpen,
+          icon = _this$state.icon,
+          selectedValue = _this$state.selectedValue;
+      var selectedItem = this.getSelectedItem(selectedValue);
+      return react.createElement("div", {
+        className: classnames("select__wrapper", className),
+        ref: this.selectRef
+      }, react.createElement(SelectHeader, {
+        title: selectedItem ? selectedItem.title : title,
+        icon: selectedItem ? selectedItem.icon : icon,
+        onClick: this.toggleList,
+        listOpen: listOpen
+      }), listOpen && react.createElement(SelectList, {
+        options: options,
+        onClick: this.selectItem,
+        selectedValue: selectedValue
+      }));
+    }
+  }]);
+
+  return Select;
+}(react.PureComponent);
+
+_defineProperty(Select, "propTypes", {
+  // eslint-disable-next-line react/forbid-prop-types
+  options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  className: PropTypes.string
+});
+
+Select.defaultProps = {
+  className: "",
+  icon: ""
+};
+
+/**
+ * @class DropDown- It contains the list of options
+ */
+
+var Dropdown =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Dropdown, _React$PureComponent);
+
+  function Dropdown() {
+    _classCallCheck(this, Dropdown);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Dropdown).apply(this, arguments));
+  }
+
+  _createClass(Dropdown, [{
+    key: "render",
+
+    /**
+     * @property {node} children - The content of the modal
+     * @property {string} className - Just in case you need another class
+      */
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className;
+      return react.createElement("div", {
+        className: classnames("dropdown", className)
+      }, children);
+    }
+  }]);
+
+  return Dropdown;
+}(react.PureComponent);
+
+_defineProperty(Dropdown, "propTypes", {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
+});
+
+Dropdown.defaultProps = {
+  className: ""
+};
+
+/**
+ * @class DropDownWrapper -It contains the Dropdown and the Button Icon that triggers it
+ */
+
+var DropdownWrapper =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(DropdownWrapper, _React$PureComponent);
+
+  /**
+   * @property {node} children - The content of the dropdown
+   * @property {string} className - Just in case you need another class
+   * @property {string} icon - The icon that triggers the dropdown
+   * */
+  function DropdownWrapper(props) {
+    var _this;
+
+    _classCallCheck(this, DropdownWrapper);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DropdownWrapper).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "toggleDropDown", function () {
+      _this.setState(function (prevState) {
+        return {
+          show: !prevState.show
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClose", function () {
+      _this.setState({
+        show: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (event) {
+      var show = _this.state.show;
+
+      if (_this.dropdownRef.current && !_this.dropdownRef.current.contains(event.target) && show) {
+        _this.setState({
+          show: false
+        });
+      }
+    });
+
+    _this.state = {
+      show: false
+    };
+    _this.activatorRef = react.createRef();
+    _this.dropdownRef = react.createRef();
+    return _this;
+  }
+
+  _createClass(DropdownWrapper, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className,
+          icon = _this$props.icon;
+      return react.createElement("div", {
+        className: classnames("dropdown__wrapper", className),
+        ref: this.dropdownRef
+      }, react.createElement("div", {
+        ref: this.activatorRef,
+        id: "activator-dropdown"
+      }, react.createElement(ButtonIcon, {
+        icon: icon,
+        onClick: this.toggleDropDown
+      })), this.state.show && react.createElement(Dropdown, {
+        onClose: this.onClose,
+        className: className
+      }, children));
+    }
+  }]);
+
+  return DropdownWrapper;
+}(react.PureComponent);
+
+_defineProperty(DropdownWrapper, "propTypes", {
+  icon: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
+});
+
+DropdownWrapper.defaultProps = {
+  className: "",
+  icon: "options"
+};
+
+/**
+ * @class Input - It is an html input
+ */
+
+var Input =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Input, _React$PureComponent);
+
+  function Input() {
+    _classCallCheck(this, Input);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Input).apply(this, arguments));
+  }
+
+  _createClass(Input, [{
+    key: "render",
+
+    /**
+     * @property {string} name -The name of the input
+     * @property {string} type - The type of the input
+     * @property {string} placeholder- The placeholder of the input
+     * @property {func} onBlur - The function triggered when the input is onBlur
+     * @property {func} onChange - The function triggered when the input value change
+     * @property {bool} showError - Determines if the input should add an error style
+     * @property {string} defaultValue - The Default Value of the input
+     * @property {func} innerRef - The function to create a Ref for the input
+     */
+    value: function render() {
+      var _this$props = this.props,
+          innerRef = _this$props.innerRef,
+          name = _this$props.name,
+          type = _this$props.type,
+          placeholder = _this$props.placeholder,
+          showError = _this$props.showError,
+          onChange = _this$props.onChange,
+          onBlur = _this$props.onBlur,
+          defaultValue = _this$props.defaultValue,
+          autoComplete = _this$props.autoComplete;
+      return react.createElement("input", {
+        ref: innerRef,
+        autoComplete: autoComplete,
+        name: name,
+        type: type,
+        placeholder: placeholder,
+        className: classnames({
+          "error_div": showError
+        }, "input"),
+        onChange: onChange,
+        onBlur: onBlur,
+        defaultValue: defaultValue
       });
     }
   }]);
 
-  return Icon;
+  return Input;
 }(react.PureComponent);
 
-_defineProperty(Icon, "propTypes", {
-  icon: PropTypes.string.isRequired,
-  size: PropTypes.string,
-  color: PropTypes.string
+_defineProperty(Input, "propTypes", {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onBlur: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  showError: PropTypes.bool.isRequired,
+  defaultValue: PropTypes.string,
+  innerRef: PropTypes.func,
+  autoComplete: PropTypes.string
 });
 
-Icon.defaultProps = {
-  size: "XXL",
-  color: "gray-l1"
+Input.defaultProps = {
+  placeholder: "",
+  defaultValue: "",
+  innerRef: function innerRef() {},
+  autoComplete: "false"
+};
+
+var autosize = createCommonjsModule(function (module, exports) {
+/*!
+	autosize 4.0.2
+	license: MIT
+	http://www.jacklmoore.com/autosize
+*/
+(function (global, factory) {
+	{
+		factory(module, exports);
+	}
+})(commonjsGlobal, function (module, exports) {
+
+	var map = typeof Map === "function" ? new Map() : function () {
+		var keys = [];
+		var values = [];
+
+		return {
+			has: function has(key) {
+				return keys.indexOf(key) > -1;
+			},
+			get: function get(key) {
+				return values[keys.indexOf(key)];
+			},
+			set: function set(key, value) {
+				if (keys.indexOf(key) === -1) {
+					keys.push(key);
+					values.push(value);
+				}
+			},
+			delete: function _delete(key) {
+				var index = keys.indexOf(key);
+				if (index > -1) {
+					keys.splice(index, 1);
+					values.splice(index, 1);
+				}
+			}
+		};
+	}();
+
+	var createEvent = function createEvent(name) {
+		return new Event(name, { bubbles: true });
+	};
+	try {
+		new Event('test');
+	} catch (e) {
+		// IE does not support `new Event()`
+		createEvent = function createEvent(name) {
+			var evt = document.createEvent('Event');
+			evt.initEvent(name, true, false);
+			return evt;
+		};
+	}
+
+	function assign(ta) {
+		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
+
+		var heightOffset = null;
+		var clientWidth = null;
+		var cachedHeight = null;
+
+		function init() {
+			var style = window.getComputedStyle(ta, null);
+
+			if (style.resize === 'vertical') {
+				ta.style.resize = 'none';
+			} else if (style.resize === 'both') {
+				ta.style.resize = 'horizontal';
+			}
+
+			if (style.boxSizing === 'content-box') {
+				heightOffset = -(parseFloat(style.paddingTop) + parseFloat(style.paddingBottom));
+			} else {
+				heightOffset = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+			}
+			// Fix when a textarea is not on document body and heightOffset is Not a Number
+			if (isNaN(heightOffset)) {
+				heightOffset = 0;
+			}
+
+			update();
+		}
+
+		function changeOverflow(value) {
+			{
+				// Chrome/Safari-specific fix:
+				// When the textarea y-overflow is hidden, Chrome/Safari do not reflow the text to account for the space
+				// made available by removing the scrollbar. The following forces the necessary text reflow.
+				var width = ta.style.width;
+				ta.style.width = '0px';
+				// Force reflow:
+				/* jshint ignore:start */
+				ta.offsetWidth;
+				/* jshint ignore:end */
+				ta.style.width = width;
+			}
+
+			ta.style.overflowY = value;
+		}
+
+		function getParentOverflows(el) {
+			var arr = [];
+
+			while (el && el.parentNode && el.parentNode instanceof Element) {
+				if (el.parentNode.scrollTop) {
+					arr.push({
+						node: el.parentNode,
+						scrollTop: el.parentNode.scrollTop
+					});
+				}
+				el = el.parentNode;
+			}
+
+			return arr;
+		}
+
+		function resize() {
+			if (ta.scrollHeight === 0) {
+				// If the scrollHeight is 0, then the element probably has display:none or is detached from the DOM.
+				return;
+			}
+
+			var overflows = getParentOverflows(ta);
+			var docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
+
+			ta.style.height = '';
+			ta.style.height = ta.scrollHeight + heightOffset + 'px';
+
+			// used to check if an update is actually necessary on window.resize
+			clientWidth = ta.clientWidth;
+
+			// prevents scroll-position jumping
+			overflows.forEach(function (el) {
+				el.node.scrollTop = el.scrollTop;
+			});
+
+			if (docTop) {
+				document.documentElement.scrollTop = docTop;
+			}
+		}
+
+		function update() {
+			resize();
+
+			var styleHeight = Math.round(parseFloat(ta.style.height));
+			var computed = window.getComputedStyle(ta, null);
+
+			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
+			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
+
+			// The actual height not matching the style height (set via the resize method) indicates that 
+			// the max-height has been exceeded, in which case the overflow should be allowed.
+			if (actualHeight < styleHeight) {
+				if (computed.overflowY === 'hidden') {
+					changeOverflow('scroll');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			} else {
+				// Normally keep overflow set to hidden, to avoid flash of scrollbar as the textarea expands.
+				if (computed.overflowY !== 'hidden') {
+					changeOverflow('hidden');
+					resize();
+					actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
+				}
+			}
+
+			if (cachedHeight !== actualHeight) {
+				cachedHeight = actualHeight;
+				var evt = createEvent('autosize:resized');
+				try {
+					ta.dispatchEvent(evt);
+				} catch (err) {
+					// Firefox will throw an error on dispatchEvent for a detached element
+					// https://bugzilla.mozilla.org/show_bug.cgi?id=889376
+				}
+			}
+		}
+
+		var pageResize = function pageResize() {
+			if (ta.clientWidth !== clientWidth) {
+				update();
+			}
+		};
+
+		var destroy = function (style) {
+			window.removeEventListener('resize', pageResize, false);
+			ta.removeEventListener('input', update, false);
+			ta.removeEventListener('keyup', update, false);
+			ta.removeEventListener('autosize:destroy', destroy, false);
+			ta.removeEventListener('autosize:update', update, false);
+
+			Object.keys(style).forEach(function (key) {
+				ta.style[key] = style[key];
+			});
+
+			map.delete(ta);
+		}.bind(ta, {
+			height: ta.style.height,
+			resize: ta.style.resize,
+			overflowY: ta.style.overflowY,
+			overflowX: ta.style.overflowX,
+			wordWrap: ta.style.wordWrap
+		});
+
+		ta.addEventListener('autosize:destroy', destroy, false);
+
+		// IE9 does not fire onpropertychange or oninput for deletions,
+		// so binding to onkeyup to catch most of those events.
+		// There is no way that I know of to detect something like 'cut' in IE9.
+		if ('onpropertychange' in ta && 'oninput' in ta) {
+			ta.addEventListener('keyup', update, false);
+		}
+
+		window.addEventListener('resize', pageResize, false);
+		ta.addEventListener('input', update, false);
+		ta.addEventListener('autosize:update', update, false);
+		ta.style.overflowX = 'hidden';
+		ta.style.wordWrap = 'break-word';
+
+		map.set(ta, {
+			destroy: destroy,
+			update: update
+		});
+
+		init();
+	}
+
+	function destroy(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.destroy();
+		}
+	}
+
+	function update(ta) {
+		var methods = map.get(ta);
+		if (methods) {
+			methods.update();
+		}
+	}
+
+	var autosize = null;
+
+	// Do nothing in Node.js environment and IE8 (or lower)
+	if (typeof window === 'undefined' || typeof window.getComputedStyle !== 'function') {
+		autosize = function autosize(el) {
+			return el;
+		};
+		autosize.destroy = function (el) {
+			return el;
+		};
+		autosize.update = function (el) {
+			return el;
+		};
+	} else {
+		autosize = function autosize(el, options) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], function (x) {
+					return assign(x, options);
+				});
+			}
+			return el;
+		};
+		autosize.destroy = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], destroy);
+			}
+			return el;
+		};
+		autosize.update = function (el) {
+			if (el) {
+				Array.prototype.forEach.call(el.length ? el : [el], update);
+			}
+			return el;
+		};
+	}
+
+	exports.default = autosize;
+	module.exports = exports['default'];
+});
+});
+
+/**
+ * @class InputTitle - It is an input for titles where they look as text
+ */
+
+var InputTitle =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(InputTitle, _React$PureComponent);
+
+  /**
+  * @property {string} placeholder -The placeholder of the input
+  * @property {string} className - The type of the input
+  * @property {string} initialText- The placeholder of the input
+  * @property {number} maxLength - The number of characters
+  * @property {bool} readOnly - Determines if you can edit text
+  */
+  function InputTitle(props) {
+    var _this;
+
+    _classCallCheck(this, InputTitle);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(InputTitle).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "setTextInputRef", function (element) {
+      _this.textInput = element;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTextTrim", function () {
+      if (!_this.props.allowBlank && _this.textInput.value.trim() === "") {
+        return;
+      }
+
+      _this.setState({
+        text: _this.textInput.value.trim()
+      });
+
+      _this.props.onTextEdited(_this.textInput.value.trim());
+
+      if (_this.props.resetOnFinish) {
+        _this.textInput.value = "";
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onKeyDown", function (event) {
+      if (event.keyCode === 13) {
+        _this.textInput.blur();
+
+        event.preventDefault();
+      }
+
+      autosize(_this.textInput);
+    });
+
+    _this.state = {
+      text: props.initialText
+    };
+    _this.textInput = null;
+    return _this;
+  }
+
+  _createClass(InputTitle, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      autosize(this.textInput);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.initialText !== this.props.initialText) {
+        this.textInput.value = this.props.initialText;
+        autosize(this.textInput);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          placeholder = _this$props.placeholder,
+          className = _this$props.className,
+          initialText = _this$props.initialText,
+          maxLength = _this$props.maxLength,
+          readOnly = _this$props.readOnly;
+      return react.createElement("textarea", {
+        placeholder: placeholder,
+        onBlur: this.setTextTrim,
+        className: classnames("textarea__edition", className),
+        ref: this.setTextInputRef,
+        onKeyDown: this.onKeyDown,
+        maxLength: maxLength,
+        defaultValue: initialText,
+        rows: "5",
+        readOnly: readOnly
+      });
+    }
+  }]);
+
+  return InputTitle;
+}(react.PureComponent);
+
+_defineProperty(InputTitle, "propTypes", {
+  initialText: PropTypes.string,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  onTextEdited: PropTypes.func.isRequired,
+  allowBlank: PropTypes.bool.isRequired,
+  resetOnFinish: PropTypes.bool.isRequired,
+  maxLength: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  readOnly: PropTypes.bool.isRequired
+});
+
+InputTitle.defaultProps = {
+  allowBlank: true,
+  resetOnFinish: false,
+  readOnly: false,
+  maxLength: "",
+  className: "",
+  placeholder: "",
+  initialText: ""
 };
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle };
 //# sourceMappingURL=index.es.js.map
