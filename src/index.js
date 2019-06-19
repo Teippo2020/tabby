@@ -11,8 +11,8 @@ import ModalMedal from "./components/modal/modalMedal/ModalMedal";
 import Medal from "./components/modal/modalMedal/Medal";
 
 // Buttons components
-import ButtonIcon from "./components/buttons/ButtonText";
-import ButtonText from "./components/buttons/ButtonIcon";
+import ButtonIcon from "./components/buttons/ButtonIcon";
+import ButtonText from "./components/buttons/ButtonText";
 
 //Icon
 import Icon from "./components/icons/Icon";
