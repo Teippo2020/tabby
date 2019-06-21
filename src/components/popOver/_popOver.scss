@@ -25,6 +25,7 @@
   }
   .pop-over--content{
     display: flex;
+    overflow-y: scroll;
   }
   .pop-over--footer{
     margin: 0 auto;

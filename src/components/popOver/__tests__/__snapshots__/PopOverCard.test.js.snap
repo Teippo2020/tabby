@@ -38,7 +38,7 @@ ShallowWrapper {
             color="gray-l1"
             icon="left"
             onClick={[Function]}
-            size="XXL"
+            size="R"
           />
           <PopOverHeader
             title=""
@@ -48,7 +48,7 @@ ShallowWrapper {
             color="gray-l1"
             icon="cross"
             onClick={[Function]}
-            size="XXL"
+            size="R"
           />
         </div>,
         <div
@@ -76,7 +76,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="left"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />,
             <PopOverHeader
               title=""
@@ -86,7 +86,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="cross"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />,
           ],
           "className": "icons",
@@ -102,7 +102,7 @@ ShallowWrapper {
               "color": "gray-l1",
               "icon": "left",
               "onClick": [Function],
-              "size": "XXL",
+              "size": "R",
             },
             "ref": null,
             "rendered": null,
@@ -128,7 +128,7 @@ ShallowWrapper {
               "color": "gray-l1",
               "icon": "cross",
               "onClick": [Function],
-              "size": "XXL",
+              "size": "R",
             },
             "ref": null,
             "rendered": null,
@@ -175,7 +175,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="left"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />
             <PopOverHeader
               title=""
@@ -185,7 +185,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="cross"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />
           </div>,
           <div
@@ -213,7 +213,7 @@ ShallowWrapper {
                 color="gray-l1"
                 icon="left"
                 onClick={[Function]}
-                size="XXL"
+                size="R"
               />,
               <PopOverHeader
                 title=""
@@ -223,7 +223,7 @@ ShallowWrapper {
                 color="gray-l1"
                 icon="cross"
                 onClick={[Function]}
-                size="XXL"
+                size="R"
               />,
             ],
             "className": "icons",
@@ -239,7 +239,7 @@ ShallowWrapper {
                 "color": "gray-l1",
                 "icon": "left",
                 "onClick": [Function],
-                "size": "XXL",
+                "size": "R",
               },
               "ref": null,
               "rendered": null,
@@ -265,7 +265,7 @@ ShallowWrapper {
                 "color": "gray-l1",
                 "icon": "cross",
                 "onClick": [Function],
-                "size": "XXL",
+                "size": "R",
               },
               "ref": null,
               "rendered": null,
