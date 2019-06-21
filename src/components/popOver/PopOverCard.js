@@ -80,4 +80,5 @@ PopOverCard.defaultProps = {
   left: 0,
   top: 0
 };
+
 export default PopOverCard;
