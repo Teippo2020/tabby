@@ -27,6 +27,7 @@ import Select from "./components/select/Select";
 
 //DropDown
 import DropdownWrapper from "./components/dropDown/DropdownWrapper";
+import DropdownOption from "./components/dropDown/DrodownOption"
 
 //Inputs
 import Input from "./components/input/Input";
@@ -52,5 +53,6 @@ export {
 	Select,
 	DropdownWrapper,
 	Input,
-	InputTitle
+	InputTitle,
+	DropdownOption
 };

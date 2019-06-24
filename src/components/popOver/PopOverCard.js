@@ -58,9 +58,13 @@ class PopOverCard extends React.PureComponent {
             icon="left"
             onClick={onBack}
             className={classNames({ "visibility-hidden": !back })}
+            size="R"
           />
           <PopOverHeader title={title} />
-          <ButtonIcon icon="cross" onClick={onClose} />
+          <ButtonIcon 
+            icon="cross" 
+            size="R"
+            onClick={onClose} />
         </div>
         <div className="pop-over--content">{children}</div>
       </div>
@@ -76,4 +80,5 @@ PopOverCard.defaultProps = {
   left: 0,
   top: 0
 };
+
 export default PopOverCard;

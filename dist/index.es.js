@@ -3954,5 +3954,5 @@ InputTitle.defaultProps = {
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonText as ButtonIcon, ButtonIcon as ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle };
 //# sourceMappingURL=index.es.js.map
