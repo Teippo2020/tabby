@@ -16,7 +16,8 @@ class DropdownWrapper extends React.PureComponent {
   static propTypes = {
     icon: PropTypes.string,
     children: PropTypes.node.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    size: PropTypes.string
   };
 
   constructor(props) {
@@ -62,12 +63,12 @@ class DropdownWrapper extends React.PureComponent {
   };
 
   render() {
-    const { children, className, icon } = this.props;
+    const { children, className, icon, size } = this.props;
 
     return (
       <div className={classNames("dropdown__wrapper", className)} ref={this.dropdownRef}>
         <div ref={this.activatorRef} id="activator-dropdown">
-          <ButtonIcon icon={icon} onClick={this.toggleDropDown} />
+          <ButtonIcon icon={icon} onClick={this.toggleDropDown} size={size} />
         </div>
         {this.state.show && 
           <Dropdown onClose={this.onClose} className={className}>
@@ -81,6 +82,7 @@ class DropdownWrapper extends React.PureComponent {
 
 DropdownWrapper.defaultProps = {
   className: "",
+  size: "R",
   icon: "options"
 };
 
