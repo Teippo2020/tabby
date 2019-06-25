@@ -3444,7 +3444,8 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           children = _this$props.children,
           className = _this$props.className,
-          icon = _this$props.icon;
+          icon = _this$props.icon,
+          size = _this$props.size;
       return react.createElement("div", {
         className: classnames("dropdown__wrapper", className),
         ref: this.dropdownRef
@@ -3453,7 +3454,8 @@ function (_React$PureComponent) {
         id: "activator-dropdown"
       }, react.createElement(ButtonIcon, {
         icon: icon,
-        onClick: this.toggleDropDown
+        onClick: this.toggleDropDown,
+        size: size
       })), this.state.show && react.createElement(Dropdown, {
         onClose: this.onClose,
         className: className
@@ -3467,11 +3469,13 @@ function (_React$PureComponent) {
 _defineProperty(DropdownWrapper, "propTypes", {
   icon: PropTypes.string,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  size: PropTypes.string
 });
 
 DropdownWrapper.defaultProps = {
   className: "",
+  size: "R",
   icon: "options"
 };
 
