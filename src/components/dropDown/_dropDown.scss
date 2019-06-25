@@ -5,7 +5,7 @@
 }
 .dropdown{
   background-color: $gray-l3;
-  position: absolute;
+  position: fixed;
   box-shadow: $shadow-3;
   z-index: $level-3;
   border-radius: 4px;

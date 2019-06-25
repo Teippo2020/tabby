@@ -20,6 +20,7 @@ storiesOf("Pop Over", module)
               onClick={() => store.set({ show: !store.get("show") })}
             />
           )}
+          title="Popover"
           position="top"
           onClose={() => store.set({ show: !store.get("show") })}
         >
