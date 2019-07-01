@@ -2721,11 +2721,13 @@ function (_React$PureComponent) {
         onClick: onBack,
         className: classnames({
           "visibility-hidden": !back
-        })
+        }),
+        size: "R"
       }), react.createElement(PopOverHeader, {
         title: title
       }), react.createElement(ButtonIcon, {
         icon: "cross",
+        size: "R",
         onClick: onClose
       })), react.createElement("div", {
         className: "pop-over--content"
@@ -3442,7 +3444,8 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           children = _this$props.children,
           className = _this$props.className,
-          icon = _this$props.icon;
+          icon = _this$props.icon,
+          size = _this$props.size;
       return react.createElement("div", {
         className: classnames("dropdown__wrapper", className),
         ref: this.dropdownRef
@@ -3451,7 +3454,8 @@ function (_React$PureComponent) {
         id: "activator-dropdown"
       }, react.createElement(ButtonIcon, {
         icon: icon,
-        onClick: this.toggleDropDown
+        onClick: this.toggleDropDown,
+        size: size
       })), this.state.show && react.createElement(Dropdown, {
         onClose: this.onClose,
         className: className
@@ -3465,12 +3469,75 @@ function (_React$PureComponent) {
 _defineProperty(DropdownWrapper, "propTypes", {
   icon: PropTypes.string,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  size: PropTypes.string
 });
 
 DropdownWrapper.defaultProps = {
   className: "",
+  size: "R",
   icon: "options"
+};
+
+/**
+ * @class DropDown- Is the option of the Dropdown
+ */
+
+var DropdownOption =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(DropdownOption, _React$PureComponent);
+
+  function DropdownOption() {
+    _classCallCheck(this, DropdownOption);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(DropdownOption).apply(this, arguments));
+  }
+
+  _createClass(DropdownOption, [{
+    key: "render",
+
+    /**
+     * @property {string} className - Just in case you need another class
+     * @property {func} onClick - The function of the option
+     * @property {string} iconDirection - Determines if the icon is on the left or rigth side
+     * @property {string} text - The title of the option
+     * @property {string} icon - The icon of the option
+     */
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          iconDirection = _this$props.iconDirection,
+          icon = _this$props.icon,
+          text = _this$props.text,
+          onClick = _this$props.onClick;
+      return react.createElement("div", {
+        className: classnames("dropdown__option", className, {
+          "dropdown__icon-right": iconDirection === "right"
+        }),
+        onClick: onClick
+      }, icon && react.createElement(Icon, {
+        icon: icon,
+        size: "S"
+      }), react.createElement("p", null, text));
+    }
+  }]);
+
+  return DropdownOption;
+}(react.PureComponent);
+
+_defineProperty(DropdownOption, "propTypes", {
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  iconDirection: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.string
+});
+
+DropdownOption.defaultProps = {
+  className: "",
+  iconDirection: "left",
+  icon: ""
 };
 
 /**
@@ -3954,5 +4021,5 @@ InputTitle.defaultProps = {
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption };
 //# sourceMappingURL=index.es.js.map

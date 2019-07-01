@@ -13,6 +13,8 @@
     width:100%;
     display: flex;
     justify-content:space-between;
+    align-items: center;
+    padding-bottom: 16px;
     }
   .pop-over--header{
     text-align: center;
@@ -21,11 +23,12 @@
       font-weight: $regular;
       color: $gray;
     }
-    padding-bottom: 16px;
+
   }
   .pop-over--content{
     display: flex;
-    overflow-y: scroll;
+    overflow-y: auto;
+    max-height: 40vh;
   }
   .pop-over--footer{
     margin: 0 auto;

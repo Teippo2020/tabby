@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <DropdownWrapper
     className=""
     icon="options"
+    size="R"
   >
     <DropdownOption
       className=""
@@ -52,7 +53,7 @@ ShallowWrapper {
             color="gray-l1"
             icon="options"
             onClick={[Function]}
-            size="XXL"
+            size="R"
           />
         </div>,
         false,
@@ -73,7 +74,7 @@ ShallowWrapper {
             color="gray-l1"
             icon="options"
             onClick={[Function]}
-            size="XXL"
+            size="R"
           />,
           "id": "activator-dropdown",
         },
@@ -89,7 +90,7 @@ ShallowWrapper {
             "color": "gray-l1",
             "icon": "options",
             "onClick": [Function],
-            "size": "XXL",
+            "size": "R",
           },
           "ref": null,
           "rendered": null,
@@ -116,7 +117,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="options"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />
           </div>,
           false,
@@ -137,7 +138,7 @@ ShallowWrapper {
               color="gray-l1"
               icon="options"
               onClick={[Function]}
-              size="XXL"
+              size="R"
             />,
             "id": "activator-dropdown",
           },
@@ -153,7 +154,7 @@ ShallowWrapper {
               "color": "gray-l1",
               "icon": "options",
               "onClick": [Function],
-              "size": "XXL",
+              "size": "R",
             },
             "ref": null,
             "rendered": null,
