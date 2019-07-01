@@ -14,6 +14,7 @@ class Select extends React.PureComponent {
    * @property {string} placeholder - Placeholder for the select
    * @property {string} icon - Name of the icon if the placeholder needs one
    * @property {string} className - ClassName if you need to customize
+   * @property {func} onSelect - Function triggered by the item
    */
   constructor(props) {
     super(props);
@@ -32,7 +33,8 @@ class Select extends React.PureComponent {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onSelect: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -83,6 +85,7 @@ class Select extends React.PureComponent {
         selectedValue: itemValue
       });
     }
+    this.props.onSelect(item);
     this.toggleList();
   };
 
