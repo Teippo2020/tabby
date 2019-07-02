@@ -3244,9 +3244,7 @@ function (_React$PureComponent) {
       return item;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
-      var itemValue = event.target.dataset.value;
-
+    _defineProperty(_assertThisInitialized(_this), "selectItemByValue", function (itemValue) {
       var item = _this.getSelectedItem(itemValue);
 
       if (item.icon) {
@@ -3267,15 +3265,22 @@ function (_React$PureComponent) {
       _this.toggleList();
     });
 
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
+      var itemValue = event.target.dataset.value;
+
+      _this.selectItemByValue(itemValue);
+    });
+
     var _this$props = _this.props,
         placeholder = _this$props.placeholder,
-        icon = _this$props.icon;
+        icon = _this$props.icon,
+        selectedValue = _this$props.selectedValue;
     _this.selectRef = react.createRef();
     _this.state = {
       title: placeholder,
       listOpen: false,
       icon: icon,
-      selectedValue: ""
+      selectedValue: selectedValue
     };
     return _this;
   }
@@ -3289,6 +3294,15 @@ function (_React$PureComponent) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var selectedValue = this.props.selectedValue;
+
+      if (prevProps.selectedValue !== selectedValue) {
+        this.selectItemByValue(selectedValue);
+      }
     }
   }, {
     key: "render",
@@ -3327,12 +3341,14 @@ _defineProperty(Select, "propTypes", {
   placeholder: PropTypes.string.isRequired,
   icon: PropTypes.string,
   className: PropTypes.string,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string
 });
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 /**
