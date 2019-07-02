@@ -3209,6 +3209,7 @@ function (_React$PureComponent) {
    * @property {string} placeholder - Placeholder for the select
    * @property {string} icon - Name of the icon if the placeholder needs one
    * @property {string} className - ClassName if you need to customize
+   * @property {func} onSelect - Function triggered by the item
    */
   function Select(props) {
     var _this;
@@ -3260,6 +3261,8 @@ function (_React$PureComponent) {
           selectedValue: itemValue
         });
       }
+
+      _this.props.onSelect(item);
 
       _this.toggleList();
     });
@@ -3323,7 +3326,8 @@ _defineProperty(Select, "propTypes", {
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  onSelect: PropTypes.func.isRequired
 });
 
 Select.defaultProps = {

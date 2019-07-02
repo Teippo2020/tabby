@@ -27,6 +27,7 @@ ShallowWrapper {
       ]
     }
     placeholder="Select"
+    selectedValue=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

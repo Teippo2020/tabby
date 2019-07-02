@@ -18,13 +18,11 @@ class Select extends React.PureComponent {
    */
   constructor(props) {
     super(props);
-    const { placeholder, icon } = this.props;
+    const { selectedValue } = this.props;
     this.selectRef = React.createRef();
     this.state = {
-      title: placeholder,
       listOpen: false,
-      icon,
-      selectedValue: ""
+      selectedValue
     };
   }
 
@@ -34,7 +32,8 @@ class Select extends React.PureComponent {
     placeholder: PropTypes.string.isRequired,
     icon: PropTypes.string,
     className: PropTypes.string,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
+    selectedValue: PropTypes.string
   };
 
   componentDidMount() {
@@ -70,28 +69,34 @@ class Select extends React.PureComponent {
     return item;
   };
 
-  selectItem = event => {
-    const itemValue = event.target.dataset.value;
+  _setItemSelected = itemValue => {
+    this.setState({
+      selectedValue: itemValue
+    });
+  };
+
+  selectItemByValue = itemValue => {
     const item = this.getSelectedItem(itemValue);
-    if (item.icon) {
-      this.setState({
-        icon: item.icon,
-        title: item.title,
-        selectedValue: itemValue
-      });
-    } else {
-      this.setState({
-        title: item.title,
-        selectedValue: itemValue
-      });
-    }
+    this._setItemSelected(itemValue);
     this.props.onSelect(item);
     this.toggleList();
   };
 
+  selectItem = event => {
+    const itemValue = event.target.dataset.value;
+    this.selectItemByValue(itemValue);
+  };
+
+  componentDidUpdate(prevProps) {
+    const { selectedValue } = this.props;
+    if (prevProps.selectedValue !== selectedValue) {
+      this._setItemSelected(selectedValue);
+    }
+  }
+
   render() {
-    const { className, options } = this.props;
-    const { title, listOpen, icon, selectedValue } = this.state;
+    const { className, options, icon, placeholder } = this.props;
+    const { listOpen, selectedValue } = this.state;
     const selectedItem = this.getSelectedItem(selectedValue);
 
     return (
@@ -100,7 +105,7 @@ class Select extends React.PureComponent {
         ref={this.selectRef}
       >
         <SelectHeader
-          title={selectedItem ? selectedItem.title : title}
+          title={selectedItem ? selectedItem.title : placeholder}
           icon={selectedItem ? selectedItem.icon : icon}
           onClick={this.toggleList}
           listOpen={listOpen}
@@ -119,7 +124,8 @@ class Select extends React.PureComponent {
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 export default Select;
