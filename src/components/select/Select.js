@@ -23,12 +23,9 @@ class Select extends React.PureComponent {
     this.state = {
       title: placeholder,
       listOpen: false,
-      icon
+      icon,
+      selectedValue
     };
-
-    if (selectedValue) {
-      this.selectItemByValue(selectedValue);
-    }
   }
 
   static propTypes = {

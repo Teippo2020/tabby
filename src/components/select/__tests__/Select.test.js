@@ -62,11 +62,11 @@ describe("Select", () => {
     expect(component.state().title).toEqual("Option 2");
   });
   it("should re render when props change", () => {
-    const component = mount(<Select {...props} selectedValue={props[1].value} />);
+    const component = mount(<Select {...props} selectedValue={props.options[1].value} />);
     component.find("SelectHeader").simulate("click");
-    expect(component.state().selectedValue).toEqual("Option 2");
+    expect(component.state().selectedValue).toEqual(props.options[1].value);
   });
-  it("should chnage state when you click outside", () => {
+  it("should change state when you click outside", () => {
     const wrapper = mount(
       <div>
         <Select {...props} />
