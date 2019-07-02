@@ -3209,6 +3209,7 @@ function (_React$PureComponent) {
    * @property {string} placeholder - Placeholder for the select
    * @property {string} icon - Name of the icon if the placeholder needs one
    * @property {string} className - ClassName if you need to customize
+   * @property {func} onSelect - Function triggered by the item
    */
   function Select(props) {
     var _this;
@@ -3243,9 +3244,7 @@ function (_React$PureComponent) {
       return item;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
-      var itemValue = event.target.dataset.value;
-
+    _defineProperty(_assertThisInitialized(_this), "selectItemByValue", function (itemValue) {
       var item = _this.getSelectedItem(itemValue);
 
       if (item.icon) {
@@ -3261,18 +3260,27 @@ function (_React$PureComponent) {
         });
       }
 
+      _this.props.onSelect(item);
+
       _this.toggleList();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
+      var itemValue = event.target.dataset.value;
+
+      _this.selectItemByValue(itemValue);
     });
 
     var _this$props = _this.props,
         placeholder = _this$props.placeholder,
-        icon = _this$props.icon;
+        icon = _this$props.icon,
+        selectedValue = _this$props.selectedValue;
     _this.selectRef = react.createRef();
     _this.state = {
       title: placeholder,
       listOpen: false,
       icon: icon,
-      selectedValue: ""
+      selectedValue: selectedValue
     };
     return _this;
   }
@@ -3286,6 +3294,15 @@ function (_React$PureComponent) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var selectedValue = this.props.selectedValue;
+
+      if (prevProps.selectedValue !== selectedValue) {
+        this.selectItemByValue(selectedValue);
+      }
     }
   }, {
     key: "render",
@@ -3323,12 +3340,15 @@ _defineProperty(Select, "propTypes", {
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  onSelect: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string
 });
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 /**
