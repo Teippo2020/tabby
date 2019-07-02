@@ -72,4 +72,5 @@ describe("Select", () => {
     document.dispatchEvent(event);
     expect(wrapper.find(Select).state().listOpen).toEqual(false);
   });
+  
 });
