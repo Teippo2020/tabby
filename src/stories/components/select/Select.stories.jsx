@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Select from "../../../components/select/Select"
+import Select from "../../../components/select/Select";
 
 const options= [
   {
@@ -9,7 +9,7 @@ const options= [
     value: "Option 1"
   },
   {
-    title: "Option 2",
+    title: "Option 200000",
     icon: "flag-outline",
     value: "Option 2"
   },
@@ -33,7 +33,7 @@ storiesOf("Select", module)
   // Input
   .add("Default", () => (
 
-  <Select name="default" options={options} placeholder="Select" icon="world" >
+  <Select name="default" options={options} placeholder="Select" icon="world" onSelect={() => {}}>
     
   </Select>
   ))

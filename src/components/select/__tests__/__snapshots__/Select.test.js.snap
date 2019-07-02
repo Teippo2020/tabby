@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Select
     className=""
     icon=""
+    onSelect={[Function]}
     options={
       Array [
         Object {

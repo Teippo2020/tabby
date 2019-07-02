@@ -25,7 +25,8 @@ describe("Select", () => {
           icon: "right",
           value: "option 3"
         }
-      ]
+      ],
+      onSelect: () => {}
     };
   });
 
@@ -38,6 +39,13 @@ describe("Select", () => {
     const component = shallow(<Select {...props} onClick={click} />);
     component.find("SelectHeader").simulate("click");
     expect(component.state().listOpen).toEqual(true);
+  });
+  it("should use selected item as param", () => {
+    const click = sinon.spy();
+    const component = mount(<Select {...props} onSelect={click} />);
+    component.find("SelectHeader").simulate("click");
+    component.find({ value: "option 2" }).simulate("click");
+    expect(click.calledWithExactly(props.options[1])).toBeTruthy();
   });
   it("should select one option from the list", () => {
     const click = sinon.spy();
