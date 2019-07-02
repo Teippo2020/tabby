@@ -18,12 +18,10 @@ class Select extends React.PureComponent {
    */
   constructor(props) {
     super(props);
-    const { placeholder, icon, selectedValue } = this.props;
+    const { selectedValue } = this.props;
     this.selectRef = React.createRef();
     this.state = {
-      title: placeholder,
       listOpen: false,
-      icon,
       selectedValue
     };
   }
@@ -71,20 +69,15 @@ class Select extends React.PureComponent {
     return item;
   };
 
+  _setItemSelected = itemValue => {
+    this.setState({
+      selectedValue: itemValue
+    });
+  };
+
   selectItemByValue = itemValue => {
     const item = this.getSelectedItem(itemValue);
-    if (item.icon) {
-      this.setState({
-        icon: item.icon,
-        title: item.title,
-        selectedValue: itemValue
-      });
-    } else {
-      this.setState({
-        title: item.title,
-        selectedValue: itemValue
-      });
-    }
+    this._setItemSelected(itemValue);
     this.props.onSelect(item);
     this.toggleList();
   };
@@ -97,13 +90,13 @@ class Select extends React.PureComponent {
   componentDidUpdate(prevProps) {
     const { selectedValue } = this.props;
     if (prevProps.selectedValue !== selectedValue) {
-      this.selectItemByValue(selectedValue);
+      this._setItemSelected(selectedValue);
     }
   }
 
   render() {
-    const { className, options } = this.props;
-    const { title, listOpen, icon, selectedValue } = this.state;
+    const { className, options, icon, placeholder } = this.props;
+    const { listOpen, selectedValue } = this.state;
     const selectedItem = this.getSelectedItem(selectedValue);
 
     return (
@@ -112,7 +105,7 @@ class Select extends React.PureComponent {
         ref={this.selectRef}
       >
         <SelectHeader
-          title={selectedItem ? selectedItem.title : title}
+          title={selectedItem ? selectedItem.title : placeholder}
           icon={selectedItem ? selectedItem.icon : icon}
           onClick={this.toggleList}
           listOpen={listOpen}
