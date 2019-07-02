@@ -18,14 +18,17 @@ class Select extends React.PureComponent {
    */
   constructor(props) {
     super(props);
-    const { placeholder, icon } = this.props;
+    const { placeholder, icon, selectedValue } = this.props;
     this.selectRef = React.createRef();
     this.state = {
       title: placeholder,
       listOpen: false,
-      icon,
-      selectedValue: ""
+      icon
     };
+
+    if (selectedValue) {
+      this.selectItemByValue(selectedValue);
+    }
   }
 
   static propTypes = {
@@ -34,7 +37,8 @@ class Select extends React.PureComponent {
     placeholder: PropTypes.string.isRequired,
     icon: PropTypes.string,
     className: PropTypes.string,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
+    selectedValue: PropTypes.string
   };
 
   componentDidMount() {
@@ -70,8 +74,7 @@ class Select extends React.PureComponent {
     return item;
   };
 
-  selectItem = event => {
-    const itemValue = event.target.dataset.value;
+  selectItemByValue = itemValue => {
     const item = this.getSelectedItem(itemValue);
     if (item.icon) {
       this.setState({
@@ -88,6 +91,18 @@ class Select extends React.PureComponent {
     this.props.onSelect(item);
     this.toggleList();
   };
+
+  selectItem = event => {
+    const itemValue = event.target.dataset.value;
+    this.selectItemByValue(itemValue);
+  };
+
+  componentDidUpdate(prevProps) {
+    const { selectedValue } = this.props;
+    if (prevProps.selectedValue !== selectedValue) {
+      this.selectItemByValue(selectedValue);
+    }
+  }
 
   render() {
     const { className, options } = this.props;
@@ -119,7 +134,8 @@ class Select extends React.PureComponent {
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 export default Select;
