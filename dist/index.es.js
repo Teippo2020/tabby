@@ -2360,11 +2360,12 @@ function (_React$PureComponent) {
           show = _this$props.show,
           onClose = _this$props.onClose,
           children = _this$props.children,
-          className = _this$props.className;
+          className = _this$props.className,
+          classNameWrapper = _this$props.classNameWrapper;
       return react.createElement("div", {
         className: classnames({
           hidden: !show
-        }, "modal--wrapper")
+        }, "modal--wrapper", "".concat(classNameWrapper))
       }, react.createElement(ModalBackground, {
         onClose: onClose
       }), react.createElement(ModalCard, {
@@ -2381,11 +2382,13 @@ _defineProperty(Modal, "propTypes", {
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  classNameWrapper: PropTypes.string
 });
 
 Modal.defaultProps = {
-  className: ""
+  className: "",
+  classNameWrapper: ""
 };
 
 /**

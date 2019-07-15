@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Modal from "../Modal";
 
@@ -48,5 +48,9 @@ describe("Modal", () => {
   it("should render the same onClose func on ModalCard", () => {
     const ModalBackground = shallow(<Modal {...props} />).find("ModalCard");
     expect(ModalBackground.props().onClose).toEqual(props.onClose);
+  });
+  it("should has a new classname", () => {
+    const component =  shallow(<Modal {...props} classNameWrapper="classname--wrapper"/>);
+    expect(component.hasClass("classname--wrapper")).toBeTrue();
   });
 });
