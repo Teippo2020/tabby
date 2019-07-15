@@ -2365,7 +2365,7 @@ function (_React$PureComponent) {
       return react.createElement("div", {
         className: classnames({
           hidden: !show
-        }, "modal--wrapper", "".concat(classNameWrapper))
+        }, "modal--wrapper", classNameWrapper)
       }, react.createElement(ModalBackground, {
         onClose: onClose
       }), react.createElement(ModalCard, {
