@@ -3244,38 +3244,33 @@ function (_React$PureComponent) {
       return item;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
-      var itemValue = event.target.dataset.value;
+    _defineProperty(_assertThisInitialized(_this), "_setItemSelected", function (itemValue) {
+      _this.setState({
+        selectedValue: itemValue
+      });
+    });
 
+    _defineProperty(_assertThisInitialized(_this), "selectItemByValue", function (itemValue) {
       var item = _this.getSelectedItem(itemValue);
 
-      if (item.icon) {
-        _this.setState({
-          icon: item.icon,
-          title: item.title,
-          selectedValue: itemValue
-        });
-      } else {
-        _this.setState({
-          title: item.title,
-          selectedValue: itemValue
-        });
-      }
+      _this._setItemSelected(itemValue);
 
       _this.props.onSelect(item);
 
       _this.toggleList();
     });
 
-    var _this$props = _this.props,
-        placeholder = _this$props.placeholder,
-        icon = _this$props.icon;
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
+      var itemValue = event.target.dataset.value;
+
+      _this.selectItemByValue(itemValue);
+    });
+
+    var selectedValue = _this.props.selectedValue;
     _this.selectRef = react.createRef();
     _this.state = {
-      title: placeholder,
       listOpen: false,
-      icon: icon,
-      selectedValue: ""
+      selectedValue: selectedValue
     };
     return _this;
   }
@@ -3291,22 +3286,31 @@ function (_React$PureComponent) {
       document.removeEventListener("mousedown", this.handleClickOutside);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var selectedValue = this.props.selectedValue;
+
+      if (prevProps.selectedValue !== selectedValue) {
+        this._setItemSelected(selectedValue);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          className = _this$props2.className,
-          options = _this$props2.options;
+      var _this$props = this.props,
+          className = _this$props.className,
+          options = _this$props.options,
+          icon = _this$props.icon,
+          placeholder = _this$props.placeholder;
       var _this$state = this.state,
-          title = _this$state.title,
           listOpen = _this$state.listOpen,
-          icon = _this$state.icon,
           selectedValue = _this$state.selectedValue;
       var selectedItem = this.getSelectedItem(selectedValue);
       return react.createElement("div", {
         className: classnames("select__wrapper", className),
         ref: this.selectRef
       }, react.createElement(SelectHeader, {
-        title: selectedItem ? selectedItem.title : title,
+        title: selectedItem ? selectedItem.title : placeholder,
         icon: selectedItem ? selectedItem.icon : icon,
         onClick: this.toggleList,
         listOpen: listOpen
@@ -3327,12 +3331,14 @@ _defineProperty(Select, "propTypes", {
   placeholder: PropTypes.string.isRequired,
   icon: PropTypes.string,
   className: PropTypes.string,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string
 });
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 /**

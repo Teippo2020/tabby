@@ -55,15 +55,14 @@ describe("Select", () => {
     expect(component.state().selectedValue).toEqual("option 2");
   });
   it("should change title when you selected one option", () => {
-    const click = sinon.spy();
-    const component = mount(<Select {...props} onClick={click} />);
+    const component = mount(<Select {...props}  />);
     component.find("SelectHeader").simulate("click");
     component.find({ value: "option 2" }).simulate("click");
-    expect(component.state().title).toEqual("Option 2");
+    expect(component.find("SelectHeader").props().title).toEqual("Option 2")
   });
   it("should re render when props change", () => {
-    const component = mount(<Select {...props} selectedValue={props.options[1].value} />);
-    component.find("SelectHeader").simulate("click");
+    let component = mount(<Select {...props} />);
+    component.setProps({selectedValue: props.options[1].value })
     expect(component.state().selectedValue).toEqual(props.options[1].value);
   });
   it("should change state when you click outside", () => {
@@ -77,4 +76,5 @@ describe("Select", () => {
     document.dispatchEvent(event);
     expect(wrapper.find(Select).state().listOpen).toEqual(false);
   });
+  
 });
