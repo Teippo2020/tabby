@@ -3371,7 +3371,7 @@ function (_React$PureComponent) {
           children = _this$props.children,
           className = _this$props.className;
       return react.createElement("div", {
-        className: classnames("dropdown", className)
+        className: classnames("dropdown__list", className)
       }, children);
     }
   }]);
