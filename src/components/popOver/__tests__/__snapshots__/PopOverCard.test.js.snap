@@ -6,12 +6,12 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <PopOverCard
     back={false}
     className=""
-    left={0}
+    left=""
     onBack={[Function]}
     onClose={[Function]}
     show={false}
     title=""
-    top={0}
+    top=""
   >
     <div />
   </PopOverCard>,
@@ -59,8 +59,8 @@ ShallowWrapper {
       ],
       "className": "pop-over visibility-hidden",
       "style": Object {
-        "left": 0,
-        "top": 0,
+        "left": "",
+        "top": "",
       },
     },
     "ref": null,
@@ -196,8 +196,8 @@ ShallowWrapper {
         ],
         "className": "pop-over visibility-hidden",
         "style": Object {
-          "left": 0,
-          "top": 0,
+          "left": "",
+          "top": "",
         },
       },
       "ref": null,

@@ -48,12 +48,12 @@ ShallowWrapper {
         <PopOverCard
           back={false}
           className=""
-          left={0}
+          left=""
           onBack={null}
           onClose={[Function]}
           show={false}
           title=""
-          top={0}
+          top=""
         >
           <div />
         </PopOverCard>,
@@ -104,12 +104,12 @@ ShallowWrapper {
           "back": false,
           "children": <div />,
           "className": "",
-          "left": 0,
+          "left": "",
           "onBack": null,
           "onClose": [Function],
           "show": false,
           "title": "",
-          "top": 0,
+          "top": "",
         },
         "ref": null,
         "rendered": Object {
@@ -146,12 +146,12 @@ ShallowWrapper {
           <PopOverCard
             back={false}
             className=""
-            left={0}
+            left=""
             onBack={null}
             onClose={[Function]}
             show={false}
             title=""
-            top={0}
+            top=""
           >
             <div />
           </PopOverCard>,
@@ -202,12 +202,12 @@ ShallowWrapper {
             "back": false,
             "children": <div />,
             "className": "",
-            "left": 0,
+            "left": "",
             "onBack": null,
             "onClose": [Function],
             "show": false,
             "title": "",
-            "top": 0,
+            "top": "",
           },
           "ref": null,
           "rendered": Object {
