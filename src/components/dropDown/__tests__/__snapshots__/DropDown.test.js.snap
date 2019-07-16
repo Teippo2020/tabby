@@ -23,7 +23,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div />,
-      "className": "dropdown",
+      "className": "dropdown__list",
     },
     "ref": null,
     "rendered": Object {
@@ -44,7 +44,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div />,
-        "className": "dropdown",
+        "className": "dropdown__list",
       },
       "ref": null,
       "rendered": Object {

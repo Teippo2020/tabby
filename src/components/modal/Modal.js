@@ -20,13 +20,14 @@ class Modal extends React.PureComponent {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    classNameWrapper: PropTypes.string
   };
 
   render() {
-    const { show, onClose, children, className } = this.props;
+    const { show, onClose, children, className, classNameWrapper } = this.props;
     return (
-      <div className={classNames({ hidden: !show }, "modal--wrapper")}>
+      <div className={classNames({ hidden: !show }, "modal--wrapper", classNameWrapper)}>
         <ModalBackground onClose={onClose} />
         <ModalCard onClose={onClose} className={className}>
           {children}
@@ -36,6 +37,7 @@ class Modal extends React.PureComponent {
   }
 }
 Modal.defaultProps = {
-  className: ""
+  className: "",
+  classNameWrapper: ""
 };
 export default Modal;

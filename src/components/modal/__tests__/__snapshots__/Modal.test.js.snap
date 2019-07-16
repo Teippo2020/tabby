@@ -5,6 +5,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Modal
     className=""
+    classNameWrapper=""
     onClose={[Function]}
     show={false}
   >

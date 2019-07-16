@@ -2360,11 +2360,12 @@ function (_React$PureComponent) {
           show = _this$props.show,
           onClose = _this$props.onClose,
           children = _this$props.children,
-          className = _this$props.className;
+          className = _this$props.className,
+          classNameWrapper = _this$props.classNameWrapper;
       return react.createElement("div", {
         className: classnames({
           hidden: !show
-        }, "modal--wrapper")
+        }, "modal--wrapper", classNameWrapper)
       }, react.createElement(ModalBackground, {
         onClose: onClose
       }), react.createElement(ModalCard, {
@@ -2381,11 +2382,13 @@ _defineProperty(Modal, "propTypes", {
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  classNameWrapper: PropTypes.string
 });
 
 Modal.defaultProps = {
-  className: ""
+  className: "",
+  classNameWrapper: ""
 };
 
 /**
@@ -2929,11 +2932,26 @@ function (_React$PureComponent) {
       document.removeEventListener("keydown", this.handleEscPressed);
     }
   }, {
+    key: "isSafari",
+    value: function isSafari() {
+      var ua = window.navigator.userAgent.toLowerCase();
+
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }, {
     key: "getStyle",
     value: function getStyle() {
       var activator = this.activatorRef.current;
 
-      if (!activator) {
+      if (!activator || this.isSafari()) {
         return {};
       }
 
@@ -3368,7 +3386,7 @@ function (_React$PureComponent) {
           children = _this$props.children,
           className = _this$props.className;
       return react.createElement("div", {
-        className: classnames("dropdown", className)
+        className: classnames("dropdown__list", className)
       }, children);
     }
   }]);
