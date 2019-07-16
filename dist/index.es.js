@@ -2749,8 +2749,8 @@ _defineProperty(PopOverCard, "propTypes", {
   onBack: PropTypes.func,
   back: PropTypes.bool,
   className: PropTypes.string,
-  left: PropTypes.number,
-  top: PropTypes.number
+  left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  top: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 });
 
 PopOverCard.defaultProps = {
@@ -2758,8 +2758,8 @@ PopOverCard.defaultProps = {
   title: "",
   back: false,
   onBack: null,
-  left: 0,
-  top: 0
+  left: "",
+  top: ""
 };
 
 /**
@@ -2934,12 +2934,10 @@ function (_React$PureComponent) {
   }, {
     key: "isSafari",
     value: function isSafari() {
-      var ua = window.navigator.userAgent.toLowerCase();
+      var ua = navigator.userAgent.toLowerCase();
 
       if (ua.indexOf('safari') != -1) {
-        if (ua.indexOf('chrome') > -1) {
-          return false;
-        } else {
+        if (ua.indexOf('chrome') === -1) {
           return true;
         }
       }
