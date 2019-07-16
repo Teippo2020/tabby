@@ -2932,11 +2932,26 @@ function (_React$PureComponent) {
       document.removeEventListener("keydown", this.handleEscPressed);
     }
   }, {
+    key: "isSafari",
+    value: function isSafari() {
+      var ua = window.navigator.userAgent.toLowerCase();
+
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }, {
     key: "getStyle",
     value: function getStyle() {
       var activator = this.activatorRef.current;
 
-      if (!activator) {
+      if (!activator || this.isSafari()) {
         return {};
       }
 
