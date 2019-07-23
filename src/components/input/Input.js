@@ -59,9 +59,10 @@ class Input extends React.PureComponent {
 Input.defaultProps = {
   defaultValue: "",
   placeholder: "",
-  innerRef: () => {},
   autoComplete: "off",
-  showError: false
+  showError: false,
+  innerRef: () => {}
+
 };
 
 export default Input;
