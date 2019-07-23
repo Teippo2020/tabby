@@ -2194,7 +2194,7 @@ function (_React$PureComponent) {
           size = _this$props.size,
           color = _this$props.color;
       return react.createElement("i", {
-        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size, " icon--height")
       });
     }
   }]);
@@ -2238,6 +2238,7 @@ function (_React$PureComponent) {
      * @property {string} size- The size of the icon
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
+     * @property {string} type - Button type
      */
     value: function render() {
       var _this$props = this.props,
@@ -2245,9 +2246,10 @@ function (_React$PureComponent) {
           color = _this$props.color,
           size = _this$props.size,
           onClick = _this$props.onClick,
-          className = _this$props.className;
+          className = _this$props.className,
+          type = _this$props.type;
       return react.createElement("button", {
-        type: "submit",
+        type: type,
         className: classnames("btn", "btn--icon", className),
         onClick: onClick
       }, react.createElement(Icon, {
@@ -2266,13 +2268,15 @@ _defineProperty(ButtonIcon, "propTypes", {
   color: PropTypes.string,
   size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.string
 });
 
 ButtonIcon.defaultProps = {
   className: "",
   size: "XXL",
-  color: "gray-l1"
+  color: "gray-l1",
+  type: "button"
 };
 
 /**
@@ -2486,6 +2490,7 @@ function (_React$PureComponent) {
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
      * @property {string} color -  The color of the button
+     * @property {string} type - Button type
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2493,11 +2498,12 @@ function (_React$PureComponent) {
           color = _this$props.color,
           onClick = _this$props.onClick,
           text = _this$props.text,
-          className = _this$props.className;
+          className = _this$props.className,
+          type = _this$props.type;
       return react.createElement("button", {
         className: classnames("btn", "btn--text", "bg--".concat(color), className),
         onClick: onClick,
-        type: "button"
+        type: type
       }, react.createElement("p", null, text));
     }
   }]);
@@ -2509,11 +2515,13 @@ _defineProperty(ButtonText, "propTypes", {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.string
 });
 
 ButtonText.defaultProps = {
-  className: ""
+  className: "",
+  type: "button"
 };
 
 /**
@@ -3593,6 +3601,7 @@ function (_React$PureComponent) {
      * @property {bool} showError - Determines if the input should add an error style
      * @property {string} defaultValue - The Default Value of the input
      * @property {func} innerRef - The function to create a Ref for the input
+     * @property {string} autoComplete - To enable autocomplete
      */
     value: function render() {
       var _this$props = this.props,
@@ -3612,7 +3621,7 @@ function (_React$PureComponent) {
         type: type,
         placeholder: placeholder,
         className: classnames({
-          "error_div": showError
+          "input__error": showError
         }, "input"),
         onChange: onChange,
         onBlur: onBlur,
@@ -3630,17 +3639,18 @@ _defineProperty(Input, "propTypes", {
   placeholder: PropTypes.string,
   onBlur: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  showError: PropTypes.bool.isRequired,
+  showError: PropTypes.bool,
   defaultValue: PropTypes.string,
   innerRef: PropTypes.func,
   autoComplete: PropTypes.string
 });
 
 Input.defaultProps = {
-  placeholder: "",
   defaultValue: "",
-  innerRef: function innerRef() {},
-  autoComplete: "false"
+  placeholder: "",
+  autoComplete: "off",
+  showError: false,
+  innerRef: function innerRef() {}
 };
 
 var autosize = createCommonjsModule(function (module, exports) {
