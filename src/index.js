@@ -35,7 +35,7 @@ import Input from "./components/input/Input";
 import InputTitle from "./components/input/InputTitle";
 import InputIcon from "./components/input/InputIcon";
 
-
+//css
 import "./index.scss";
 
 export {
