@@ -6,12 +6,12 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <PopOverCard
     back={false}
     className=""
-    left={0}
+    left=""
     onBack={[Function]}
     onClose={[Function]}
     show={false}
     title=""
-    top={0}
+    top=""
   >
     <div />
   </PopOverCard>,
@@ -39,6 +39,7 @@ ShallowWrapper {
             icon="left"
             onClick={[Function]}
             size="R"
+            type="submit"
           />
           <PopOverHeader
             title=""
@@ -49,6 +50,7 @@ ShallowWrapper {
             icon="cross"
             onClick={[Function]}
             size="R"
+            type="submit"
           />
         </div>,
         <div
@@ -59,8 +61,8 @@ ShallowWrapper {
       ],
       "className": "pop-over visibility-hidden",
       "style": Object {
-        "left": 0,
-        "top": 0,
+        "left": "",
+        "top": "",
       },
     },
     "ref": null,
@@ -77,6 +79,7 @@ ShallowWrapper {
               icon="left"
               onClick={[Function]}
               size="R"
+              type="submit"
             />,
             <PopOverHeader
               title=""
@@ -87,6 +90,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="R"
+              type="submit"
             />,
           ],
           "className": "icons",
@@ -103,6 +107,7 @@ ShallowWrapper {
               "icon": "left",
               "onClick": [Function],
               "size": "R",
+              "type": "submit",
             },
             "ref": null,
             "rendered": null,
@@ -129,6 +134,7 @@ ShallowWrapper {
               "icon": "cross",
               "onClick": [Function],
               "size": "R",
+              "type": "submit",
             },
             "ref": null,
             "rendered": null,
@@ -176,6 +182,7 @@ ShallowWrapper {
               icon="left"
               onClick={[Function]}
               size="R"
+              type="submit"
             />
             <PopOverHeader
               title=""
@@ -186,6 +193,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="R"
+              type="submit"
             />
           </div>,
           <div
@@ -196,8 +204,8 @@ ShallowWrapper {
         ],
         "className": "pop-over visibility-hidden",
         "style": Object {
-          "left": 0,
-          "top": 0,
+          "left": "",
+          "top": "",
         },
       },
       "ref": null,
@@ -214,6 +222,7 @@ ShallowWrapper {
                 icon="left"
                 onClick={[Function]}
                 size="R"
+                type="submit"
               />,
               <PopOverHeader
                 title=""
@@ -224,6 +233,7 @@ ShallowWrapper {
                 icon="cross"
                 onClick={[Function]}
                 size="R"
+                type="submit"
               />,
             ],
             "className": "icons",
@@ -240,6 +250,7 @@ ShallowWrapper {
                 "icon": "left",
                 "onClick": [Function],
                 "size": "R",
+                "type": "submit",
               },
               "ref": null,
               "rendered": null,
@@ -266,6 +277,7 @@ ShallowWrapper {
                 "icon": "cross",
                 "onClick": [Function],
                 "size": "R",
+                "type": "submit",
               },
               "ref": null,
               "rendered": null,

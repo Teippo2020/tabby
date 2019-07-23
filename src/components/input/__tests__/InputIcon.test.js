@@ -1,10 +1,12 @@
-import React from "react";
-import { shallow, mount } from "enzyme";
-import sinon from "sinon";
+import React from "react"
+import {shallow, mount} from "enzyme"
+import sinon from "sinon"
 
+import InputIcon from "../InputIcon"
 import Input from "../Input";
 
-describe("Input", () => {
+
+describe("InputIcon", () => {
   const onBlur = sinon.stub();
   const onChange = sinon.stub();
   let props;
@@ -14,29 +16,36 @@ describe("Input", () => {
       type: "text",
       onBlur,
       onChange,
-      showError: false
+      icon: "down",
     };
   });
+
+
   it("should render correctly with default state", () => {
-    const component = shallow(<Input {...props} />);
+    const component = shallow(<InputIcon {...props} />);
     expect(component).toMatchSnapshot();
   });
+
   it("should add placeholder to the input", () => {
-    const component = shallow(<Input {...props} placeholder="placeholder" />);
+    const component = mount(<InputIcon {...props} placeholder="placeholder" />);
     expect(component.props().placeholder).toEqual("placeholder");
   });
   it("should call onChange when you change the input value", () => {
-    const component = mount(<Input {...props} />);
+    const component = mount(<InputIcon {...props} />);
     component.find("input").simulate("change");
     expect(onChange.called).toBeTruthy();
   });
-  it("should call onBlur when you focus the input", () => {
-    const component = mount(<Input {...props} />);
+  it("should call onBlur when you focus the input ", () => {
+    const component = mount(<InputIcon {...props} /> );
     component.find("input").simulate("blur");
     expect(onBlur.called).toBeTruthy();
   });
   it("should has class error_div with showError prop", () => {
-    const component = shallow(<Input {...props} showError={true} />);
-    expect(component.hasClass("input__error")).toBeTruthy();
+    const component = mount(<InputIcon {...props} showError />);
+    expect(component.find('input').hasClass("input__error")).toBeTruthy();
+  });
+  it("should has an Icon ", () => {
+    const component = mount(<InputIcon {...props} />)
+    expect(component.find("Icon")).toBeTruthy();
   });
 });

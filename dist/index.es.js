@@ -2360,11 +2360,12 @@ function (_React$PureComponent) {
           show = _this$props.show,
           onClose = _this$props.onClose,
           children = _this$props.children,
-          className = _this$props.className;
+          className = _this$props.className,
+          classNameWrapper = _this$props.classNameWrapper;
       return react.createElement("div", {
         className: classnames({
           hidden: !show
-        }, "modal--wrapper")
+        }, "modal--wrapper", classNameWrapper)
       }, react.createElement(ModalBackground, {
         onClose: onClose
       }), react.createElement(ModalCard, {
@@ -2381,11 +2382,13 @@ _defineProperty(Modal, "propTypes", {
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  classNameWrapper: PropTypes.string
 });
 
 Modal.defaultProps = {
-  className: ""
+  className: "",
+  classNameWrapper: ""
 };
 
 /**
@@ -2746,8 +2749,8 @@ _defineProperty(PopOverCard, "propTypes", {
   onBack: PropTypes.func,
   back: PropTypes.bool,
   className: PropTypes.string,
-  left: PropTypes.number,
-  top: PropTypes.number
+  left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  top: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 });
 
 PopOverCard.defaultProps = {
@@ -2755,8 +2758,8 @@ PopOverCard.defaultProps = {
   title: "",
   back: false,
   onBack: null,
-  left: 0,
-  top: 0
+  left: "",
+  top: ""
 };
 
 /**
@@ -2929,11 +2932,24 @@ function (_React$PureComponent) {
       document.removeEventListener("keydown", this.handleEscPressed);
     }
   }, {
+    key: "isSafari",
+    value: function isSafari() {
+      var ua = navigator.userAgent.toLowerCase();
+
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') === -1) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }, {
     key: "getStyle",
     value: function getStyle() {
       var activator = this.activatorRef.current;
 
-      if (!activator) {
+      if (!activator || this.isSafari()) {
         return {};
       }
 
@@ -3244,38 +3260,33 @@ function (_React$PureComponent) {
       return item;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
-      var itemValue = event.target.dataset.value;
+    _defineProperty(_assertThisInitialized(_this), "_setItemSelected", function (itemValue) {
+      _this.setState({
+        selectedValue: itemValue
+      });
+    });
 
+    _defineProperty(_assertThisInitialized(_this), "selectItemByValue", function (itemValue) {
       var item = _this.getSelectedItem(itemValue);
 
-      if (item.icon) {
-        _this.setState({
-          icon: item.icon,
-          title: item.title,
-          selectedValue: itemValue
-        });
-      } else {
-        _this.setState({
-          title: item.title,
-          selectedValue: itemValue
-        });
-      }
+      _this._setItemSelected(itemValue);
 
       _this.props.onSelect(item);
 
       _this.toggleList();
     });
 
-    var _this$props = _this.props,
-        placeholder = _this$props.placeholder,
-        icon = _this$props.icon;
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (event) {
+      var itemValue = event.target.dataset.value;
+
+      _this.selectItemByValue(itemValue);
+    });
+
+    var selectedValue = _this.props.selectedValue;
     _this.selectRef = react.createRef();
     _this.state = {
-      title: placeholder,
       listOpen: false,
-      icon: icon,
-      selectedValue: ""
+      selectedValue: selectedValue
     };
     return _this;
   }
@@ -3291,22 +3302,31 @@ function (_React$PureComponent) {
       document.removeEventListener("mousedown", this.handleClickOutside);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var selectedValue = this.props.selectedValue;
+
+      if (prevProps.selectedValue !== selectedValue) {
+        this._setItemSelected(selectedValue);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          className = _this$props2.className,
-          options = _this$props2.options;
+      var _this$props = this.props,
+          className = _this$props.className,
+          options = _this$props.options,
+          icon = _this$props.icon,
+          placeholder = _this$props.placeholder;
       var _this$state = this.state,
-          title = _this$state.title,
           listOpen = _this$state.listOpen,
-          icon = _this$state.icon,
           selectedValue = _this$state.selectedValue;
       var selectedItem = this.getSelectedItem(selectedValue);
       return react.createElement("div", {
         className: classnames("select__wrapper", className),
         ref: this.selectRef
       }, react.createElement(SelectHeader, {
-        title: selectedItem ? selectedItem.title : title,
+        title: selectedItem ? selectedItem.title : placeholder,
         icon: selectedItem ? selectedItem.icon : icon,
         onClick: this.toggleList,
         listOpen: listOpen
@@ -3327,12 +3347,14 @@ _defineProperty(Select, "propTypes", {
   placeholder: PropTypes.string.isRequired,
   icon: PropTypes.string,
   className: PropTypes.string,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string
 });
 
 Select.defaultProps = {
   className: "",
-  icon: ""
+  icon: "",
+  selectedValue: ""
 };
 
 /**
@@ -3362,7 +3384,7 @@ function (_React$PureComponent) {
           children = _this$props.children,
           className = _this$props.className;
       return react.createElement("div", {
-        className: classnames("dropdown", className)
+        className: classnames("dropdown__list", className)
       }, children);
     }
   }]);

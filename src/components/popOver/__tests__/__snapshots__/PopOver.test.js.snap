@@ -10,6 +10,7 @@ ShallowWrapper {
         color="blue"
         onClick={[Function]}
         text="Activator"
+        type="button"
       />
     }
     back={false}
@@ -43,17 +44,18 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="Activator"
+            type="button"
           />
         </div>,
         <PopOverCard
           back={false}
           className=""
-          left={0}
+          left=""
           onBack={null}
           onClose={[Function]}
           show={false}
           title=""
-          top={0}
+          top=""
         >
           <div />
         </PopOverCard>,
@@ -74,6 +76,7 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="Activator"
+            type="button"
           />,
           "id": "activator",
         },
@@ -89,6 +92,7 @@ ShallowWrapper {
             "color": "blue",
             "onClick": [Function],
             "text": "Activator",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
@@ -104,12 +108,12 @@ ShallowWrapper {
           "back": false,
           "children": <div />,
           "className": "",
-          "left": 0,
+          "left": "",
           "onBack": null,
           "onClose": [Function],
           "show": false,
           "title": "",
-          "top": 0,
+          "top": "",
         },
         "ref": null,
         "rendered": Object {
@@ -141,17 +145,18 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="Activator"
+              type="button"
             />
           </div>,
           <PopOverCard
             back={false}
             className=""
-            left={0}
+            left=""
             onBack={null}
             onClose={[Function]}
             show={false}
             title=""
-            top={0}
+            top=""
           >
             <div />
           </PopOverCard>,
@@ -172,6 +177,7 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="Activator"
+              type="button"
             />,
             "id": "activator",
           },
@@ -187,6 +193,7 @@ ShallowWrapper {
               "color": "blue",
               "onClick": [Function],
               "text": "Activator",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,
@@ -202,12 +209,12 @@ ShallowWrapper {
             "back": false,
             "children": <div />,
             "className": "",
-            "left": 0,
+            "left": "",
             "onBack": null,
             "onClose": [Function],
             "show": false,
             "title": "",
-            "top": 0,
+            "top": "",
           },
           "ref": null,
           "rendered": Object {

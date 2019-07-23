@@ -18,7 +18,7 @@ class Icon extends React.PureComponent {
 
   render() {
     const { icon, size, color } = this.props;
-    return <i className={`icon-${icon} color--${color} size--${size}`} />;
+    return <i className={`icon-${icon} color--${color} size--${size} icon--height`} />;
   }
 }
 

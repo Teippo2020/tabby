@@ -27,8 +27,8 @@ class PopOverCard extends React.PureComponent {
     onBack: PropTypes.func,
     back: PropTypes.bool,
     className: PropTypes.string,
-    left: PropTypes.number,
-    top: PropTypes.number
+    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   };
 
   render() {
@@ -77,8 +77,8 @@ PopOverCard.defaultProps = {
   title: "",
   back: false,
   onBack: null,
-  left: 0,
-  top: 0
+  left: "",
+  top: ""
 };
 
 export default PopOverCard;

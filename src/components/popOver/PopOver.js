@@ -52,9 +52,19 @@ class PopOver extends React.PureComponent {
     document.removeEventListener("keydown", this.handleEscPressed);
   }
 
+  isSafari(){
+    let ua = navigator.userAgent.toLowerCase(); 
+    if (ua.indexOf('safari') != -1) { 
+      if (ua.indexOf('chrome') === -1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   getStyle() {
     const activator = this.activatorRef.current;
-    if (!activator) {
+    if (!activator || this.isSafari()) {
       return {};
     }
     const pop = this.popRef.current;

@@ -20,7 +20,7 @@ class Dropdown extends React.PureComponent {
     const { children, className} = this.props;
     return (
       <div
-        className={classNames("dropdown", className)}
+        className={classNames("dropdown__list", className)}
       >
         {children}
       </div>

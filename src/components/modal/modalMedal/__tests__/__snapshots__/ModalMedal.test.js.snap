@@ -74,10 +74,12 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="button text"
+            type="button"
           />
         </ModalFooter>,
       ],
       "className": "modal--medal",
+      "classNameWrapper": "",
       "onClose": [Function],
       "show": false,
     },
@@ -227,6 +229,7 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="button text"
+            type="button"
           />,
         },
         "ref": null,
@@ -239,6 +242,7 @@ ShallowWrapper {
             "color": "blue",
             "onClick": [Function],
             "text": "button text",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
@@ -294,10 +298,12 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="button text"
+              type="button"
             />
           </ModalFooter>,
         ],
         "className": "modal--medal",
+        "classNameWrapper": "",
         "onClose": [Function],
         "show": false,
       },
@@ -447,6 +453,7 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="button text"
+              type="button"
             />,
           },
           "ref": null,
@@ -459,6 +466,7 @@ ShallowWrapper {
               "color": "blue",
               "onClick": [Function],
               "text": "button text",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,
