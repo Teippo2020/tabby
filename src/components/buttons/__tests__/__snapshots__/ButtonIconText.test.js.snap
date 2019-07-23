@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonIcon should render correctly with default state 1`] = `
+exports[`ButtonIconText should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ButtonText
+  Symbol(enzyme.__unrendered__): <ButtonIconText
     className=""
     color="blue"
+    icon="down"
+    iconColor="white"
+    iconRight={false}
+    iconSize="R"
     onClick={[Function]}
     text="text"
     type="button"
@@ -24,42 +28,36 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p>
-        text
-      </p>,
-      "className": "btn btn--text bg--blue",
+      "children": Array [
+        <Icon
+          color="white"
+          icon="down"
+          size="R"
+        />,
+        <p>
+          text
+        </p>,
+      ],
+      "className": "btn btn__icon--text bg--blue",
       "onClick": [Function],
       "type": "button",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "text",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "color": "white",
+          "icon": "down",
+          "size": "R",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": "text",
-      "type": "p",
-    },
-    "type": "button",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <p>
-          text
-        </p>,
-        "className": "btn btn--text bg--blue",
-        "onClick": [Function],
-        "type": "button",
-      },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -70,6 +68,56 @@ ShallowWrapper {
         "rendered": "text",
         "type": "p",
       },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Icon
+            color="white"
+            icon="down"
+            size="R"
+          />,
+          <p>
+            text
+          </p>,
+        ],
+        "className": "btn btn__icon--text bg--blue",
+        "onClick": [Function],
+        "type": "button",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "color": "white",
+            "icon": "down",
+            "size": "R",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "text",
+          },
+          "ref": null,
+          "rendered": "text",
+          "type": "p",
+        },
+      ],
       "type": "button",
     },
   ],

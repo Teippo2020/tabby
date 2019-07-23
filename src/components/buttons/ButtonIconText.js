@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Icon from "../icons/Icon";
 
 /**
  * @class ButtonText - Is a button that only contains text
  */
-class ButtonText extends React.PureComponent {
+class ButtonIconText extends React.PureComponent {
   /**
    * @property {string} text -The text of the button
    * @property {func} onClick - The function triggered by the button
    * @property {string} className - Just in case you need another class
    * @property {string} color -  The color of the button
    * @property {string} type - Button type
+   * @property {string} icon - Name of the icon
+   * @property {string} iconColor - Color of the icon
+   * @property {string} iconSize - Size of the icon, by default is 16px
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
@@ -19,25 +23,32 @@ class ButtonText extends React.PureComponent {
     onClick: PropTypes.func.isRequired,
     color: PropTypes.string.isRequired,
     className: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    icon: PropTypes.string.isRequired,
+    iconColor: PropTypes.string.isRequired,
+    iconSize: PropTypes.string,
+    iconRight: PropTypes.bool
   };
 
   render() {
-    const { color, onClick, text, className, type } = this.props;
+    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight } = this.props;
     return (
       <button
-        className={classNames("btn", "btn--text", `bg--${color}`, className)}
+        className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, className)}
         onClick={onClick}
         type={type}
       >
+        <Icon icon={icon} color={iconColor} size={iconSize}/>
         <p>{text}</p>
       </button>
     );
   }
 }
-ButtonText.defaultProps = {
+ButtonIconText.defaultProps = {
   className: "",
-  type: "button"
+  type: "button",
+  iconSize: "R",
+  iconRight: false
 };
 
-export default ButtonText;
+export default ButtonIconText;

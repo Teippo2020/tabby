@@ -27,4 +27,8 @@ describe("ButtonIcon", () => {
     const component = shallow(<ButtonText {...props} className="btn-2" />);
     expect(component.hasClass("btn-2"));
   });
+  it("should be a submit button", () => {
+    const component = shallow(<ButtonText {...props} type="submit" /> );
+    expect(component.find({type: "submit"})).toBeTruthy();
+  });
 });

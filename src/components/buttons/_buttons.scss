@@ -29,6 +29,37 @@
   }
 }
 
+.btn__icon--text{
+  font-size: $R;
+  font-weight: $regular;
+  padding:4px 16px;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  i{
+    margin-right: 8px;
+    margin-left: 0;
+  }
+  &:hover{
+    filter:brightness(1.2);
+  }
+  &:active{
+    filter:saturate(.7);
+  }
+
+  &:disabled{
+    filter: saturate(.3);
+  }
+}
+.btn__icon--right{
+   flex-direction: row-reverse;
+  i{
+    margin-left: 8px;
+    margin-right: 0;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .btn--text{
