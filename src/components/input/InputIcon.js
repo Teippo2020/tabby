@@ -6,7 +6,7 @@ import Icon from "../icons/Icon";
 /**
  * @class Input - It is an html input
  */
-class Input extends React.PureComponent {
+class InputIcon extends React.PureComponent {
   /**
    * @property {string} name -The name of the input
    * @property {string} type - The type of the input
@@ -66,7 +66,7 @@ class Input extends React.PureComponent {
     );
   }
 }
-Input.defaultProps = {
+InputIcon.defaultProps = {
   placeholder: "",
   defaultValue: "",
   innerRef: () => {},
@@ -76,4 +76,4 @@ Input.defaultProps = {
   showError: false
 };
 
-export default Input;
+export default InputIcon;
