@@ -19,14 +19,15 @@ class ButtonIcon extends React.PureComponent {
     color: PropTypes.string,
     size: PropTypes.string,
     onClick: PropTypes.func.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    type: PropTypes.string
   };
 
   render() {
-    const { icon, color, size, onClick, className } = this.props;
+    const { icon, color, size, onClick, className, type } = this.props;
     return (
       <button
-        type="submit"
+        type={type}
         className={classNames("btn", "btn--icon", className)}
         onClick={onClick}
       >
@@ -38,7 +39,8 @@ class ButtonIcon extends React.PureComponent {
 ButtonIcon.defaultProps = {
   className: "",
   size: "XXL",
-  color: "gray-l1"
+  color: "gray-l1",
+  type: "submit"
 };
 
 export default ButtonIcon;

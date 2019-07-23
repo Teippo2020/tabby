@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Icon from "../icons/Icon";
 
 /**
  * @class Input - It is an html input
@@ -25,7 +26,10 @@ class Input extends React.PureComponent {
     showError: PropTypes.bool,
     defaultValue: PropTypes.string,
     innerRef: PropTypes.func,
-    autoComplete: PropTypes.string
+    autoComplete: PropTypes.string,
+    icon: PropTypes.string.isRequired,
+    iconColor: PropTypes.string,
+    iconSize: PropTypes.string
   };
 
   render() {
@@ -38,9 +42,14 @@ class Input extends React.PureComponent {
       onChange,
       onBlur,
       defaultValue,
-      autoComplete
+      autoComplete,
+      icon,
+      iconColor,
+      iconSize
     } = this.props;
     return (
+      <div className="input__icon--container">
+        <Icon color={iconColor} icon={icon} size={iconSize}/>
       <input
         ref={innerRef}
         autoComplete={autoComplete}
@@ -52,6 +61,7 @@ class Input extends React.PureComponent {
         onBlur={onBlur}
         defaultValue={defaultValue}
       />
+      </div>
     );
   }
 }
@@ -60,6 +70,8 @@ Input.defaultProps = {
   defaultValue: "",
   innerRef: () => {},
   autoComplete: "off",
+  iconColor: "gray-l2",
+  iconSize: "R",
   showError: false
 };
 

@@ -10,6 +10,7 @@ ShallowWrapper {
         color="blue"
         onClick={[Function]}
         text="Activator"
+        type="button"
       />
     }
     back={false}
@@ -43,6 +44,7 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="Activator"
+            type="button"
           />
         </div>,
         <PopOverCard
@@ -74,6 +76,7 @@ ShallowWrapper {
             color="blue"
             onClick={[Function]}
             text="Activator"
+            type="button"
           />,
           "id": "activator",
         },
@@ -89,6 +92,7 @@ ShallowWrapper {
             "color": "blue",
             "onClick": [Function],
             "text": "Activator",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
@@ -141,6 +145,7 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="Activator"
+              type="button"
             />
           </div>,
           <PopOverCard
@@ -172,6 +177,7 @@ ShallowWrapper {
               color="blue"
               onClick={[Function]}
               text="Activator"
+              type="button"
             />,
             "id": "activator",
           },
@@ -187,6 +193,7 @@ ShallowWrapper {
               "color": "blue",
               "onClick": [Function],
               "text": "Activator",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,

@@ -9,6 +9,7 @@ ShallowWrapper {
     icon="cross"
     onClick={[Function]}
     size="XXL"
+    type="submit"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
