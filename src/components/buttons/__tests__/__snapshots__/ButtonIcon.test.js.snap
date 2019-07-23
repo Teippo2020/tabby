@@ -9,6 +9,7 @@ ShallowWrapper {
     icon="cross"
     onClick={[Function]}
     size="XXL"
+    type="button"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -31,7 +32,7 @@ ShallowWrapper {
       />,
       "className": "btn btn--icon",
       "onClick": [Function],
-      "type": "submit",
+      "type": "button",
     },
     "ref": null,
     "rendered": Object {
@@ -62,7 +63,7 @@ ShallowWrapper {
         />,
         "className": "btn btn--icon",
         "onClick": [Function],
-        "type": "submit",
+        "type": "button",
       },
       "ref": null,
       "rendered": Object {

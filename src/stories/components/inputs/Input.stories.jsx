@@ -14,9 +14,18 @@ storiesOf("Input", module)
       onChange={() => {}}
     />
   ))
+  .add("Input with error style", () => (
+    <Input
+      type={"text"} onChange={()=>{}} name="Default" onBlur={()=>{}}
+      showError
+      placeholder="Soy placeholder"
+    />
+    )
+  )
   .add("InputTitle", () => (
     <InputTitle
       initialText="Escribe aquí el título"
     />
   ))
+
   ;

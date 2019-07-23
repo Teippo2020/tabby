@@ -22,7 +22,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "icon- color--gray-l1 size--XXL",
+      "className": "icon- color--gray-l1 size--XXL icon--height",
     },
     "ref": null,
     "rendered": null,
@@ -34,7 +34,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "icon- color--gray-l1 size--XXL",
+        "className": "icon- color--gray-l1 size--XXL icon--height",
       },
       "ref": null,
       "rendered": null,

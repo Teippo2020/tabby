@@ -4,7 +4,7 @@ exports[`Input should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Input
-    autoComplete="false"
+    autoComplete="off"
     defaultValue=""
     innerRef={[Function]}
     name="Input"
@@ -28,7 +28,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "autoComplete": "false",
+      "autoComplete": "off",
       "className": "input",
       "defaultValue": "",
       "name": "Input",
@@ -47,7 +47,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "autoComplete": "false",
+        "autoComplete": "off",
         "className": "input",
         "defaultValue": "",
         "name": "Input",

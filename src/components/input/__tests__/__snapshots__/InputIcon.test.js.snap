@@ -1,14 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectHeader should render correctly with default state 1`] = `
+exports[`InputIcon should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SelectHeader
-    className=""
-    icon=""
-    listOpen={false}
-    onClick={[Function]}
-    title="Title"
+  Symbol(enzyme.__unrendered__): <Input
+    autoComplete="off"
+    defaultValue=""
+    icon="down"
+    iconColor="gray-l2"
+    iconSize="R"
+    innerRef={[Function]}
+    name="Input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder=""
+    showError={false}
+    type="text"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -25,51 +32,56 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "",
-        <p>
-          Title
-        </p>,
-        <ButtonIcon
-          className=""
-          color="not-gray-l1"
+        <Icon
+          color="gray-l2"
           icon="down"
-          onClick={[Function]}
-          size="XXS"
-          type="button"
+          size="R"
+        />,
+        <input
+          autoComplete="off"
+          className="input"
+          defaultValue=""
+          name="Input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder=""
+          type="text"
         />,
       ],
-      "className": "select__header",
-      "onClick": [Function],
+      "className": "input__icon--container",
     },
     "ref": null,
     "rendered": Array [
-      "",
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Title",
-        },
-        "ref": null,
-        "rendered": "Title",
-        "type": "p",
-      },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "className": "",
-          "color": "not-gray-l1",
+          "color": "gray-l2",
           "icon": "down",
-          "onClick": [Function],
-          "size": "XXS",
-          "type": "button",
+          "size": "R",
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "autoComplete": "off",
+          "className": "input",
+          "defaultValue": "",
+          "name": "Input",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "placeholder": "",
+          "type": "text",
+        },
+        "ref": [Function],
+        "rendered": null,
+        "type": "input",
       },
     ],
     "type": "div",
@@ -81,51 +93,56 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "",
-          <p>
-            Title
-          </p>,
-          <ButtonIcon
-            className=""
-            color="not-gray-l1"
+          <Icon
+            color="gray-l2"
             icon="down"
-            onClick={[Function]}
-            size="XXS"
-            type="button"
+            size="R"
+          />,
+          <input
+            autoComplete="off"
+            className="input"
+            defaultValue=""
+            name="Input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder=""
+            type="text"
           />,
         ],
-        "className": "select__header",
-        "onClick": [Function],
+        "className": "input__icon--container",
       },
       "ref": null,
       "rendered": Array [
-        "",
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Title",
-          },
-          "ref": null,
-          "rendered": "Title",
-          "type": "p",
-        },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "className": "",
-            "color": "not-gray-l1",
+            "color": "gray-l2",
             "icon": "down",
-            "onClick": [Function],
-            "size": "XXS",
-            "type": "button",
+            "size": "R",
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "autoComplete": "off",
+            "className": "input",
+            "defaultValue": "",
+            "name": "Input",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "placeholder": "",
+            "type": "text",
+          },
+          "ref": [Function],
+          "rendered": null,
+          "type": "input",
         },
       ],
       "type": "div",

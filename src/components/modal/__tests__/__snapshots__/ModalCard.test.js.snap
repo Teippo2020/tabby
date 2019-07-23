@@ -33,6 +33,7 @@ ShallowWrapper {
             icon="cross"
             onClick={[Function]}
             size="L"
+            type="button"
           />
         </div>,
         <div
@@ -56,6 +57,7 @@ ShallowWrapper {
             icon="cross"
             onClick={[Function]}
             size="L"
+            type="button"
           />,
           "className": "icons",
         },
@@ -70,6 +72,7 @@ ShallowWrapper {
             "icon": "cross",
             "onClick": [Function],
             "size": "L",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
@@ -116,6 +119,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="L"
+              type="button"
             />
           </div>,
           <div
@@ -139,6 +143,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="L"
+              type="button"
             />,
             "className": "icons",
           },
@@ -153,6 +158,7 @@ ShallowWrapper {
               "icon": "cross",
               "onClick": [Function],
               "size": "L",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,

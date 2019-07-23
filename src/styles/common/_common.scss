@@ -74,6 +74,7 @@
 @each $allSize, $size in $sizes {
   .size--#{$allSize} {
     font-size: $size;
+    height: $size;
   }
 }
 
