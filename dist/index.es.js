@@ -4136,18 +4136,18 @@ InputTitle.defaultProps = {
  * @class Input - It is an html input
  */
 
-var Input$1 =
+var InputIcon =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(Input, _React$PureComponent);
+  _inherits(InputIcon, _React$PureComponent);
 
-  function Input() {
-    _classCallCheck(this, Input);
+  function InputIcon() {
+    _classCallCheck(this, InputIcon);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Input).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(InputIcon).apply(this, arguments));
   }
 
-  _createClass(Input, [{
+  _createClass(InputIcon, [{
     key: "render",
 
     /**
@@ -4197,10 +4197,10 @@ function (_React$PureComponent) {
     }
   }]);
 
-  return Input;
+  return InputIcon;
 }(react.PureComponent);
 
-_defineProperty(Input$1, "propTypes", {
+_defineProperty(InputIcon, "propTypes", {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -4215,7 +4215,7 @@ _defineProperty(Input$1, "propTypes", {
   iconSize: PropTypes.string
 });
 
-Input$1.defaultProps = {
+InputIcon.defaultProps = {
   placeholder: "",
   defaultValue: "",
   innerRef: function innerRef() {},
@@ -4227,5 +4227,5 @@ Input$1.defaultProps = {
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption, ButtonIconText, Input$1 as InputIcon };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption, ButtonIconText, InputIcon };
 //# sourceMappingURL=index.es.js.map
