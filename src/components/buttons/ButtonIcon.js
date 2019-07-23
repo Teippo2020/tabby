@@ -13,6 +13,7 @@ class ButtonIcon extends React.PureComponent {
    * @property {string} size- The size of the icon
    * @property {func} onClick - The function triggered by the button
    * @property {string} className - Just in case you need another class
+   * @property {string} type - Button type
    */
   static propTypes = {
     icon: PropTypes.string.isRequired,
@@ -40,7 +41,7 @@ ButtonIcon.defaultProps = {
   className: "",
   size: "XXL",
   color: "gray-l1",
-  type: "submit"
+  type: "button"
 };
 
 export default ButtonIcon;

@@ -54,7 +54,7 @@ ShallowWrapper {
             icon="options"
             onClick={[Function]}
             size="R"
-            type="submit"
+            type="button"
           />
         </div>,
         false,
@@ -76,7 +76,7 @@ ShallowWrapper {
             icon="options"
             onClick={[Function]}
             size="R"
-            type="submit"
+            type="button"
           />,
           "id": "activator-dropdown",
         },
@@ -93,7 +93,7 @@ ShallowWrapper {
             "icon": "options",
             "onClick": [Function],
             "size": "R",
-            "type": "submit",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
@@ -121,7 +121,7 @@ ShallowWrapper {
               icon="options"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />
           </div>,
           false,
@@ -143,7 +143,7 @@ ShallowWrapper {
               icon="options"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />,
             "id": "activator-dropdown",
           },
@@ -160,7 +160,7 @@ ShallowWrapper {
               "icon": "options",
               "onClick": [Function],
               "size": "R",
-              "type": "submit",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,

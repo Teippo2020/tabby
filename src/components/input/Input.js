@@ -15,6 +15,7 @@ class Input extends React.PureComponent {
    * @property {bool} showError - Determines if the input should add an error style
    * @property {string} defaultValue - The Default Value of the input
    * @property {func} innerRef - The function to create a Ref for the input
+   * @property {string} autoComplete - To enable autocomplete
    */
   static propTypes = {
     name: PropTypes.string.isRequired,

@@ -39,7 +39,7 @@ ShallowWrapper {
             icon="left"
             onClick={[Function]}
             size="R"
-            type="submit"
+            type="button"
           />
           <PopOverHeader
             title=""
@@ -50,7 +50,7 @@ ShallowWrapper {
             icon="cross"
             onClick={[Function]}
             size="R"
-            type="submit"
+            type="button"
           />
         </div>,
         <div
@@ -79,7 +79,7 @@ ShallowWrapper {
               icon="left"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />,
             <PopOverHeader
               title=""
@@ -90,7 +90,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />,
           ],
           "className": "icons",
@@ -107,7 +107,7 @@ ShallowWrapper {
               "icon": "left",
               "onClick": [Function],
               "size": "R",
-              "type": "submit",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,
@@ -134,7 +134,7 @@ ShallowWrapper {
               "icon": "cross",
               "onClick": [Function],
               "size": "R",
-              "type": "submit",
+              "type": "button",
             },
             "ref": null,
             "rendered": null,
@@ -182,7 +182,7 @@ ShallowWrapper {
               icon="left"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />
             <PopOverHeader
               title=""
@@ -193,7 +193,7 @@ ShallowWrapper {
               icon="cross"
               onClick={[Function]}
               size="R"
-              type="submit"
+              type="button"
             />
           </div>,
           <div
@@ -222,7 +222,7 @@ ShallowWrapper {
                 icon="left"
                 onClick={[Function]}
                 size="R"
-                type="submit"
+                type="button"
               />,
               <PopOverHeader
                 title=""
@@ -233,7 +233,7 @@ ShallowWrapper {
                 icon="cross"
                 onClick={[Function]}
                 size="R"
-                type="submit"
+                type="button"
               />,
             ],
             "className": "icons",
@@ -250,7 +250,7 @@ ShallowWrapper {
                 "icon": "left",
                 "onClick": [Function],
                 "size": "R",
-                "type": "submit",
+                "type": "button",
               },
               "ref": null,
               "rendered": null,
@@ -277,7 +277,7 @@ ShallowWrapper {
                 "icon": "cross",
                 "onClick": [Function],
                 "size": "R",
-                "type": "submit",
+                "type": "button",
               },
               "ref": null,
               "rendered": null,

@@ -35,7 +35,7 @@ ShallowWrapper {
           icon="down"
           onClick={[Function]}
           size="XXS"
-          type="submit"
+          type="button"
         />,
       ],
       "className": "select__header",
@@ -65,7 +65,7 @@ ShallowWrapper {
           "icon": "down",
           "onClick": [Function],
           "size": "XXS",
-          "type": "submit",
+          "type": "button",
         },
         "ref": null,
         "rendered": null,
@@ -91,7 +91,7 @@ ShallowWrapper {
             icon="down"
             onClick={[Function]}
             size="XXS"
-            type="submit"
+            type="button"
           />,
         ],
         "className": "select__header",
@@ -121,7 +121,7 @@ ShallowWrapper {
             "icon": "down",
             "onClick": [Function],
             "size": "XXS",
-            "type": "submit",
+            "type": "button",
           },
           "ref": null,
           "rendered": null,
