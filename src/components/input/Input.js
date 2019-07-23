@@ -62,6 +62,7 @@ Input.defaultProps = {
   autoComplete: "off",
   showError: false,
   innerRef: () => {}
+
 };
 
 export default Input;
