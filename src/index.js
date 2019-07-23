@@ -13,6 +13,7 @@ import Medal from "./components/modal/modalMedal/Medal";
 // Buttons components
 import ButtonIcon from "./components/buttons/ButtonIcon";
 import ButtonText from "./components/buttons/ButtonText";
+import ButtonIconText from "./components/buttons/ButtonIconText";
 
 //Icon
 import Icon from "./components/icons/Icon";
@@ -31,7 +32,8 @@ import DropdownOption from "./components/dropDown/DrodownOption"
 
 //Inputs
 import Input from "./components/input/Input";
-import InputTitle from "./components/input/InputTitle"
+import InputTitle from "./components/input/InputTitle";
+import InputIcon from "./components/input/InputIcon";
 
 
 import "./index.scss";
@@ -54,5 +56,7 @@ export {
 	DropdownWrapper,
 	Input,
 	InputTitle,
-	DropdownOption
+	DropdownOption,
+  ButtonIconText,
+  InputIcon
 };
