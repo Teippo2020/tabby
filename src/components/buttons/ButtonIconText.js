@@ -17,6 +17,7 @@ class ButtonIconText extends React.PureComponent {
    * @property {string} iconColor - Color of the icon
    * @property {string} iconSize - Size of the icon, by default is 16px
    * @property {bool} iconRight - to define the position of the icon
+   * @property {bool} disabled - Button could be disabled
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {

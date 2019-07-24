@@ -14,6 +14,7 @@ class ButtonIcon extends React.PureComponent {
    * @property {func} onClick - The function triggered by the button
    * @property {string} className - Just in case you need another class
    * @property {string} type - Button type
+   * @property {bool} disabled - Button could be disabled
    */
   static propTypes = {
     icon: PropTypes.string.isRequired,

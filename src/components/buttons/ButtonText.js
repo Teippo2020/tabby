@@ -12,6 +12,7 @@ class ButtonText extends React.PureComponent {
    * @property {string} className - Just in case you need another class
    * @property {string} color -  The color of the button
    * @property {string} type - Button type
+   * @property {bool} disabled - Button could be disabled
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
