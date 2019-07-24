@@ -72,6 +72,7 @@ ShallowWrapper {
           <ButtonText
             className=""
             color="blue"
+            disabled={false}
             onClick={[Function]}
             text="button text"
             type="button"
@@ -227,6 +228,7 @@ ShallowWrapper {
           "children": <ButtonText
             className=""
             color="blue"
+            disabled={false}
             onClick={[Function]}
             text="button text"
             type="button"
@@ -240,6 +242,7 @@ ShallowWrapper {
           "props": Object {
             "className": "",
             "color": "blue",
+            "disabled": false,
             "onClick": [Function],
             "text": "button text",
             "type": "button",
@@ -296,6 +299,7 @@ ShallowWrapper {
             <ButtonText
               className=""
               color="blue"
+              disabled={false}
               onClick={[Function]}
               text="button text"
               type="button"
@@ -451,6 +455,7 @@ ShallowWrapper {
             "children": <ButtonText
               className=""
               color="blue"
+              disabled={false}
               onClick={[Function]}
               text="button text"
               type="button"
@@ -464,6 +469,7 @@ ShallowWrapper {
             "props": Object {
               "className": "",
               "color": "blue",
+              "disabled": false,
               "onClick": [Function],
               "text": "button text",
               "type": "button",

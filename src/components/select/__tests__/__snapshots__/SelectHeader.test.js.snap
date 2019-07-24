@@ -32,6 +32,7 @@ ShallowWrapper {
         <ButtonIcon
           className=""
           color="not-gray-l1"
+          disabled={false}
           icon="down"
           onClick={[Function]}
           size="XXS"
@@ -62,6 +63,7 @@ ShallowWrapper {
         "props": Object {
           "className": "",
           "color": "not-gray-l1",
+          "disabled": false,
           "icon": "down",
           "onClick": [Function],
           "size": "XXS",
@@ -88,6 +90,7 @@ ShallowWrapper {
           <ButtonIcon
             className=""
             color="not-gray-l1"
+            disabled={false}
             icon="down"
             onClick={[Function]}
             size="XXS"
@@ -118,6 +121,7 @@ ShallowWrapper {
           "props": Object {
             "className": "",
             "color": "not-gray-l1",
+            "disabled": false,
             "icon": "down",
             "onClick": [Function],
             "size": "XXS",

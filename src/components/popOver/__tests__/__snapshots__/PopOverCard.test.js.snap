@@ -36,6 +36,7 @@ ShallowWrapper {
           <ButtonIcon
             className="visibility-hidden"
             color="gray-l1"
+            disabled={false}
             icon="left"
             onClick={[Function]}
             size="R"
@@ -47,6 +48,7 @@ ShallowWrapper {
           <ButtonIcon
             className=""
             color="gray-l1"
+            disabled={false}
             icon="cross"
             onClick={[Function]}
             size="R"
@@ -76,6 +78,7 @@ ShallowWrapper {
             <ButtonIcon
               className="visibility-hidden"
               color="gray-l1"
+              disabled={false}
               icon="left"
               onClick={[Function]}
               size="R"
@@ -87,6 +90,7 @@ ShallowWrapper {
             <ButtonIcon
               className=""
               color="gray-l1"
+              disabled={false}
               icon="cross"
               onClick={[Function]}
               size="R"
@@ -104,6 +108,7 @@ ShallowWrapper {
             "props": Object {
               "className": "visibility-hidden",
               "color": "gray-l1",
+              "disabled": false,
               "icon": "left",
               "onClick": [Function],
               "size": "R",
@@ -131,6 +136,7 @@ ShallowWrapper {
             "props": Object {
               "className": "",
               "color": "gray-l1",
+              "disabled": false,
               "icon": "cross",
               "onClick": [Function],
               "size": "R",
@@ -179,6 +185,7 @@ ShallowWrapper {
             <ButtonIcon
               className="visibility-hidden"
               color="gray-l1"
+              disabled={false}
               icon="left"
               onClick={[Function]}
               size="R"
@@ -190,6 +197,7 @@ ShallowWrapper {
             <ButtonIcon
               className=""
               color="gray-l1"
+              disabled={false}
               icon="cross"
               onClick={[Function]}
               size="R"
@@ -219,6 +227,7 @@ ShallowWrapper {
               <ButtonIcon
                 className="visibility-hidden"
                 color="gray-l1"
+                disabled={false}
                 icon="left"
                 onClick={[Function]}
                 size="R"
@@ -230,6 +239,7 @@ ShallowWrapper {
               <ButtonIcon
                 className=""
                 color="gray-l1"
+                disabled={false}
                 icon="cross"
                 onClick={[Function]}
                 size="R"
@@ -247,6 +257,7 @@ ShallowWrapper {
               "props": Object {
                 "className": "visibility-hidden",
                 "color": "gray-l1",
+                "disabled": false,
                 "icon": "left",
                 "onClick": [Function],
                 "size": "R",
@@ -274,6 +285,7 @@ ShallowWrapper {
               "props": Object {
                 "className": "",
                 "color": "gray-l1",
+                "disabled": false,
                 "icon": "cross",
                 "onClick": [Function],
                 "size": "R",

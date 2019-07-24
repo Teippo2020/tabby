@@ -12,6 +12,7 @@ class ButtonText extends React.PureComponent {
    * @property {string} className - Just in case you need another class
    * @property {string} color -  The color of the button
    * @property {string} type - Button type
+   * @property {bool} disabled - Button could be disabled
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
@@ -19,16 +20,18 @@ class ButtonText extends React.PureComponent {
     onClick: PropTypes.func.isRequired,
     color: PropTypes.string.isRequired,
     className: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    disabled: PropTypes.bool
   };
 
   render() {
-    const { color, onClick, text, className, type } = this.props;
+    const { color, onClick, text, className, type, disabled } = this.props;
     return (
       <button
         className={classNames("btn", "btn--text", `bg--${color}`, className)}
         onClick={onClick}
         type={type}
+        disabled={disabled}
       >
         <p>{text}</p>
       </button>
@@ -37,7 +40,8 @@ class ButtonText extends React.PureComponent {
 }
 ButtonText.defaultProps = {
   className: "",
-  type: "button"
+  type: "button",
+  disabled: false
 };
 
 export default ButtonText;
