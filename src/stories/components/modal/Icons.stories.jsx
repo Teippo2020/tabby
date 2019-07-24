@@ -4,4 +4,4 @@ import Icon from "../../../components/icons/Icon";
 
 storiesOf("Icons", module)
   // Icons
-  .add("Default", () => <Icon icon="user" />);
+  .add("Default", () => <Icon icon="phone" />);

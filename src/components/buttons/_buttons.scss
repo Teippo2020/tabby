@@ -51,6 +51,8 @@
 
   &:disabled{
     filter: saturate(.3);
+    opacity:.4;
+    cursor: auto;
   }
 }
 .btn__icon--right{

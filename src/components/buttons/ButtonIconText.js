@@ -28,16 +28,18 @@ class ButtonIconText extends React.PureComponent {
     icon: PropTypes.string.isRequired,
     iconColor: PropTypes.string.isRequired,
     iconSize: PropTypes.string,
-    iconRight: PropTypes.bool
+    iconRight: PropTypes.bool,
+    disabled: PropTypes.bool
   };
 
   render() {
-    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight } = this.props;
+    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled } = this.props;
     return (
       <button
         className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, className)}
         onClick={onClick}
         type={type}
+        disabled={disabled}
       >
         <Icon icon={icon} color={iconColor} size={iconSize}/>
         <p>{text}</p>
@@ -49,7 +51,8 @@ ButtonIconText.defaultProps = {
   className: "",
   type: "button",
   iconSize: "R",
-  iconRight: false
+  iconRight: false,
+  disabled: false
 };
 
 export default ButtonIconText;

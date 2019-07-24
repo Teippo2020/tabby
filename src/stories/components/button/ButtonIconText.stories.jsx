@@ -19,5 +19,6 @@ storiesOf("ButtonIconText", module)
           icon="down"
           iconColor="white"
           iconRight
+          disabled
         />
     ));

@@ -2194,7 +2194,7 @@ function (_React$PureComponent) {
           size = _this$props.size,
           color = _this$props.color;
       return react.createElement("i", {
-        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size)
+        className: "icon-".concat(icon, " color--").concat(color, " size--").concat(size, " icon--height")
       });
     }
   }]);
@@ -2238,6 +2238,7 @@ function (_React$PureComponent) {
      * @property {string} size- The size of the icon
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
+     * @property {string} type - Button type
      */
     value: function render() {
       var _this$props = this.props,
@@ -2245,9 +2246,10 @@ function (_React$PureComponent) {
           color = _this$props.color,
           size = _this$props.size,
           onClick = _this$props.onClick,
-          className = _this$props.className;
+          className = _this$props.className,
+          type = _this$props.type;
       return react.createElement("button", {
-        type: "submit",
+        type: type,
         className: classnames("btn", "btn--icon", className),
         onClick: onClick
       }, react.createElement(Icon, {
@@ -2266,13 +2268,15 @@ _defineProperty(ButtonIcon, "propTypes", {
   color: PropTypes.string,
   size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.string
 });
 
 ButtonIcon.defaultProps = {
   className: "",
   size: "XXL",
-  color: "gray-l1"
+  color: "gray-l1",
+  type: "button"
 };
 
 /**
@@ -2486,6 +2490,7 @@ function (_React$PureComponent) {
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
      * @property {string} color -  The color of the button
+     * @property {string} type - Button type
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2493,11 +2498,12 @@ function (_React$PureComponent) {
           color = _this$props.color,
           onClick = _this$props.onClick,
           text = _this$props.text,
-          className = _this$props.className;
+          className = _this$props.className,
+          type = _this$props.type;
       return react.createElement("button", {
         className: classnames("btn", "btn--text", "bg--".concat(color), className),
         onClick: onClick,
-        type: "button"
+        type: type
       }, react.createElement("p", null, text));
     }
   }]);
@@ -2509,11 +2515,13 @@ _defineProperty(ButtonText, "propTypes", {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.string
 });
 
 ButtonText.defaultProps = {
-  className: ""
+  className: "",
+  type: "button"
 };
 
 /**
@@ -2632,6 +2640,83 @@ function (_React$PureComponent) {
 _defineProperty(Medal, "propTypes", {
   medalSrc: PropTypes.string.isRequired
 });
+
+/**
+ * @class ButtonText - Is a button that only contains text
+ */
+
+var ButtonIconText =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(ButtonIconText, _React$PureComponent);
+
+  function ButtonIconText() {
+    _classCallCheck(this, ButtonIconText);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ButtonIconText).apply(this, arguments));
+  }
+
+  _createClass(ButtonIconText, [{
+    key: "render",
+
+    /**
+     * @property {string} text -The text of the button
+     * @property {func} onClick - The function triggered by the button
+     * @property {string} className - Just in case you need another class
+     * @property {string} color -  The color of the button
+     * @property {string} type - Button type
+     * @property {string} icon - Name of the icon
+     * @property {string} iconColor - Color of the icon
+     * @property {string} iconSize - Size of the icon, by default is 16px
+     * @property {bool} iconRight - to define the position of the icon
+     * @see See './../../../styles/variables/_colors.scss' for the list of color names
+     */
+    value: function render() {
+      var _this$props = this.props,
+          color = _this$props.color,
+          onClick = _this$props.onClick,
+          text = _this$props.text,
+          className = _this$props.className,
+          type = _this$props.type,
+          iconColor = _this$props.iconColor,
+          icon = _this$props.icon,
+          iconSize = _this$props.iconSize,
+          iconRight = _this$props.iconRight;
+      return react.createElement("button", {
+        className: classnames("btn", "btn__icon--text", "bg--".concat(color), {
+          "btn__icon--right": iconRight
+        }, className),
+        onClick: onClick,
+        type: type
+      }, react.createElement(Icon, {
+        icon: icon,
+        color: iconColor,
+        size: iconSize
+      }), react.createElement("p", null, text));
+    }
+  }]);
+
+  return ButtonIconText;
+}(react.PureComponent);
+
+_defineProperty(ButtonIconText, "propTypes", {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  type: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  iconColor: PropTypes.string.isRequired,
+  iconSize: PropTypes.string,
+  iconRight: PropTypes.bool
+});
+
+ButtonIconText.defaultProps = {
+  className: "",
+  type: "button",
+  iconSize: "R",
+  iconRight: false
+};
 
 /**
  * @class PopOver Header - Is the title of the pop over
@@ -3593,6 +3678,7 @@ function (_React$PureComponent) {
      * @property {bool} showError - Determines if the input should add an error style
      * @property {string} defaultValue - The Default Value of the input
      * @property {func} innerRef - The function to create a Ref for the input
+     * @property {string} autoComplete - To enable autocomplete
      */
     value: function render() {
       var _this$props = this.props,
@@ -3612,7 +3698,7 @@ function (_React$PureComponent) {
         type: type,
         placeholder: placeholder,
         className: classnames({
-          "error_div": showError
+          "input__error": showError
         }, "input"),
         onChange: onChange,
         onBlur: onBlur,
@@ -3630,17 +3716,18 @@ _defineProperty(Input, "propTypes", {
   placeholder: PropTypes.string,
   onBlur: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  showError: PropTypes.bool.isRequired,
+  showError: PropTypes.bool,
   defaultValue: PropTypes.string,
   innerRef: PropTypes.func,
   autoComplete: PropTypes.string
 });
 
 Input.defaultProps = {
-  placeholder: "",
   defaultValue: "",
-  innerRef: function innerRef() {},
-  autoComplete: "false"
+  placeholder: "",
+  autoComplete: "off",
+  showError: false,
+  innerRef: function innerRef() {}
 };
 
 var autosize = createCommonjsModule(function (module, exports) {
@@ -4045,7 +4132,100 @@ InputTitle.defaultProps = {
   initialText: ""
 };
 
+/**
+ * @class Input - It is an html input
+ */
+
+var InputIcon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(InputIcon, _React$PureComponent);
+
+  function InputIcon() {
+    _classCallCheck(this, InputIcon);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(InputIcon).apply(this, arguments));
+  }
+
+  _createClass(InputIcon, [{
+    key: "render",
+
+    /**
+     * @property {string} name -The name of the input
+     * @property {string} type - The type of the input
+     * @property {string} placeholder- The placeholder of the input
+     * @property {func} onBlur - The function triggered when the input is onBlur
+     * @property {func} onChange - The function triggered when the input value change
+     * @property {bool} showError - Determines if the input should add an error style
+     * @property {string} defaultValue - The Default Value of the input
+     * @property {func} innerRef - The function to create a Ref for the input
+     * @property {string} autoComplete - To enable autocomplete
+     */
+    value: function render() {
+      var _this$props = this.props,
+          innerRef = _this$props.innerRef,
+          name = _this$props.name,
+          type = _this$props.type,
+          placeholder = _this$props.placeholder,
+          showError = _this$props.showError,
+          onChange = _this$props.onChange,
+          onBlur = _this$props.onBlur,
+          defaultValue = _this$props.defaultValue,
+          autoComplete = _this$props.autoComplete,
+          icon = _this$props.icon,
+          iconColor = _this$props.iconColor,
+          iconSize = _this$props.iconSize;
+      return react.createElement("div", {
+        className: "input__icon--container"
+      }, react.createElement(Icon, {
+        color: iconColor,
+        icon: icon,
+        size: iconSize
+      }), react.createElement("input", {
+        ref: innerRef,
+        autoComplete: autoComplete,
+        name: name,
+        type: type,
+        placeholder: placeholder,
+        className: classnames({
+          "input__error": showError
+        }, "input"),
+        onChange: onChange,
+        onBlur: onBlur,
+        defaultValue: defaultValue
+      }));
+    }
+  }]);
+
+  return InputIcon;
+}(react.PureComponent);
+
+_defineProperty(InputIcon, "propTypes", {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onBlur: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  showError: PropTypes.bool,
+  defaultValue: PropTypes.string,
+  innerRef: PropTypes.func,
+  autoComplete: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  iconColor: PropTypes.string,
+  iconSize: PropTypes.string
+});
+
+InputIcon.defaultProps = {
+  placeholder: "",
+  defaultValue: "",
+  innerRef: function innerRef() {},
+  autoComplete: "off",
+  iconColor: "gray-l2",
+  iconSize: "R",
+  showError: false
+};
+
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption, ButtonIconText, InputIcon };
 //# sourceMappingURL=index.es.js.map
