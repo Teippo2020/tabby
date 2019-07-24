@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ButtonIconText
     className=""
     color="blue"
+    disabled={false}
     icon="down"
     iconColor="white"
     iconRight={false}
@@ -39,6 +40,7 @@ ShallowWrapper {
         </p>,
       ],
       "className": "btn btn__icon--text bg--blue",
+      "disabled": false,
       "onClick": [Function],
       "type": "button",
     },
@@ -88,6 +90,7 @@ ShallowWrapper {
           </p>,
         ],
         "className": "btn btn__icon--text bg--blue",
+        "disabled": false,
         "onClick": [Function],
         "type": "button",
       },
