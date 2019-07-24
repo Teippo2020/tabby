@@ -6,12 +6,12 @@ import InputIcon from "../../../components/input/InputIcon";
 storiesOf("InputIcon", module)
     .add("Default", () => (
         <InputIcon
-          icon="planet-outline"
+          icon="planet"
         />
     ))
     .add("InputIcon with error style", () => (
         <InputIcon
-          icon="planet-outline"
+          icon="planet"
           showError
         />
     ));
