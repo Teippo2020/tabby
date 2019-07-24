@@ -2239,6 +2239,7 @@ function (_React$PureComponent) {
      * @property {func} onClick - The function triggered by the button
      * @property {string} className - Just in case you need another class
      * @property {string} type - Button type
+     * @property {bool} disabled - Button could be disabled
      */
     value: function render() {
       var _this$props = this.props,
@@ -2247,11 +2248,13 @@ function (_React$PureComponent) {
           size = _this$props.size,
           onClick = _this$props.onClick,
           className = _this$props.className,
-          type = _this$props.type;
+          type = _this$props.type,
+          disabled = _this$props.disabled;
       return react.createElement("button", {
         type: type,
         className: classnames("btn", "btn--icon", className),
-        onClick: onClick
+        onClick: onClick,
+        disabled: disabled
       }, react.createElement(Icon, {
         icon: icon,
         color: color,
@@ -2269,14 +2272,16 @@ _defineProperty(ButtonIcon, "propTypes", {
   size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  disabled: PropTypes.bool
 });
 
 ButtonIcon.defaultProps = {
   className: "",
   size: "XXL",
   color: "gray-l1",
-  type: "button"
+  type: "button",
+  disabled: false
 };
 
 /**
@@ -2491,6 +2496,7 @@ function (_React$PureComponent) {
      * @property {string} className - Just in case you need another class
      * @property {string} color -  The color of the button
      * @property {string} type - Button type
+     * @property {bool} disabled - Button could be disabled
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2499,11 +2505,13 @@ function (_React$PureComponent) {
           onClick = _this$props.onClick,
           text = _this$props.text,
           className = _this$props.className,
-          type = _this$props.type;
+          type = _this$props.type,
+          disabled = _this$props.disabled;
       return react.createElement("button", {
         className: classnames("btn", "btn--text", "bg--".concat(color), className),
         onClick: onClick,
-        type: type
+        type: type,
+        disabled: disabled
       }, react.createElement("p", null, text));
     }
   }]);
@@ -2516,12 +2524,14 @@ _defineProperty(ButtonText, "propTypes", {
   onClick: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,
   className: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  disabled: PropTypes.bool
 });
 
 ButtonText.defaultProps = {
   className: "",
-  type: "button"
+  type: "button",
+  disabled: false
 };
 
 /**
@@ -2669,6 +2679,7 @@ function (_React$PureComponent) {
      * @property {string} iconColor - Color of the icon
      * @property {string} iconSize - Size of the icon, by default is 16px
      * @property {bool} iconRight - to define the position of the icon
+     * @property {bool} disabled - Button could be disabled
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2681,13 +2692,15 @@ function (_React$PureComponent) {
           iconColor = _this$props.iconColor,
           icon = _this$props.icon,
           iconSize = _this$props.iconSize,
-          iconRight = _this$props.iconRight;
+          iconRight = _this$props.iconRight,
+          disabled = _this$props.disabled;
       return react.createElement("button", {
         className: classnames("btn", "btn__icon--text", "bg--".concat(color), {
           "btn__icon--right": iconRight
         }, className),
         onClick: onClick,
-        type: type
+        type: type,
+        disabled: disabled
       }, react.createElement(Icon, {
         icon: icon,
         color: iconColor,
@@ -2708,14 +2721,16 @@ _defineProperty(ButtonIconText, "propTypes", {
   icon: PropTypes.string.isRequired,
   iconColor: PropTypes.string.isRequired,
   iconSize: PropTypes.string,
-  iconRight: PropTypes.bool
+  iconRight: PropTypes.bool,
+  disabled: PropTypes.bool
 });
 
 ButtonIconText.defaultProps = {
   className: "",
   type: "button",
   iconSize: "R",
-  iconRight: false
+  iconRight: false,
+  disabled: false
 };
 
 /**
