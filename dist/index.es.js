@@ -3694,6 +3694,7 @@ function (_React$PureComponent) {
      * @property {string} defaultValue - The Default Value of the input
      * @property {func} innerRef - The function to create a Ref for the input
      * @property {string} autoComplete - To enable autocomplete
+     * @property {bool} autoFocus - Makes the input focusable when is showed on the screen
      */
     value: function render() {
       var _this$props = this.props,
@@ -3705,7 +3706,8 @@ function (_React$PureComponent) {
           onChange = _this$props.onChange,
           onBlur = _this$props.onBlur,
           defaultValue = _this$props.defaultValue,
-          autoComplete = _this$props.autoComplete;
+          autoComplete = _this$props.autoComplete,
+          autoFocus = _this$props.autoFocus;
       return react.createElement("input", {
         ref: innerRef,
         autoComplete: autoComplete,
@@ -3717,7 +3719,8 @@ function (_React$PureComponent) {
         }, "input"),
         onChange: onChange,
         onBlur: onBlur,
-        defaultValue: defaultValue
+        defaultValue: defaultValue,
+        autoFocus: autoFocus
       });
     }
   }]);
@@ -3734,7 +3737,8 @@ _defineProperty(Input, "propTypes", {
   showError: PropTypes.bool,
   defaultValue: PropTypes.string,
   innerRef: PropTypes.func,
-  autoComplete: PropTypes.string
+  autoComplete: PropTypes.string,
+  autoFocus: PropTypes.bool
 });
 
 Input.defaultProps = {
@@ -3742,6 +3746,7 @@ Input.defaultProps = {
   placeholder: "",
   autoComplete: "off",
   showError: false,
+  autoFocus: false,
   innerRef: function innerRef() {}
 };
 
@@ -4175,6 +4180,7 @@ function (_React$PureComponent) {
      * @property {string} defaultValue - The Default Value of the input
      * @property {func} innerRef - The function to create a Ref for the input
      * @property {string} autoComplete - To enable autocomplete
+     * @property {bool} autoFocus - Makes the input focusable when is showed on the screen
      */
     value: function render() {
       var _this$props = this.props,
@@ -4189,15 +4195,16 @@ function (_React$PureComponent) {
           autoComplete = _this$props.autoComplete,
           icon = _this$props.icon,
           iconColor = _this$props.iconColor,
-          iconSize = _this$props.iconSize;
+          iconSize = _this$props.iconSize,
+          autoFocus = _this$props.autoFocus;
       return react.createElement("div", {
         className: "input__icon--container"
       }, react.createElement(Icon, {
         color: iconColor,
         icon: icon,
         size: iconSize
-      }), react.createElement("input", {
-        ref: innerRef,
+      }), react.createElement(Input, {
+        innerRef: innerRef,
         autoComplete: autoComplete,
         name: name,
         type: type,
@@ -4207,7 +4214,8 @@ function (_React$PureComponent) {
         }, "input"),
         onChange: onChange,
         onBlur: onBlur,
-        defaultValue: defaultValue
+        defaultValue: defaultValue,
+        autoFocus: autoFocus
       }));
     }
   }]);
@@ -4227,7 +4235,8 @@ _defineProperty(InputIcon, "propTypes", {
   autoComplete: PropTypes.string,
   icon: PropTypes.string.isRequired,
   iconColor: PropTypes.string,
-  iconSize: PropTypes.string
+  iconSize: PropTypes.string,
+  autoFocus: PropTypes.bool
 });
 
 InputIcon.defaultProps = {
@@ -4237,7 +4246,8 @@ InputIcon.defaultProps = {
   autoComplete: "off",
   iconColor: "gray-l2",
   iconSize: "R",
-  showError: false
+  showError: false,
+  autoFocus: false
 };
 
 // Modal components
