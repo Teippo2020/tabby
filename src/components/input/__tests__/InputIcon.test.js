@@ -40,10 +40,6 @@ describe("InputIcon", () => {
     component.find("input").simulate("blur");
     expect(onBlur.called).toBeTruthy();
   });
-  it("should has class error_div with showError prop", () => {
-    const component = mount(<InputIcon {...props} showError />);
-    expect(component.find('input').hasClass("input__error")).toBeTruthy();
-  });
   it("should has an Icon ", () => {
     const component = mount(<InputIcon {...props} />)
     expect(component.find("Icon")).toBeTruthy();
