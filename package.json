@@ -89,6 +89,7 @@
     "@storybook/react": "^4.1.13",
     "autosize": "^4.0.2",
     "classnames": "^2.2.6",
+    "lottie-web": "^5.5.7",
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
