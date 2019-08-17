@@ -31,4 +31,8 @@ describe("ButtonIcon", () => {
     const component = shallow(<ButtonText {...props} type="submit" /> );
     expect(component.find({type: "submit"})).toBeTruthy();
   });
+  it("should render an animtaion when its loading", () => {
+    const component = shallow(<ButtonText {...props} loading />);
+    expect(component.find(".button--animation")).toBeTruthy();
+  });
 });

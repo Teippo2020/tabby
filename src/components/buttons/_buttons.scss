@@ -151,6 +151,44 @@
 }
 
 .toggleButton--container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 25%;
+  p{
+    color: $gray-l1;
+  }
 
+  .toggle--outside{
+    width: 60px;
+    border-radius: 50px;
+    border: solid 2px $gray-l3;
+    height: 30px;
+    position: relative;
+    transition: background-color ease .5s;;;
+
+  }
+  .toggle--inside{
+    width:30px;
+    border-radius: 50px;
+    height: 30px;
+    background-color: $white;
+    position: absolute;
+    left: 30px;
+    transition: left .5s;
+    &:focus{
+      outline: none;
+    }
+  }
+  .toggle--off{
+    background-color: $gray-l3;
+    button{
+      left: 0;
+    }
+    i{
+      color: $gray-l2;
+    }
+  }
 }
 

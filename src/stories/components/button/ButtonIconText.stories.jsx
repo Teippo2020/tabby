@@ -1,9 +1,7 @@
 import React from "react";
 import {storiesOf} from "@storybook/react";
 import ButtonIconText from "../../../components/buttons/ButtonIconText";
-import Toggle from "../../../components/buttons/Toggle";
-import ButtonText from "../../../components/buttons/ButtonText";
-import ToggleButton from "../../../components/buttons/ToggleButton";
+
 
 
 storiesOf("ButtonIconText", module)
@@ -15,23 +13,14 @@ storiesOf("ButtonIconText", module)
           iconColor="white"
         />
     ))
-  .add("Toggle", () => (
-    <Toggle
-      on="Activos"
-      off="Inactivos"
+
+  .add("Loading", () => (
+    <ButtonIconText
+      text="botón"
       color="blue"
-    />
-  ))
-  .add("ButtonText", () => (
-    <ButtonText
-      color="blue"
-      text="loading"
+      icon="down"
+      iconColor="white"
       loading
-    />
-  ))
-  .add("toggle button", () => (
-    <ToggleButton
-      color="blue"
     />
   ))
     .add("ButtonIconText with iconRight", () => (

@@ -14,6 +14,8 @@ class ButtonText extends React.PureComponent {
    * @property {string} color -  The color of the button
    * @property {string} type - Button type
    * @property {bool} disabled - Button could be disabled
+   * @property {string} border - Button could have a border color
+   * @property {bool} loading - Button has a loading state, where it shows an animation
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
@@ -35,8 +37,7 @@ class ButtonText extends React.PureComponent {
       autoplay: true,
       path: "https://pulsarupassets.s3-us-west-2.amazonaws.com/tabby_animations/loading.json", // the path to the animation json
       rendererSettings: {
-        scaleMode: 'scale'
-      }
+        scaleMode: 'scale'}
     });
   };
 
