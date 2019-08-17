@@ -43,7 +43,7 @@ class ToggleButton extends PureComponent {
   };
 
   onClickToggle = () => {
-    {onClick} = this.props;
+    const {onClick} = this.props;
     let actualState = this.toggle();
     onClick(actualState);
   };
