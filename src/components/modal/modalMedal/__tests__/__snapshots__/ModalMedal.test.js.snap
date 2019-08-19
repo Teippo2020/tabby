@@ -70,11 +70,10 @@ ShallowWrapper {
         </p>,
         <ModalFooter>
           <ButtonText
-            border=""
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
-            loading={false}
             onClick={[Function]}
             text="button text"
             type="button"
@@ -228,11 +227,10 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <ButtonText
-            border=""
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
-            loading={false}
             onClick={[Function]}
             text="button text"
             type="button"
@@ -244,11 +242,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "border": "",
+            "borderColor": "",
             "className": "",
             "color": "blue",
             "disabled": false,
-            "loading": false,
             "onClick": [Function],
             "text": "button text",
             "type": "button",
@@ -303,11 +300,10 @@ ShallowWrapper {
           </p>,
           <ModalFooter>
             <ButtonText
-              border=""
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
-              loading={false}
               onClick={[Function]}
               text="button text"
               type="button"
@@ -461,11 +457,10 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <ButtonText
-              border=""
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
-              loading={false}
               onClick={[Function]}
               text="button text"
               type="button"
@@ -477,11 +472,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "border": "",
+              "borderColor": "",
               "className": "",
               "color": "blue",
               "disabled": false,
-              "loading": false,
               "onClick": [Function],
               "text": "button text",
               "type": "button",

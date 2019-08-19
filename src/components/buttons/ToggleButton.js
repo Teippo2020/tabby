@@ -5,14 +5,13 @@ import Icon from "../icons/Icon";
 
 class ToggleButton extends PureComponent {
   /**
-   * @property {string} icon -The text of the button
+   * @property {string} icon -The icon of the button
    * @property {func} onClick - The function triggered by the button
-   * @property {string} color -  The color of the button
-   * @property {string} on - Button type
-   * @property {bool} off - Button could be disabled
-   * @property {string} border - Button could have a border color
-   * @property {bool} loading - Button has a loading state, where it shows an animation
-   * @see See './../../../styles/variables/_colors.scss' for the list of color names
+   * @property {string} color -  The color of the background
+   * @property {string} on - Text to explain the "on" state
+   * @property {bool} off - Text to explain the "off" state
+   * @property {bool} toggleState - The state of the button
+   * @see See './../../../styles/variables/_colors. scss' for the list of color names
    */
   static propTypes = {
     icon: PropTypes.string,
@@ -36,15 +35,17 @@ class ToggleButton extends PureComponent {
   };
 
   toggle = () => {
-    this.setState(prevState => ({
-      toggleState: !prevState.toggleState
-    }));
-    return this.state.toggleState
+    const { toggleState } = this.state;
+    const newState = !toggleState;
+    this.setState({
+      toggleState: newState
+    });
+    return newState;
   };
 
   onClickToggle = () => {
-    const {onClick} = this.props;
-    let actualState = this.toggle();
+    const { onClick } = this.props;
+    const actualState = this.toggle();
     onClick(actualState);
   };
 
@@ -60,7 +61,11 @@ class ToggleButton extends PureComponent {
             "toggle--off": !toggleState
           })}
         >
-          <button type="button" className="toggle--inside" onClick={this.onClickToggle}>
+          <button
+            type="button"
+            className="toggle--inside"
+            onClick={this.onClickToggle}
+          >
             <Icon icon={icon} color={color} size="R" />
           </button>
         </div>

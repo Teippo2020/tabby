@@ -34,8 +34,4 @@ describe("ButtonIconText", () => {
     const component = mount(<ButtonIconText {...props} icon="cross" />);
     expect(component.find("Icon")).toBeTruthy();
   });
-  it("should render an animtaion when its loading", () => {
-    const component = shallow(<ButtonIconText {...props} loading />);
-    expect(component.find(".button--animation")).toBeTruthy();
-  });
 });

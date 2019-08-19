@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Icon from "../icons/Icon";
-import lottie from "lottie-web";
+
 /**
  * @class ButtonText - Is a button that only contains text
  */
@@ -18,8 +18,7 @@ class ButtonIconText extends React.PureComponent {
    * @property {string} iconSize - Size of the icon, by default is 16px
    * @property {bool} iconRight - to define the position of the icon
    * @property {bool} disabled - Button could be disabled
-   * @property {string} border - Button could have a border color
-   * @property {bool} loading - Button has a loading state, where it shows an animation
+   * @property {string} borderColor - Button could have a border color
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
@@ -33,36 +32,21 @@ class ButtonIconText extends React.PureComponent {
     iconSize: PropTypes.string,
     iconRight: PropTypes.bool,
     disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    border: PropTypes.string
+    borderColor: PropTypes.string
   };
 
-  componentDidMount() {
-    lottie.loadAnimation({
-      container: this.ref, // the dom element that will contain the animation
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "https://pulsarupassets.s3-us-west-2.amazonaws.com/tabby_animations/loading.json", // the path to the animation json
-      rendererSettings: {
-        scaleMode: 'scale'}
-    });
-  };
 
   render() {
-    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled, border, loading } = this.props;
+    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled, borderColor, loading } = this.props;
     return (
       <button
-        className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, `border--${border}`, className)}
+        className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, `border--${borderColor}`, className)}
         onClick={onClick}
         type={type}
         disabled={disabled}
       >
         <Icon icon={icon} color={iconColor} size={iconSize}/>
-        {!loading && <p>{text}</p>}
-        {loading &&
-        <div ref={ref => this.ref = ref} className={classNames("button--animation")} />
-        }
+        <p>{text}</p>
       </button>
     );
   }
@@ -73,8 +57,7 @@ ButtonIconText.defaultProps = {
   iconSize: "R",
   iconRight: false,
   disabled: false,
-  loading: false,
-  border: ""
+  borderColor: ""
 };
 
 export default ButtonIconText;

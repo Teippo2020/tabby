@@ -6,11 +6,10 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <PopOver
     activator={
       <ButtonText
-        border=""
+        borderColor=""
         className=""
         color="blue"
         disabled={false}
-        loading={false}
         onClick={[Function]}
         text="Activator"
         type="button"
@@ -43,11 +42,10 @@ ShallowWrapper {
           id="activator"
         >
           <ButtonText
-            border=""
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
-            loading={false}
             onClick={[Function]}
             text="Activator"
             type="button"
@@ -78,11 +76,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ButtonText
-            border=""
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
-            loading={false}
             onClick={[Function]}
             text="Activator"
             type="button"
@@ -97,11 +94,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "border": "",
+            "borderColor": "",
             "className": "",
             "color": "blue",
             "disabled": false,
-            "loading": false,
             "onClick": [Function],
             "text": "Activator",
             "type": "button",
@@ -153,11 +149,10 @@ ShallowWrapper {
             id="activator"
           >
             <ButtonText
-              border=""
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
-              loading={false}
               onClick={[Function]}
               text="Activator"
               type="button"
@@ -188,11 +183,10 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ButtonText
-              border=""
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
-              loading={false}
               onClick={[Function]}
               text="Activator"
               type="button"
@@ -207,11 +201,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "border": "",
+              "borderColor": "",
               "className": "",
               "color": "blue",
               "disabled": false,
-              "loading": false,
               "onClick": [Function],
               "text": "Activator",
               "type": "button",
