@@ -4,6 +4,7 @@ exports[`ButtonIcon should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ButtonText
+    borderColor=""
     className=""
     color="blue"
     disabled={false}
@@ -28,7 +29,7 @@ ShallowWrapper {
       "children": <p>
         text
       </p>,
-      "className": "btn btn--text bg--blue",
+      "className": "btn btn--text bg--blue border--",
       "disabled": false,
       "onClick": [Function],
       "type": "button",
@@ -56,7 +57,7 @@ ShallowWrapper {
         "children": <p>
           text
         </p>,
-        "className": "btn btn--text bg--blue",
+        "className": "btn btn--text bg--blue border--",
         "disabled": false,
         "onClick": [Function],
         "type": "button",
