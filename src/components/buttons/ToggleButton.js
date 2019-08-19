@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Icon from "../icons/Icon";
 
-class ToggleButton extends PureComponent {
+class ToggleButton extends React.PureComponent {
   /**
    * @property {string} icon -The icon of the button
    * @property {func} onClick - The function triggered by the button
