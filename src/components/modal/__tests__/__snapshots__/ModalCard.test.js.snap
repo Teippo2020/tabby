@@ -28,6 +28,7 @@ ShallowWrapper {
           className="icons"
         >
           <ButtonIcon
+            borderColor=""
             className=""
             color="gray-l2"
             disabled={false}
@@ -53,6 +54,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ButtonIcon
+            borderColor=""
             className=""
             color="gray-l2"
             disabled={false}
@@ -69,6 +71,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "borderColor": "",
             "className": "",
             "color": "gray-l2",
             "disabled": false,
@@ -117,6 +120,7 @@ ShallowWrapper {
             className="icons"
           >
             <ButtonIcon
+              borderColor=""
               className=""
               color="gray-l2"
               disabled={false}
@@ -142,6 +146,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ButtonIcon
+              borderColor=""
               className=""
               color="gray-l2"
               disabled={false}
@@ -158,6 +163,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "borderColor": "",
               "className": "",
               "color": "gray-l2",
               "disabled": false,
