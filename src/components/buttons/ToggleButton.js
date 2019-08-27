@@ -7,9 +7,9 @@ class ToggleButton extends React.PureComponent {
   /**
    * @property {string} icon -The icon of the button
    * @property {func} onClick - The function triggered by the button
-   * @property {string} color -  The color of the background
-   * @property {string} on - Text to explain the "on" state
-   * @property {bool} off - Text to explain the "off" state
+   * @property {string} backgroundColor -  The color of the background
+   * @property {string} onLabel - Text to explain the "on" state
+   * @property {bool} offLabel - Text to explain the "off" state
    * @property {bool} toggleState - The state of the button
    * @see See './../../../styles/variables/_colors. scss' for the list of color names
    */
