@@ -2497,6 +2497,7 @@ function (_React$PureComponent) {
      * @property {string} color -  The color of the button
      * @property {string} type - Button type
      * @property {bool} disabled - Button could be disabled
+     * @property {string} borderColor - Button could have a border color
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2506,9 +2507,11 @@ function (_React$PureComponent) {
           text = _this$props.text,
           className = _this$props.className,
           type = _this$props.type,
-          disabled = _this$props.disabled;
+
+          disabled = _this$props.disabled,
+          borderColor = _this$props.borderColor;
       return react.createElement("button", {
-        className: classnames("btn", "btn--text", "bg--".concat(color), className),
+        className: classnames("btn", "btn--text", "bg--".concat(color), "border--".concat(borderColor), className),
         onClick: onClick,
         type: type,
         disabled: disabled
@@ -2525,13 +2528,15 @@ _defineProperty(ButtonText, "propTypes", {
   color: PropTypes.string.isRequired,
   className: PropTypes.string,
   type: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  borderColor: PropTypes.string
 });
 
 ButtonText.defaultProps = {
   className: "",
   type: "button",
-  disabled: false
+  disabled: false,
+  borderColor: ""
 };
 
 /**
@@ -2680,6 +2685,7 @@ function (_React$PureComponent) {
      * @property {string} iconSize - Size of the icon, by default is 16px
      * @property {bool} iconRight - to define the position of the icon
      * @property {bool} disabled - Button could be disabled
+    * @property {string} borderColor - Button could have a border color
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2693,11 +2699,14 @@ function (_React$PureComponent) {
           icon = _this$props.icon,
           iconSize = _this$props.iconSize,
           iconRight = _this$props.iconRight,
-          disabled = _this$props.disabled;
+
+          disabled = _this$props.disabled,
+          borderColor = _this$props.borderColor,
+          loading = _this$props.loading;
       return react.createElement("button", {
         className: classnames("btn", "btn__icon--text", "bg--".concat(color), {
           "btn__icon--right": iconRight
-        }, className),
+        }, "border--".concat(borderColor), className),
         onClick: onClick,
         type: type,
         disabled: disabled
@@ -2722,7 +2731,10 @@ _defineProperty(ButtonIconText, "propTypes", {
   iconColor: PropTypes.string.isRequired,
   iconSize: PropTypes.string,
   iconRight: PropTypes.bool,
-  disabled: PropTypes.bool
+
+  disabled: PropTypes.bool,
+  borderColor: PropTypes.string
+
 });
 
 ButtonIconText.defaultProps = {
@@ -2730,8 +2742,101 @@ ButtonIconText.defaultProps = {
   type: "button",
   iconSize: "R",
   iconRight: false,
-  disabled: false
+  disabled: false,
+  borderColor: ""
+
 };
+
+var ToggleButton =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(ToggleButton, _React$PureComponent);
+
+  function ToggleButton() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, ToggleButton);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ToggleButton)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      toggleState: _this.props.toggleState
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggle", function () {
+      var toggleState = _this.state.toggleState;
+      var newState = !toggleState;
+
+      _this.setState({
+        toggleState: newState
+      });
+
+      return newState;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickToggle", function () {
+      var onClick = _this.props.onClick;
+
+      var actualState = _this.toggle();
+
+      onClick(actualState);
+    });
+
+    return _this;
+  }
+
+  _createClass(ToggleButton, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          icon = _this$props.icon,
+          color = _this$props.color,
+          on = _this$props.on,
+          off = _this$props.off;
+      var toggleState = this.state.toggleState;
+      return react.createElement("div", {
+        className: "toggleButton--container"
+      }, react.createElement("p", null, off), react.createElement("div", {
+        className: classnames("toggle--outside", "bg--".concat(color), {
+          "toggle--off": !toggleState
+        })
+      }, react.createElement("button", {
+        type: "button",
+        className: "toggle--inside",
+        onClick: this.onClickToggle
+      }, react.createElement(Icon, {
+        icon: icon,
+        color: color,
+        size: "R"
+      }))), react.createElement("p", null, on));
+    }
+  }]);
+
+  return ToggleButton;
+}(react.PureComponent);
+
+_defineProperty(ToggleButton, "propTypes", {
+  icon: PropTypes.string,
+  color: PropTypes.string,
+  on: PropTypes.string,
+  off: PropTypes.string,
+  toggleState: PropTypes.bool,
+  onClick: PropTypes.func.isRequired
+});
+
+_defineProperty(ToggleButton, "defaultProps", {
+  color: "blue",
+  on: "",
+  off: "",
+  icon: "",
+  toggleState: true
+});
 
 /**
  * @class PopOver Header - Is the title of the pop over
@@ -4242,5 +4347,5 @@ InputIcon.defaultProps = {
 
 // Modal components
 
-export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption, ButtonIconText, InputIcon };
+export { Modal, ModalCard, ModalBackground, ModalHeader, ModalFooter, ModalMedal, Medal, ButtonIcon, ButtonText, Icon, PopOver, PopOverCard, PopOverHeader, Select, DropdownWrapper, Input, InputTitle, DropdownOption, ButtonIconText, InputIcon, ToggleButton };
 //# sourceMappingURL=index.es.js.map

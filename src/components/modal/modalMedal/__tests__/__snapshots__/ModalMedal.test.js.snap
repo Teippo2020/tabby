@@ -70,6 +70,7 @@ ShallowWrapper {
         </p>,
         <ModalFooter>
           <ButtonText
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
@@ -226,6 +227,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <ButtonText
+            borderColor=""
             className=""
             color="blue"
             disabled={false}
@@ -240,6 +242,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "borderColor": "",
             "className": "",
             "color": "blue",
             "disabled": false,
@@ -297,6 +300,7 @@ ShallowWrapper {
           </p>,
           <ModalFooter>
             <ButtonText
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
@@ -453,6 +457,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <ButtonText
+              borderColor=""
               className=""
               color="blue"
               disabled={false}
@@ -467,6 +472,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "borderColor": "",
               "className": "",
               "color": "blue",
               "disabled": false,

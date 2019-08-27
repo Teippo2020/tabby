@@ -18,6 +18,7 @@ class ButtonIconText extends React.PureComponent {
    * @property {string} iconSize - Size of the icon, by default is 16px
    * @property {bool} iconRight - to define the position of the icon
    * @property {bool} disabled - Button could be disabled
+   * @property {string} borderColor - Button could have a border color
    * @see See './../../../styles/variables/_colors.scss' for the list of color names
    */
   static propTypes = {
@@ -30,14 +31,16 @@ class ButtonIconText extends React.PureComponent {
     iconColor: PropTypes.string.isRequired,
     iconSize: PropTypes.string,
     iconRight: PropTypes.bool,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    borderColor: PropTypes.string
   };
 
+
   render() {
-    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled } = this.props;
+    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled, borderColor } = this.props;
     return (
       <button
-        className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, className)}
+        className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, `border--${borderColor}`, className)}
         onClick={onClick}
         type={type}
         disabled={disabled}
@@ -53,7 +56,8 @@ ButtonIconText.defaultProps = {
   type: "button",
   iconSize: "R",
   iconRight: false,
-  disabled: false
+  disabled: false,
+  borderColor: ""
 };
 
 export default ButtonIconText;

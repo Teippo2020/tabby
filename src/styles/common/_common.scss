@@ -78,5 +78,11 @@
   }
 }
 
+@each $allColor, $color in $colors {
+  .border--#{$allColor} {
+    border: solid 1.5px $color !important;
+    color: $color;
+  }
+}
 
 
