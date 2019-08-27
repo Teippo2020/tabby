@@ -2240,6 +2240,7 @@ function (_React$PureComponent) {
      * @property {string} className - Just in case you need another class
      * @property {string} type - Button type
      * @property {bool} disabled - Button could be disabled
+     * @property {string} borderColor - Button could have a border color
      */
     value: function render() {
       var _this$props = this.props,
@@ -2249,10 +2250,11 @@ function (_React$PureComponent) {
           onClick = _this$props.onClick,
           className = _this$props.className,
           type = _this$props.type,
-          disabled = _this$props.disabled;
+          disabled = _this$props.disabled,
+          borderColor = _this$props.borderColor;
       return react.createElement("button", {
         type: type,
-        className: classnames("btn", "btn--icon", className),
+        className: classnames("btn", "btn--icon", "border--".concat(borderColor), className),
         onClick: onClick,
         disabled: disabled
       }, react.createElement(Icon, {
@@ -2273,7 +2275,8 @@ _defineProperty(ButtonIcon, "propTypes", {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   type: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  borderColor: PropTypes.string
 });
 
 ButtonIcon.defaultProps = {
@@ -2281,7 +2284,8 @@ ButtonIcon.defaultProps = {
   size: "XXL",
   color: "gray-l1",
   type: "button",
-  disabled: false
+  disabled: false,
+  borderColor: ""
 };
 
 /**
@@ -2699,8 +2703,7 @@ function (_React$PureComponent) {
           iconSize = _this$props.iconSize,
           iconRight = _this$props.iconRight,
           disabled = _this$props.disabled,
-          borderColor = _this$props.borderColor,
-          loading = _this$props.loading;
+          borderColor = _this$props.borderColor;
       return react.createElement("button", {
         className: classnames("btn", "btn__icon--text", "bg--".concat(color), {
           "btn__icon--right": iconRight
@@ -2729,7 +2732,6 @@ _defineProperty(ButtonIconText, "propTypes", {
   iconColor: PropTypes.string.isRequired,
   iconSize: PropTypes.string,
   iconRight: PropTypes.bool,
-
   disabled: PropTypes.bool,
   borderColor: PropTypes.string
 });
@@ -2792,14 +2794,14 @@ function (_React$PureComponent) {
     value: function render() {
       var _this$props = this.props,
           icon = _this$props.icon,
-          color = _this$props.color,
-          on = _this$props.on,
-          off = _this$props.off;
+          backgroundColor = _this$props.backgroundColor,
+          onLabel = _this$props.onLabel,
+          offLabel = _this$props.offLabel;
       var toggleState = this.state.toggleState;
       return react.createElement("div", {
         className: "toggleButton--container"
-      }, react.createElement("p", null, off), react.createElement("div", {
-        className: classnames("toggle--outside", "bg--".concat(color), {
+      }, react.createElement("p", null, offLabel), react.createElement("div", {
+        className: classnames("toggle--outside", "bg--".concat(backgroundColor), {
           "toggle--off": !toggleState
         })
       }, react.createElement("button", {
@@ -2808,9 +2810,9 @@ function (_React$PureComponent) {
         onClick: this.onClickToggle
       }, react.createElement(Icon, {
         icon: icon,
-        color: color,
+        color: backgroundColor,
         size: "R"
-      }))), react.createElement("p", null, on));
+      }))), react.createElement("p", null, onLabel));
     }
   }]);
 
@@ -2819,17 +2821,17 @@ function (_React$PureComponent) {
 
 _defineProperty(ToggleButton, "propTypes", {
   icon: PropTypes.string,
-  color: PropTypes.string,
-  on: PropTypes.string,
-  off: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  onLabel: PropTypes.string,
+  offLabel: PropTypes.string,
   toggleState: PropTypes.bool,
   onClick: PropTypes.func.isRequired
 });
 
 _defineProperty(ToggleButton, "defaultProps", {
-  color: "blue",
-  on: "",
-  off: "",
+  backgroundColor: "blue",
+  onLabel: "",
+  offLabel: "",
   icon: "",
   toggleState: true
 });
