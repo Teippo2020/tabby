@@ -16,6 +16,7 @@ class Input extends React.PureComponent {
    * @property {string} defaultValue - The Default Value of the input
    * @property {func} innerRef - The function to create a Ref for the input
    * @property {string} autoComplete - To enable autocomplete
+   * @property {bool} autoFocus - Makes the input focusable when is showed on the screen
    */
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -26,7 +27,8 @@ class Input extends React.PureComponent {
     showError: PropTypes.bool,
     defaultValue: PropTypes.string,
     innerRef: PropTypes.func,
-    autoComplete: PropTypes.string
+    autoComplete: PropTypes.string,
+    autoFocus: PropTypes.bool
   };
 
   render() {
@@ -39,7 +41,8 @@ class Input extends React.PureComponent {
       onChange,
       onBlur,
       defaultValue,
-      autoComplete
+      autoComplete,
+      autoFocus
     } = this.props;
     return (
       <input
@@ -52,6 +55,7 @@ class Input extends React.PureComponent {
         onChange={onChange}
         onBlur={onBlur}
         defaultValue={defaultValue}
+        autoFocus={autoFocus}
       />
     );
   }
@@ -61,6 +65,7 @@ Input.defaultProps = {
   placeholder: "",
   autoComplete: "off",
   showError: false,
+  autoFocus: false,
   innerRef: () => {}
 
 };

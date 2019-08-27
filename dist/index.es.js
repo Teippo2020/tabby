@@ -2507,6 +2507,7 @@ function (_React$PureComponent) {
           text = _this$props.text,
           className = _this$props.className,
           type = _this$props.type,
+
           disabled = _this$props.disabled,
           borderColor = _this$props.borderColor;
       return react.createElement("button", {
@@ -2684,7 +2685,7 @@ function (_React$PureComponent) {
      * @property {string} iconSize - Size of the icon, by default is 16px
      * @property {bool} iconRight - to define the position of the icon
      * @property {bool} disabled - Button could be disabled
-     * @property {string} borderColor - Button could have a border color
+    * @property {string} borderColor - Button could have a border color
      * @see See './../../../styles/variables/_colors.scss' for the list of color names
      */
     value: function render() {
@@ -2698,6 +2699,7 @@ function (_React$PureComponent) {
           icon = _this$props.icon,
           iconSize = _this$props.iconSize,
           iconRight = _this$props.iconRight,
+
           disabled = _this$props.disabled,
           borderColor = _this$props.borderColor,
           loading = _this$props.loading;
@@ -2729,8 +2731,10 @@ _defineProperty(ButtonIconText, "propTypes", {
   iconColor: PropTypes.string.isRequired,
   iconSize: PropTypes.string,
   iconRight: PropTypes.bool,
+
   disabled: PropTypes.bool,
   borderColor: PropTypes.string
+
 });
 
 ButtonIconText.defaultProps = {
@@ -2740,6 +2744,7 @@ ButtonIconText.defaultProps = {
   iconRight: false,
   disabled: false,
   borderColor: ""
+
 };
 
 var ToggleButton =
