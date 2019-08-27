@@ -4,11 +4,11 @@ exports[`ToggleButton should render correctly with default state 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ToggleButton
-    color="blue"
+    backgroundColor="blue"
     icon="user-outline"
-    off="Off text"
-    on="On text"
+    offLabel="Off text"
     onClick={[Function]}
+    onLabel="On text"
     toggleState={true}
   />,
   Symbol(enzyme.__renderer__): Object {

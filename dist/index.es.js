@@ -2729,6 +2729,7 @@ _defineProperty(ButtonIconText, "propTypes", {
   iconColor: PropTypes.string.isRequired,
   iconSize: PropTypes.string,
   iconRight: PropTypes.bool,
+
   disabled: PropTypes.bool,
   borderColor: PropTypes.string
 });
