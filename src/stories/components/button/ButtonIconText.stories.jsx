@@ -14,15 +14,6 @@ storiesOf("ButtonIconText", module)
         />
     ))
 
-  .add("Loading", () => (
-    <ButtonIconText
-      text="botón"
-      color="blue"
-      icon="down"
-      iconColor="white"
-      loading
-    />
-  ))
     .add("ButtonIconText with iconRight", () => (
         <ButtonIconText
           text="botón"

@@ -15,17 +15,17 @@ class ToggleButton extends React.PureComponent {
    */
   static propTypes = {
     icon: PropTypes.string,
-    color: PropTypes.string,
-    on: PropTypes.string,
-    off: PropTypes.string,
+    backgroundColor: PropTypes.string,
+    onLabel: PropTypes.string,
+    offLabel: PropTypes.string,
     toggleState: PropTypes.bool,
     onClick: PropTypes.func.isRequired
   };
 
   static defaultProps = {
-    color: "blue",
-    on: "",
-    off: "",
+    backgroundColor: "blue",
+    onLabel: "",
+    offLabel: "",
     icon: "",
     toggleState: true
   };
@@ -50,14 +50,14 @@ class ToggleButton extends React.PureComponent {
   };
 
   render() {
-    const { icon, color, on, off } = this.props;
+    const { icon, backgroundColor, onLabel, offLabel } = this.props;
     const { toggleState } = this.state;
 
     return (
       <div className="toggleButton--container">
-        <p>{off}</p>
+        <p>{offLabel}</p>
         <div
-          className={classNames("toggle--outside", `bg--${color}`, {
+          className={classNames("toggle--outside", `bg--${backgroundColor}`, {
             "toggle--off": !toggleState
           })}
         >
@@ -66,10 +66,10 @@ class ToggleButton extends React.PureComponent {
             className="toggle--inside"
             onClick={this.onClickToggle}
           >
-            <Icon icon={icon} color={color} size="R" />
+            <Icon icon={icon} color={backgroundColor} size="R" />
           </button>
         </div>
-        <p>{on}</p>
+        <p>{onLabel}</p>
       </div>
     );
   }

@@ -37,7 +37,7 @@ class ButtonIconText extends React.PureComponent {
 
 
   render() {
-    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled, borderColor, loading } = this.props;
+    const { color, onClick, text, className, type, iconColor, icon, iconSize, iconRight, disabled, borderColor } = this.props;
     return (
       <button
         className={classNames("btn", "btn__icon--text", `bg--${color}`, { "btn__icon--right": iconRight}, `border--${borderColor}`, className)}

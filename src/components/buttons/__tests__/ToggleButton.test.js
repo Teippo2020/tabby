@@ -10,9 +10,9 @@ describe("ToggleButton", () => {
   let props;
   beforeEach(() => {
     props = {
-      color:"blue",
-      on:"On text",
-      off:"Off text",
+      backgroundColor:"blue",
+      onLabel:"On text",
+      offLabel:"Off text",
       icon:"user-outline",
       toggleState: true,
       onClick: action
