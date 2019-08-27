@@ -9,6 +9,8 @@
 
 .btn--icon{
   background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 100px;
 }
 
 .btn--text{
@@ -155,20 +157,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 25%;
   p{
     color: $gray-l1;
   }
 
   .toggle--outside{
-    width: 60px;
+    width: 64px;
+    box-sizing: border-box;
     border-radius: 50px;
     border: solid 2px $gray-l3;
-    height: 30px;
+    height: 34px;
     position: relative;
-    transition: background-color ease .5s;;;
-
+    transition: background-color ease .3s;
   }
+
   .toggle--inside{
     width:30px;
     border-radius: 50px;
@@ -176,7 +178,7 @@
     background-color: $white;
     position: absolute;
     left: 30px;
-    transition: left .5s;
+    transition: left .3s;
     &:focus{
       outline: none;
     }

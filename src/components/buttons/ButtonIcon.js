@@ -15,6 +15,7 @@ class ButtonIcon extends React.PureComponent {
    * @property {string} className - Just in case you need another class
    * @property {string} type - Button type
    * @property {bool} disabled - Button could be disabled
+   * @property {string} borderColor - Button could have a border color
    */
   static propTypes = {
     icon: PropTypes.string.isRequired,
@@ -23,15 +24,16 @@ class ButtonIcon extends React.PureComponent {
     onClick: PropTypes.func.isRequired,
     className: PropTypes.string,
     type: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    borderColor: PropTypes.string
   };
 
   render() {
-    const { icon, color, size, onClick, className, type, disabled } = this.props;
+    const { icon, color, size, onClick, className, type, disabled, borderColor } = this.props;
     return (
       <button
         type={type}
-        className={classNames("btn", "btn--icon", className)}
+        className={classNames("btn", "btn--icon",`border--${borderColor}`, className)}
         onClick={onClick}
         disabled={disabled}
       >
@@ -45,7 +47,8 @@ ButtonIcon.defaultProps = {
   size: "XXL",
   color: "gray-l1",
   type: "button",
-  disabled: false
+  disabled: false,
+  borderColor: ""
 };
 
 export default ButtonIcon;
