@@ -75,7 +75,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-scss": "^1.0.1",
     "sass": "^1.17.2",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^17.2.3",
     "semantic-release-cli": "^4.1.1",
     "sinon": "^7.2.7",
     "terser": "^3.17.0",
